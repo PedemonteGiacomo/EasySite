@@ -2,6 +2,8 @@
 
 Template for facade sites, easy to manipulate and easy to improve.
 
+Watch [this site realized with this template](https://itlpuliziegenova.it)
+
 ## Table of Contents
 
 - [EasySite - Template Vue.js](#easysite---template-vuejs)
