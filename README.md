@@ -121,35 +121,103 @@ npm run format
 quasar build
 ```
 
+After duing the build, if you want to host with Firebase (suggested since all the services used here are from Firebase and is it free until the site is really used by users : usage-pay), 
+I suggest to setup the site as SPA(SinglePageApplication) to easily manage ga(google-analytics) tag and other features from Firebase.
+
+This is not the best choice if you deserve to analyze the access on different pages but for a first impact site can be useful to have the site as a single-page application.
+
+```bash
+firebase deploy
+```
+
+If setting up the Firestore database make sure to modify the content of "firestore.rules" that reflects the rules that you can find in the Firebase Firestore dashboard.
+
 #### Customize the configuration
 See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-vite/quasar-config-js).
 
 
-#### Relevant notes for the project EasySite
+# How to use this template?
 
-If you want to host with Firebase (suggested since all the services used here are from Firebase), I suggest to setup the site as SPA(SinglePageApplication) to easily manage ga(google-analytics) tag and other features from Firebase.
+## Ensure Node.js and Vue CLI are Installed:
 
-This is not the best choice if you deserve to analyze the access on different pages but for a first impact site can be useful to have the site as a single-page application.
+Make sure that you have [Node.js](https://nodejs.org) installed. If not, you can download it from nodejs.org. 
+After installing Node.js, you can install Vue CLI globally using the following command:
 
-Make always:
-  ```bash
-  quasar dev
-  ```
-to prove all the functionality you want to test on a local development server.
-After this, you can do:
+```bash
+npm install -g @vue/cli
+```
 
-  ```bash
-  quasar build
-  ```
+## Clone Your Repository:
+Clone your repository to their local machine:
+```bash
+git clone https://github.com/PedemonteGiacomo/EasySite
+```
 
-And then if all works fine, the SPA (in my case) is generated and hosted correctly when performing the last command:
+## Navigate to the Project Directory:
 
-  ```bash
-  firebase deploy
-  ```
+Now you should navigate to the project directory:
 
-If setting up the Firestore database make sure to modify the content of "firestore.rules" that reflects the rules that you can find in the Firebase Firestore dashboard.
+```bash
+cd EasySite
+```
 
+## Install Dependencies:
+
+Inside the project directory, you should install project dependencies:
+
+```bash
+npm install
+```
+
+## Run the Quasar Project:
+
+To run the Quasar project in development mode, as early suggested, users can use the following command:
+
+```bash
+quasar dev
+```
+This will start the development server, and quasar will automatically open the development server page.
+
+### Change API tokens
+Since the template contains google maps API usage and Firebase configuration, if you want to use them you will need to configurate you project throught [Firebase](https://firebase.google.com/)
+
+APIs to be changed or commented are in the following paths:
+ /firebase/index.js -> change the content of this file with the configuration provided in firebase after setting your project.
+
+
+ IndexPage contains google maps API usage so change when is mentioned:
+  <!-- Simple component to manage embedded maps provided by google, modify the url
+     to get the correct position (search first on maps and paste the relevant part of the URL) -->
+    <div class="row justify-center">
+      <iframe width="600" height="450" frameborder="0" style="border:0" referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=POSITION_TO_RETRIEVE"
+        allowfullscreen>
+      </iframe>
+    </div>
+To make work properly the Google analytics tag, if you have enable it from firebase, you will have to change the following inside IndexPage:
+```bash
+  // JS tags
+  script: {
+    ldJson: {
+      type: 'application/ld+json',
+      innerHTML: `{ "@context": "http://schema.org" }`
+    },
+    // Add the Google Tag for Analytics script and tracking code provided by Firebase
+    gtag: {
+      src: 'https://www.googletagmanager.com/gtag/js?id=GOOGLE_ANALYTICS_TAG',
+      async: true
+    },
+    gtagConfig: {
+      content: `
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+          dataLayer.push(arguments);
+        };
+        gtag("js", new Date());
+        gtag("config", "GOOGLE_ANALYTICS_TAG");
+      `,
+    },
+```
 ### Animations and Transitions
 
 Since there is a mess performing good animation in quasar in this site there are intersections to resume the user attention and make it more interactive with the pages.
