@@ -39,6 +39,5 @@ dist
 .firebase
 .quasar
 *.log
-package*
 node_modules
 functions
