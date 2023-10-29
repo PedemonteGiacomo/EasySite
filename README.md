@@ -1,6 +1,6 @@
 # EasySite - Template Vue.js
 
-Template for facade sites, easy to manipulate and easy to improve.
+EasySite is a versatile Vue.js and Quasar template designed for creating sleek and intuitive facade websites. It's engineered for simplicity, making it effortless to customize and enhance according to your specific needs.
 
 Watch [this site realized with this template](https://itlpuliziegenova.it)
 
@@ -12,15 +12,6 @@ Watch [this site realized with this template](https://itlpuliziegenova.it)
 
 - [EasySite - Template Vue.js](#easysite---template-vuejs)
   - [Table of Contents](#table-of-contents)
-  - [Introduction](#introduction)
-      - [Example](#example)
-  - [Features](#features)
-  - [Prerequisites](#prerequisites)
-  - [Getting Started](#getting-started)
-    - [Installation](#installation)
-    - [Configuration](#configuration)
-      - [Customize the configuration](#customize-the-configuration)
-    - [Deployment](#deployment)
 - [How to use this template?](#how-to-use-this-template)
   - [Ensure Node.js and Vue CLI are Installed:](#ensure-nodejs-and-vue-cli-are-installed)
       - [Quasar Framework](#quasar-framework)
@@ -36,70 +27,6 @@ Watch [this site realized with this template](https://itlpuliziegenova.it)
     - [Animations and Transitions](#animations-and-transitions)
 - [Contributing](#contributing)
 - [License](#license)
-
-## Introduction
-
-Explain briefly what your project does and what problem it solves. Mention that it's a template for creating facade sites using Vue.js and Quasar framework, connected to Firebase.
-
-#### Example
-
-
-## Features
-
-- List key features of your project.
-
-## Prerequisites
-
-Before you begin, ensure you have met the following requirements:
-
-- Node.js and npm installed.
-- Firebase account and Firebase CLI installed (for connecting to Firebase).
-
-## Getting Started
-
-### Installation
-
-```bash
-# Clone the repository
-git clone <repository-url>
-
-# Navigate to the project directory
-cd project-directory
-
-# Install dependencies
-npm install
-```
-
-### Configuration
-
-Firebase Setup
-
-    Create a Firebase Project:
-        Go to the Firebase Console.
-        Click on "Add Project" and follow the prompts to create a new project.
-
-    Firebase Configuration:
-        In your Firebase project settings, find your Firebase configuration object.
-          Search for the correct path to your firebase project connected to the usage of this template.
-          Change the name inside the ".firebaserc" file
-        Replace the placeholder values in your Vue.js project with the actual Firebase configuration.
-
-    Firestore Database:
-        Set up your Firestore database collections and documents as per your project requirements.
-
-#### Customize the configuration
-See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-vite/quasar-config-js).
-
-
-### Deployment
-
-Explain how to deploy your project. This might include instructions on deploying to platforms like Firebase Hosting, Vercel, or Netlify.
-Built With
-
-    Vue.js - The progressive JavaScript framework.
-    Quasar Framework - The high-performance Vue.js framework.
-    Firebase - The comprehensive app development platform.
-
 
 # How to use this template?
 
