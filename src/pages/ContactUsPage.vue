@@ -11,16 +11,7 @@
     </transition>
     <!-- </q-intersection> -->
 
-    <!-- Simple component to manage embedded maps provided by google, modify the url
-     to get the correct position (search first on maps and paste the relevant part of the URL) -->
-    <transition type="animation" mode="out-in" appear enter-active-class="animated fadeInRightBig slower">
-      <div class="row justify-center">
-        <iframe width="600" height="450" frameborder="0" style="border:0" referrerpolicy="no-referrer-when-downgrade"
-          src="https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=PLACE_TO_REQUEST"
-          allowfullscreen>
-        </iframe>
-      </div>
-    </transition>
+    <MapComponent address="ITL Srl IMPRESA PULIZIA, Genova Italy"/>
 
     <div class="description-container q-mt-xl">
       <h5 class="text-italic text-center">Mandaci subito un messaggio, lascia un recapito telefonico e verrai ricontattato
@@ -55,11 +46,13 @@
 <script>
 import { defineComponent, ref, onMounted } from "vue";
 import CatchingClientComponent from "src/components/CatchingClientComponent.vue";
+import MapComponent from "src/components/MapComponent.vue";
 
 export default defineComponent({
   name: "ContactUsPage",
   components: {
     CatchingClientComponent,
+    MapComponent
   },
 });
 </script>

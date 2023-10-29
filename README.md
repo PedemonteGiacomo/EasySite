@@ -18,7 +18,8 @@ Watch [this site realized with this template](https://itlpuliziegenova.it)
     - [Deployment](#deployment)
 - [How to use this template?](#how-to-use-this-template)
   - [Ensure Node.js and Vue CLI are Installed:](#ensure-nodejs-and-vue-cli-are-installed)
-  - [Clone Your Repository:](#clone-your-repository)
+      - [Quasar Framework](#quasar-framework)
+  - [Clone This Repository:](#clone-this-repository)
   - [Navigate to the Project Directory:](#navigate-to-the-project-directory)
   - [Install Dependencies:](#install-dependencies)
   - [Run the Quasar Project:](#run-the-quasar-project)
@@ -34,6 +35,9 @@ Watch [this site realized with this template](https://itlpuliziegenova.it)
 ## Introduction
 
 Explain briefly what your project does and what problem it solves. Mention that it's a template for creating facade sites using Vue.js and Quasar framework, connected to Firebase.
+
+#### Example
+
 
 ## Features
 
@@ -99,12 +103,16 @@ Built With
 Make sure that you have [Node.js](https://nodejs.org) installed. If not, you can download it from nodejs.org.
 After installing Node.js, you can install Vue CLI globally using the following command:
 
+#### Quasar Framework
+
+Make sure you have Quasar CLI installed globally. If not, you can install it using npm:
+
 ```bash
-npm install -g @vue/cli
+npm install -g @quasar/cli
 ```
 
-## Clone Your Repository:
-Clone your repository to their local machine:
+## Clone This Repository:
+Clone this repository to your local machine:
 ```bash
 git clone https://github.com/PedemonteGiacomo/EasySite
 ```
@@ -145,6 +153,10 @@ Change the content of this file with the configuration provided in firebase afte
 #### Adapt Google API's usage:
 
 MapComponent contains google maps API usage so change when is mentioned:
+
+At first start the result will be the following:
+
+![Invalid_API_KEY](readme_images/image.png)
 
 [Link to google maps API usage in MapComponent.vue](https://github.com/PedemonteGiacomo/EasySite/blob/main/src/components/MapComponent.vue#L21)
 
@@ -193,6 +205,10 @@ This by simply including the Map as a component in the following way:
     ...
   }
 ```
+
+This will make you obtain as result the following map rendering:
+
+![Valid_API_KEY](readme_images/image-1.png)
 
 Always in the IndexPage, to make work properly the Google analytics tag, if you have enable it from firebase, you will have to change the "GOOGLE_ANALYTIC_TAG" with your own inside [IndexPage following lines](https://github.com/PedemonteGiacomo/EasySite/blob/main/src/pages/IndexPage.vue#L356):
 ```bash
