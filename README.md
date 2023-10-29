@@ -9,6 +9,7 @@ Watch [this site realized with this template](https://itlpuliziegenova.it)
 - [EasySite - Template Vue.js](#easysite---template-vuejs)
   - [Table of Contents](#table-of-contents)
   - [Introduction](#introduction)
+      - [Example](#example)
   - [Features](#features)
   - [Prerequisites](#prerequisites)
   - [Getting Started](#getting-started)
@@ -29,8 +30,8 @@ Watch [this site realized with this template](https://itlpuliziegenova.it)
   - [Build the app for production](#build-the-app-for-production)
   - [Extras](#extras)
     - [Animations and Transitions](#animations-and-transitions)
-  - [Contributing](#contributing)
-  - [License](#license)
+- [Contributing](#contributing)
+- [License](#license)
 
 ## Introduction
 
@@ -256,11 +257,11 @@ If setting up the Firestore database make sure to modify the content of "firesto
 Since there is a mess performing good animation in quasar in this site there are intersections to resume the user attention and make it more interactive with the pages.
 Play as you like with those to obtain the desired effect.
 
-## Contributing
+# Contributing
 
 Contributions are welcome! See the Contributing Guidelines for more details.
 
-## License
+# License
 This project is licensed under the MIT License.
 
 <!-- Acknowledgements
