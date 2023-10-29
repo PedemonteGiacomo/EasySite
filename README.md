@@ -4,6 +4,10 @@ Template for facade sites, easy to manipulate and easy to improve.
 
 Watch [this site realized with this template](https://itlpuliziegenova.it)
 
+
+[![Video Presentation](readme_images/facade.png)](https://clipchamp.com/watch/rGfTaHwric3)
+
+
 ## Table of Contents
 
 - [EasySite - Template Vue.js](#easysite---template-vuejs)
