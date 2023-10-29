@@ -14,13 +14,8 @@ Watch [this site realized with this template](https://itlpuliziegenova.it)
   - [Getting Started](#getting-started)
     - [Installation](#installation)
     - [Configuration](#configuration)
-    - [Deployment](#deployment)
-      - [Install the dependencies](#install-the-dependencies)
-      - [Start the app in development mode (hot-code reloading, error reporting, etc.)](#start-the-app-in-development-mode-hot-code-reloading-error-reporting-etc)
-      - [Lint the files](#lint-the-files)
-      - [Format the files](#format-the-files)
-      - [Build the app for production](#build-the-app-for-production)
       - [Customize the configuration](#customize-the-configuration)
+    - [Deployment](#deployment)
 - [How to use this template?](#how-to-use-this-template)
   - [Ensure Node.js and Vue CLI are Installed:](#ensure-nodejs-and-vue-cli-are-installed)
   - [Clone Your Repository:](#clone-your-repository)
@@ -30,9 +25,11 @@ Watch [this site realized with this template](https://itlpuliziegenova.it)
     - [Change API tokens](#change-api-tokens)
       - [Adapt Firebase Configuration](#adapt-firebase-configuration)
       - [Adapt Google API's usage:](#adapt-google-apis-usage)
+  - [Build the app for production](#build-the-app-for-production)
+  - [Extras](#extras)
     - [Animations and Transitions](#animations-and-transitions)
-    - [Contributing](#contributing)
-    - [License](#license)
+  - [Contributing](#contributing)
+  - [License](#license)
 
 ## Introduction
 
@@ -66,10 +63,6 @@ npm install
 
 ### Configuration
 
-Explain any configuration steps users need to follow. This might include environment variables, API keys, or Firebase configuration.
-Usage
-
-Describe how to use your project. Include important code snippets and demonstrate typical use cases.
 Firebase Setup
 
     Create a Firebase Project:
@@ -85,6 +78,10 @@ Firebase Setup
     Firestore Database:
         Set up your Firestore database collections and documents as per your project requirements.
 
+#### Customize the configuration
+See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-vite/quasar-config-js).
+
+
 ### Deployment
 
 Explain how to deploy your project. This might include instructions on deploying to platforms like Firebase Hosting, Vercel, or Netlify.
@@ -93,55 +90,6 @@ Built With
     Vue.js - The progressive JavaScript framework.
     Quasar Framework - The high-performance Vue.js framework.
     Firebase - The comprehensive app development platform.
-
-#### Install the dependencies
-```bash
-yarn
-# or
-npm install
-```
-
-#### Start the app in development mode (hot-code reloading, error reporting, etc.)
-```bash
-quasar dev
-```
-
-
-#### Lint the files
-```bash
-yarn lint
-# or
-npm run lint
-```
-
-
-#### Format the files
-```bash
-yarn format
-# or
-npm run format
-```
-
-
-
-#### Build the app for production
-```bash
-quasar build
-```
-
-After duing the build, if you want to host with Firebase (suggested since all the services used here are from Firebase and is it free until the site is really used by users : usage-pay),
-I suggest to setup the site as SPA(SinglePageApplication) to easily manage ga(google-analytics) tag and other features from Firebase.
-
-This is not the best choice if you deserve to analyze the access on different pages but for a first impact site can be useful to have the site as a single-page application.
-
-```bash
-firebase deploy
-```
-
-If setting up the Firestore database make sure to modify the content of "firestore.rules" that reflects the rules that you can find in the Firebase Firestore dashboard.
-
-#### Customize the configuration
-See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-vite/quasar-config-js).
 
 
 # How to use this template?
@@ -270,17 +218,33 @@ Always in the IndexPage, to make work properly the Google analytics tag, if you 
       `,
     },
 ```
+## Build the app for production
+```bash
+quasar build
+```
 
+After duing the build, if you want to host with Firebase (suggested since all the services used here are from Firebase and is it free until the site is really used by users : usage-pay),
+I suggest to setup the site as SPA(SinglePageApplication) to easily manage ga(google-analytics) tag and other features from Firebase.
+
+This is not the best choice if you deserve to analyze the access on different pages but for a first impact site can be useful to have the site as a single-page application.
+
+```bash
+firebase deploy
+```
+
+If setting up the Firestore database make sure to modify the content of "firestore.rules" that reflects the rules that you can find in the Firebase Firestore dashboard.
+
+## Extras
 ### Animations and Transitions
 
 Since there is a mess performing good animation in quasar in this site there are intersections to resume the user attention and make it more interactive with the pages.
 Play as you like with those to obtain the desired effect.
 
-### Contributing
+## Contributing
 
 Contributions are welcome! See the Contributing Guidelines for more details.
 
-### License
+## License
 This project is licensed under the MIT License.
 
 <!-- Acknowledgements
