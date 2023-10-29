@@ -298,14 +298,7 @@
       </transition>
     </q-intersection>
 
-    <!-- Simple component to manage embedded maps provided by google, modify the url
-     to get the correct position (search first on maps and paste the relevant part of the URL) -->
-    <div class="row justify-center">
-      <iframe width="600" height="450" frameborder="0" style="border:0" referrerpolicy="no-referrer-when-downgrade"
-        src="https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=POSITION_TO_RETRIEVE"
-        allowfullscreen>
-      </iframe>
-    </div>
+    <MapComponent address="ITL Srl IMPRESA PULIZIA, Genova Italy"/>
 
     <q-intersection :key="'button-finish'" v-scroll-fire="bounceImage">
       <transition type="animation" mode="out-in" appear enter-active-class="animated tada slower">
@@ -325,6 +318,7 @@
 import { defineComponent, ref, onMounted } from "vue";
 import GalleryCarousel from "../components/GalleryCarousel.vue";
 import { useMeta } from 'quasar';
+import MapComponent from "src/components/MapComponent.vue";
 
 const metaData = {
   // sets document title
@@ -353,7 +347,7 @@ const metaData = {
     },
     // Add the Google Tag for Analytics script and tracking code provided by Firebase
     gtag: {
-      src: 'https://www.googletagmanager.com/gtag/js?id=GOOGLE_ANALYTICS_TAG',
+      src: 'https://www.googletagmanager.com/gtag/js?id=G-ZE492RNM0C',
       async: true
     },
     gtagConfig: {
@@ -363,7 +357,7 @@ const metaData = {
           dataLayer.push(arguments);
         };
         gtag("js", new Date());
-        gtag("config", "GOOGLE_ANALYTICS_TAG");
+        gtag("config", "G-ZE492RNM0C");
       `,
     },
   },
@@ -387,10 +381,10 @@ const metaData = {
 }
 
 
-
 export default defineComponent({
   components: {
     GalleryCarousel,
+    MapComponent,
   },
   name: "IndexPage",
   setup() {

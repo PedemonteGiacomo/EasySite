@@ -148,26 +148,20 @@
       </transition>
     </q-intersection>
 
-    <!-- Simple component to manage embedded maps provided by google, modify the url
-     to get the correct position (search first on maps and paste the relevant part of the URL) -->
-    <div class="row justify-center">
-      <iframe width="600" height="450" frameborder="0" style="border:0" referrerpolicy="no-referrer-when-downgrade"
-        src="https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=PLACE_TO_OBTAIN_LOCATION"
-        allowfullscreen>
-      </iframe>
-    </div>
+
+    <MapComponent address="ITL Srl IMPRESA PULIZIA, Genova Italy"/>
   </q-page>
 </template>
 
 <script>
 import AboutUsCarousel from 'src/components/AboutUsCarousel.vue';
-import GalleryCarousel from 'src/components/GalleryCarousel.vue';
 import { useQuasar } from 'quasar'
+import MapComponent from 'src/components/MapComponent.vue';
 
 export default {
   components: {
     AboutUsCarousel,
-    //GalleryCarousel
+    MapComponent
   },
   name: 'AboutUsPage',
   setup() {

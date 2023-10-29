@@ -21,7 +21,15 @@ Watch [this site realized with this template](https://itlpuliziegenova.it)
       - [Format the files](#format-the-files)
       - [Build the app for production](#build-the-app-for-production)
       - [Customize the configuration](#customize-the-configuration)
-      - [Relevant notes for the project EasySite](#relevant-notes-for-the-project-easysite)
+- [How to use this template?](#how-to-use-this-template)
+  - [Ensure Node.js and Vue CLI are Installed:](#ensure-nodejs-and-vue-cli-are-installed)
+  - [Clone Your Repository:](#clone-your-repository)
+  - [Navigate to the Project Directory:](#navigate-to-the-project-directory)
+  - [Install Dependencies:](#install-dependencies)
+  - [Run the Quasar Project:](#run-the-quasar-project)
+    - [Change API tokens](#change-api-tokens)
+      - [Adapt Firebase Configuration](#adapt-firebase-configuration)
+      - [Adapt Google API's usage:](#adapt-google-apis-usage)
     - [Animations and Transitions](#animations-and-transitions)
     - [Contributing](#contributing)
     - [License](#license)
@@ -121,7 +129,7 @@ npm run format
 quasar build
 ```
 
-After duing the build, if you want to host with Firebase (suggested since all the services used here are from Firebase and is it free until the site is really used by users : usage-pay), 
+After duing the build, if you want to host with Firebase (suggested since all the services used here are from Firebase and is it free until the site is really used by users : usage-pay),
 I suggest to setup the site as SPA(SinglePageApplication) to easily manage ga(google-analytics) tag and other features from Firebase.
 
 This is not the best choice if you deserve to analyze the access on different pages but for a first impact site can be useful to have the site as a single-page application.
@@ -140,7 +148,7 @@ See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-vite/quasar-
 
 ## Ensure Node.js and Vue CLI are Installed:
 
-Make sure that you have [Node.js](https://nodejs.org) installed. If not, you can download it from nodejs.org. 
+Make sure that you have [Node.js](https://nodejs.org) installed. If not, you can download it from nodejs.org.
 After installing Node.js, you can install Vue CLI globally using the following command:
 
 ```bash
@@ -181,20 +189,27 @@ This will start the development server, and quasar will automatically open the d
 ### Change API tokens
 Since the template contains google maps API usage and Firebase configuration, if you want to use them you will need to configurate you project throught [Firebase](https://firebase.google.com/)
 
-APIs to be changed or commented are in the following paths:
- /firebase/index.js -> change the content of this file with the configuration provided in firebase after setting your project.
+#### Adapt Firebase Configuration
+Change the content of this file with the configuration provided in firebase after setting your project.
 
+[/firebase/index.js](https://github.com/PedemonteGiacomo/EasySite/blob/main/src/firebase/index.js#L10)
 
- IndexPage contains google maps API usage so change when is mentioned:
-  <!-- Simple component to manage embedded maps provided by google, modify the url
-     to get the correct position (search first on maps and paste the relevant part of the URL) -->
-    <div class="row justify-center">
-      <iframe width="600" height="450" frameborder="0" style="border:0" referrerpolicy="no-referrer-when-downgrade"
-        src="https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=POSITION_TO_RETRIEVE"
-        allowfullscreen>
-      </iframe>
-    </div>
-To make work properly the Google analytics tag, if you have enable it from firebase, you will have to change the following inside IndexPage:
+#### Adapt Google API's usage:
+
+MapComponent contains google maps API usage so change when is mentioned:
+
+[Link to google maps API of IndexPage.vue](https://github.com/PedemonteGiacomo/EasySite/blob/main/src/pages/IndexPage.vue#L305)
+
+```bash
+  <div class="row justify-center">
+    <iframe width="600" height="450" frameborder="0" style="border:0" referrerpolicy="no-referrer-when-downgrade"
+      src="https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=POSITION_TO_RETRIEVE"
+      allowfullscreen>
+    </iframe>
+  </div>
+```
+
+Always in the IndexPage, to make work properly the Google analytics tag, if you have enable it from firebase, you will have to change the "GOOGLE_ANALYTIC_TAG" with your own inside [IndexPage following lines](https://github.com/PedemonteGiacomo/EasySite/blob/main/src/pages/IndexPage.vue#L356):
 ```bash
   // JS tags
   script: {
@@ -218,6 +233,12 @@ To make work properly the Google analytics tag, if you have enable it from fireb
       `,
     },
 ```
+
+All the usages of the google maps should be changed:
+
+[Contact Us Page](https://github.com/PedemonteGiacomo/EasySite/blob/main/src/pages/ContactUsPage.vue#L19)
+
+
 ### Animations and Transitions
 
 Since there is a mess performing good animation in quasar in this site there are intersections to resume the user attention and make it more interactive with the pages.
