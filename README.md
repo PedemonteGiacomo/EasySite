@@ -198,15 +198,52 @@ Change the content of this file with the configuration provided in firebase afte
 
 MapComponent contains google maps API usage so change when is mentioned:
 
-[Link to google maps API of IndexPage.vue](https://github.com/PedemonteGiacomo/EasySite/blob/main/src/pages/IndexPage.vue#L305)
+[Link to google maps API usage in MapComponent.vue](https://github.com/PedemonteGiacomo/EasySite/blob/main/src/components/MapComponent.vue#L21)
 
 ```bash
-  <div class="row justify-center">
-    <iframe width="600" height="450" frameborder="0" style="border:0" referrerpolicy="no-referrer-when-downgrade"
-      src="https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=POSITION_TO_RETRIEVE"
-      allowfullscreen>
-    </iframe>
-  </div>
+  <script>
+  export default {
+    props: {
+      // You can pass the address as a prop to dynamically generate the map URL
+      address: {
+        type: String,
+        required: true
+      }
+    },
+    computed: {
+      // Computed property to generate the dynamic map URL based on the passed address prop
+      mapUrl() {
+        const apiKey = 'YOUR_GOOGLE_API_KEY'; // Replace with your Google Maps API Key
+        const formattedAddress = encodeURIComponent(this.address);
+        return `https://www.google.com/maps/embed/v1/place?key=${apiKey}&q=${formattedAddress}`;
+      }
+    }
+  };
+  </script>
+```
+
+And then simply modify the string that refers to the place that want to visualize.
+
+Example of usage in the [AboutUs.vue Page](https://github.com/PedemonteGiacomo/EasySite/blob/main/src/pages/AboutUsPage.vue#L152):
+
+```bash
+  <MapComponent address="ITL Srl IMPRESA PULIZIA, Genova Italy"/>
+```
+
+This by simply including the Map as a component in the following way:
+
+```bash
+  import AboutUsCarousel from 'src/components/AboutUsCarousel.vue';
+  import { useQuasar } from 'quasar'
+  import MapComponent from 'src/components/MapComponent.vue';
+
+  export default {
+    components: {
+      AboutUsCarousel,
+      MapComponent
+    },
+    ...
+  }
 ```
 
 Always in the IndexPage, to make work properly the Google analytics tag, if you have enable it from firebase, you will have to change the "GOOGLE_ANALYTIC_TAG" with your own inside [IndexPage following lines](https://github.com/PedemonteGiacomo/EasySite/blob/main/src/pages/IndexPage.vue#L356):
@@ -233,11 +270,6 @@ Always in the IndexPage, to make work properly the Google analytics tag, if you 
       `,
     },
 ```
-
-All the usages of the google maps should be changed:
-
-[Contact Us Page](https://github.com/PedemonteGiacomo/EasySite/blob/main/src/pages/ContactUsPage.vue#L19)
-
 
 ### Animations and Transitions
 
