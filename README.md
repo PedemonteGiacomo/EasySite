@@ -20,7 +20,9 @@ Watch [this site realized with this template](https://itlpuliziegenova.it)
   - [Install Dependencies:](#install-dependencies)
   - [Run the Quasar Project:](#run-the-quasar-project)
     - [Make it Personal](#make-it-personal)
-      - [Adapt Packages](#adapt-packages)
+      - [Adapt Packages \& Configuration with your Project Name](#adapt-packages--configuration-with-your-project-name)
+        - [Pakages](#pakages)
+        - [Configuration](#configuration)
     - [Change API tokens \& Adapt Firebase Hosting and Services](#change-api-tokens--adapt-firebase-hosting-and-services)
       - [Adapt Firebase Configuration](#adapt-firebase-configuration)
       - [Adapt Google API's usage:](#adapt-google-apis-usage)
@@ -87,11 +89,12 @@ This will start the development server, and quasar will automatically open the d
 
 ### Make it Personal
 
-#### Adapt Packages
+#### Adapt Packages & Configuration with your Project Name
 
+##### Pakages
 To Adapt the site to your personal usage, go change inside the [package-lock.json](https://github.com/PedemonteGiacomo/EasySite/blob/main/package-lock.json#L1-L8) the names of the project:
 
-```bash
+```js
   {
     "name": "quasar-itl", # Adapt this to you personal name
     "version": "0.0.1",
@@ -109,7 +112,7 @@ To Adapt the site to your personal usage, go change inside the [package-lock.jso
 
 You need to do this also in the [package.json](https://github.com/PedemonteGiacomo/EasySite/blob/main/package.json#L1C1-L14C5) file in the following code:
 
-```bash
+```js
   {
     "name": "quasar-itl",
     "version": "0.0.1",
@@ -126,6 +129,18 @@ You need to do this also in the [package.json](https://github.com/PedemonteGiaco
     },
     ...
   }
+```
+##### Configuration
+
+Explore the [config](https://github.com/PedemonteGiacomo/EasySite/blob/main/quasar.config.js#L189) file to adapt to fit your needs.
+
+For the moment  I sugegst only to change the project name to your personal one:
+```js
+  builder: {
+      // https://www.electron.build/configuration/configuration
+
+      appId: "quasar-itl", //change with your personal appID
+  },
 ```
 
 ### Change API tokens & Adapt Firebase Hosting and Services
