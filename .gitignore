@@ -40,4 +40,4 @@ dist
 .quasar
 *.log
 node_modules
-
+readme_images
