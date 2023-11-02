@@ -29,7 +29,7 @@ Watch [this site realized with this template](https://itlpuliziegenova.it)
     - [Configuration](#configuration)
     - [Pakages](#pakages)
   - [Adapt Firebase Configuration](#adapt-firebase-configuration)
-      - [Use the Firestore Database](#use-the-firestore-database)
+    - [Use the Firestore Database](#use-the-firestore-database)
     - [Adapt Google API's usage:](#adapt-google-apis-usage)
     - [Manage the Google Analytic TAG](#manage-the-google-analytic-tag)
     - [Use SendGrid API to trigger mail when user complete contact form](#use-sendgrid-api-to-trigger-mail-when-user-complete-contact-form)
@@ -200,7 +200,7 @@ Change the name of the project to your own that you configured in firebase in in
 }
 ```
 
-#### Use the Firestore Database
+### Use the Firestore Database
 
 To make available the form usage by the user and your visualization you will need to insert also Firestore Database connection directly in the Firebase console (as done for the hosting and/or for the analytics).
 
@@ -219,6 +219,39 @@ service cloud.firestore {
 ```
 
 So, the Firestore database is used to store the mails recieved by the users that compile the contact form inside almost all the pages.
+
+So the declaration of the database is made once and is in [firebase/index.js](https://github.com/PedemonteGiacomo/EasySite/blob/main/src/firebase/index.js):
+
+```js
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+const analytics = firebase.analytics();
+
+analytics.setAnalyticsCollectionEnabled; // set the analytics collection on that tag
+//(don't deserve google tag manager if you copy the ga(google-analytics) tag that firebase provide you directly from the dashboard of your project)
+
+// Initialize Cloud Firestore and get a reference to the service
+const db = firebase.firestore();
+
+export { db }; // extract the db to easily recover it
+```
+
+In this template site, we use the DB to store the mail received by users in one place with easy access. So, this db is used in the [catchingClientComponent](https://github.com/PedemonteGiacomo/EasySite/blob/main/src/components/CatchingClientComponent.vue#L37), more precisely in [this part](https://github.com/PedemonteGiacomo/EasySite/blob/main/src/components/CatchingClientComponent.vue#L55-L69) of the code:
+
+```js
+// Your form data
+const formData = {
+  firstName: firstName.value,
+  lastName: lastName.value,
+  email: email.value,
+  phoneNumber: phoneNumber.value,
+  text: text.value,
+};
+// Add a new document with a generated id to store the message on firestore
+var newMexRef = db.collection("formData").doc
+newMexRef.set(formData)
+console.log("Document written with ID: ", newMexRef.id);
+```
 
 You can then manage the requests recieved directly inside your console in Firebase.
 
@@ -334,7 +367,11 @@ sgMail.setApiKey("YOUR_SENDGRID_API_KEY");
 ```
 
 Then you will change all the configuration of your response email in the following code (sendgrid will provide you all the code):
+
 ``` js
+exports.SendMail = functions.https.onRequest((request, response) => {
+  cors(request, response, () => {
+    // Your function logic here
 // Send email to user
     const userMsg = {
       to: email, // Email of the user obtained by the contact form
@@ -345,8 +382,33 @@ Then you will change all the configuration of your response email in the followi
       },
       ...
     };
+  })
+  }
+)
 ```
-This system can make you obtain as result a template mail like the following:
+
+This function will be deployed and hosted by Firebase and you can access and check the state of this function in the panel in the Firebase console.
+
+You will obtain your personal function link by performing the command:
+
+```bash
+firebase deploy --only functions
+```
+
+Once you have obtained you Function URL, you need to replace inside [CatchingClientComponent](https://github.com/PedemonteGiacomo/EasySite/blob/main/src/components/CatchingClientComponent.vue#L72) the *function URL* with your own and use it as an API, VERY COOL!
+
+```js
+// Make a POST request to your Firebase Function endpoint
+await axios.post(
+  // this url needs to be replaced
+  'https://us-central1-itl-impresadipulizie-genova.cloudfunctions.net/SendMail',
+  formData);
+```
+
+This also will bypass all possible Cross-Origin error because all the mail requests performed to the SendGrid API pass throught the same address which is your *function URL*.
+
+
+As result, this system can make you obtain a template mail like the following:
 
 ![Confirmation Mail](readme_images/content_name.png)
 
@@ -370,7 +432,9 @@ If you are hosting the site with Firebase then to make the changes be visible al
 firebase deploy
 ```
 
-If your ```firebase deploy``` isn't working try to check if all the API are set or contact me directly by mail at giacomopedemonte@libero.it.
+If your ```firebase deploy``` isn't working try to check if all the API are set. Another possible problem could be the URL of the function that is not defined for you and if you don't already changed it will be a problem [(check this)](#use-sendgrid-api-to-trigger-mail-when-user-complete-contact-form).
+
+If more problem are discovered, please, contact me directly by mail at giacomopedemonte@libero.it.
 
 The site should run even without all the API KEY updated.
 
