@@ -10,20 +10,34 @@
           <q-btn flat round dense icon="phone">
             <q-menu transition-show="rotate" transition-hide="rotate">
               <q-list style="min-width: 100px">
-                <router-link to="/contattaci">
+                <router-link to="/contattaci" class="router-link-no-style">
                   <q-item clickable>
                     <q-item-section>Contattaci Subito!</q-item-section>
                   </q-item>
                 </router-link>
                 <q-separator />
-                <q-item clickable>
-                  <q-item-section>+39 335 126 7227</q-item-section>
+                <q-item v-ripple>
+                  <q-item-section>
+                    <q-item-label overline>LUCIANO</q-item-label>
+                    <q-item-label>+39 335 126 7227</q-item-label>
+                    <q-item-label>itl.sas@virgilio.it</q-item-label>
+                  </q-item-section>
                 </q-item>
-                <q-item clickable>
-                  <q-item-section>itl.sas@virgilio.it</q-item-section>
+                <q-separator />
+                <q-item v-ripple>
+                  <q-item-section>
+                    <q-item-label overline>FEDERICO</q-item-label>
+                    <q-item-label>+39 389 6405346</q-item-label>
+                    <q-item-label>fmorasrl96@gmail.com</q-item-label>
+                  </q-item-section>
                 </q-item>
-                <q-item clickable>
-                  <q-item-section>fmorasrl96@gmail.com</q-item-section>
+                <q-separator />
+                <q-item v-ripple>
+                  <q-item-section>
+                    <q-item-label overline>FILIPPO</q-item-label>
+                    <q-item-label>+39 377 276 6580</q-item-label>
+                    <q-item-label>sas.ilforte@gmail.com</q-item-label>
+                  </q-item-section>
                 </q-item>
               </q-list>
             </q-menu>
@@ -49,4 +63,8 @@
   width: 100%
   max-width: 600px /* Adjust the maximum width as needed */
   margin: 0 auto
+
+.router-link-no-style
+  text-decoration: none
+  color: black
 </style>

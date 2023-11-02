@@ -34,7 +34,7 @@ export default defineComponent({
     TabsComponent,
   },
   name: "MainLayout",
-  setup () {
+  setup() {
     const $q = useQuasar()
   }
 });
@@ -42,11 +42,13 @@ export default defineComponent({
 
 <style scoped>
 .custom-toolbar {
-  width: 100%; /* Adjust the width as needed */
+  width: 100%;
+  /* Adjust the width as needed */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 16px; /* Add padding to control spacing */
+  padding: 0 16px;
+  /* Add padding to control spacing */
 }
 
 /* Additional styles as needed */

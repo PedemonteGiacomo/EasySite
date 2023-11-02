@@ -11,87 +11,72 @@
     <div class="q-pa-md">
       <!-- <q-intersection :key="'first-label'">
         <transition type="animation" mode="out-in" appear enter-active-class="animated fadeIn slower"> -->
-          <div class="row">
-            <p class="text-h5">
-            Le pulizie in cantiere sono un aspetto fondamentale per mantenere un ambiente di lavoro pulito, sicuro ed
-            efficiente. La nostra impresa di pulizie offre una gamma completa di servizi di pulizia in cantiere che si
-            adattano alle esigenze specifiche dei tuoi progetti.
-          </p>
-          </div>
-        <!-- </transition>
+      <div class="row">
+        <p class="text-h5">
+          Le pulizie in cantiere sono un aspetto fondamentale per mantenere un ambiente di lavoro pulito, sicuro ed
+          efficiente. La nostra impresa di pulizie offre una gamma completa di servizi di pulizia in cantiere che si
+          adattano alle esigenze specifiche dei tuoi progetti.
+        </p>
+      </div>
+      <!-- </transition>
       </q-intersection>
       <q-intersection :key="'second_label'">
         <transition type="animation" mode="out-in" appear enter-active-class="animated fadeIn slower"> -->
-          <div class="row">
-          <p class="text-h5">
-            I nostri servizi di pulizia in cantiere includono la rimozione di detriti, la pulizia delle superfici, la
-            gestione
-            dei rifiuti e molto altro. Il nostro team esperto è addestrato per affrontare le sfide uniche dei cantieri e
-            garantire che lo spazio sia sempre in condizioni ottimali.
-          </p>
-          </div>
-        <!-- </transition>
+      <div class="row">
+        <p class="text-h5">
+          I nostri servizi di pulizia in cantiere includono la rimozione di detriti, la pulizia delle superfici, la
+          gestione
+          dei rifiuti e molto altro. Il nostro team esperto è addestrato per affrontare le sfide uniche dei cantieri e
+          garantire che lo spazio sia sempre in condizioni ottimali.
+        </p>
+      </div>
+      <!-- </transition>
       </q-intersection>
       <q-intersection :key="'third-label'">
         <transition type="animation" mode="out-in" appear enter-active-class="animated fadeIn slower"> -->
-          <div class="row">
-          <p class="text-h5">
-            Sia che tu stia lavorando su un cantiere edile, un progetto di ristrutturazione o qualsiasi altra attività che
-            richieda una pulizia professionale, siamo qui per aiutarti. Offriamo soluzioni personalizzate per soddisfare
-            le
-            tue esigenze e garantire che il tuo cantiere sia sempre al meglio.
-          </p>
-          </div>
-        <!-- </transition>
+      <div class="row">
+        <p class="text-h5">
+          Sia che tu stia lavorando su un cantiere edile, un progetto di ristrutturazione o qualsiasi altra attività che
+          richieda una pulizia professionale, siamo qui per aiutarti. Offriamo soluzioni personalizzate per soddisfare
+          le
+          tue esigenze e garantire che il tuo cantiere sia sempre al meglio.
+        </p>
+      </div>
+      <!-- </transition>
       </q-intersection> -->
       <q-intersection :key="'services-list-header'">
         <transition type="animation" mode="out-in" appear enter-active-class="animated slideInRight slower">
           <div class="row">
-          <h3>I nostri servizi di pulizia in cantiere includono:</h3>
+            <h3>I nostri servizi di pulizia in cantiere includono:</h3>
           </div>
         </transition>
       </q-intersection>
       <!-- <q-intersection :key="'services-list'">
         <transition type="animation" mode="out-in" appear enter-active-class="animated fadeIn slower"> -->
-          <ul class="text-h5">
-            <li>Pulizia delle superfici e delle attrezzature</li>
-            <li>Rimozione di detriti e materiali di scarto</li>
-            <li>Pulizia dei pavimenti e delle aree di lavoro</li>
-            <li>Gestione dei rifiuti e dello smaltimento</li>
-            <li>Pulizia di vetrate e finestre</li>
-            <li>Igienizzazione e disinfezione</li>
-          </ul>
-        <!-- </transition>
+      <ul class="text-h5">
+        <li>Pulizia delle superfici e delle attrezzature</li>
+        <li>Rimozione di detriti e materiali di scarto</li>
+        <li>Pulizia dei pavimenti e delle aree di lavoro</li>
+        <li>Gestione dei rifiuti e dello smaltimento</li>
+        <li>Pulizia di vetrate e finestre</li>
+        <li>Igienizzazione e disinfezione</li>
+      </ul>
+      <!-- </transition>
       </q-intersection>
       <q-intersection :key="'fourth-label'">
         <transition type="animation" mode="out-in" appear enter-active-class="animated fadeIn slower"> -->
-          <div class="row">
-          <p class="text-h5">
-            Non importa quanto grande o piccolo sia il tuo cantiere, ci occupiamo di ogni dettaglio per garantire che tu
-            possa
-            concentrarti sul tuo lavoro senza preoccuparti della pulizia. Contattaci oggi stesso per scoprire come
-            possiamo
-            contribuire al successo dei tuoi progetti con i nostri servizi di pulizia in cantiere professionali.
-          </p>
-          </div>
-        <!-- </transition>
+      <div class="row">
+        <p class="text-h5">
+          Non importa quanto grande o piccolo sia il tuo cantiere, ci occupiamo di ogni dettaglio per garantire che tu
+          possa
+          concentrarti sul tuo lavoro senza preoccuparti della pulizia. Contattaci oggi stesso per scoprire come
+          possiamo
+          contribuire al successo dei tuoi progetti con i nostri servizi di pulizia in cantiere professionali.
+        </p>
+      </div>
+      <!-- </transition>
       </q-intersection> -->
     </div>
-
-    <q-intersection :key="'button-finish'">
-      <transition type="animation" mode="out-in" appear enter-active-class="animated tada slower">
-        <router-link to="/contattaci" class="router-link-no-style-title">
-        <div class="row justify-center q-mt-xl">
-          <q-btn
-            style="width: 80%"
-            color="secondary"
-            label="Richiedi subito un preventivo! Contattaci Ora!"
-            icon="phone"
-          />
-        </div>
-      </router-link>
-      </transition>
-    </q-intersection>
 
     <!-- <q-intersection :key="'contattaci'">
       <transition type="animation" mode="out-in" appear enter-active-class="animated fadeIn slower"> -->
@@ -105,6 +90,19 @@
     </div>
     <!-- </transition>
     </q-intersection> -->
+
+    <q-intersection :key="'button-finish'">
+      <transition type="animation" mode="out-in" appear enter-active-class="animated tada slower">
+        <router-link to="/contattaci" class="router-link-no-style-title">
+          <div class="row justify-center q-mt-xl">
+            <q-btn style="width: 80%" color="secondary" label="Richiedi subito un preventivo! Contattaci Ora!"
+              icon="phone" />
+          </div>
+        </router-link>
+      </transition>
+    </q-intersection>
+
+
   </q-page>
 </template>
 

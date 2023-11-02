@@ -60,7 +60,7 @@
 
       <div class="col-6">
         <q-card-section>
-        <AboutUsCarousel class="q-h-full q-w-full" />
+          <AboutUsCarousel class="q-h-full q-w-full" />
         </q-card-section>
       </div>
       <p class="text-h5 q-ml-md">
@@ -126,8 +126,18 @@
     </div>
 
     <div v-if="$q.platform.is.mobile" class="row justify-center q-mt-xl shadow-10">
-      <AboutUsCarousel style="width: 100%;"/>
+      <AboutUsCarousel style="width: 100%;" />
     </div>
+
+    <q-intersection :key="'h2-principles'" v-scroll-fire="bounceImage">
+      <transition type="animation" mode="out-in" appear enter-active-class="animated fadeInLeftBig slower">
+        <h2 class="text-body text-center text-italic" data-index="h2-principles">
+          Dove trovarci
+        </h2>
+      </transition>
+    </q-intersection>
+
+    <MapComponent address="ITL Srl IMPRESA PULIZIA, Genova Italy" />
 
     <q-intersection :key="'button-finish'">
       <transition type="animation" mode="out-in" appear enter-active-class="animated tada slower">
@@ -140,16 +150,6 @@
       </transition>
     </q-intersection>
 
-    <q-intersection :key="'h2-principles'" v-scroll-fire="bounceImage">
-      <transition type="animation" mode="out-in" appear enter-active-class="animated fadeInLeftBig slower">
-        <h2 class="text-body text-center text-italic" data-index="h2-principles">
-          Dove trovarci
-        </h2>
-      </transition>
-    </q-intersection>
-
-
-    <MapComponent address="ITL Srl IMPRESA PULIZIA, Genova Italy"/>
   </q-page>
 </template>
 

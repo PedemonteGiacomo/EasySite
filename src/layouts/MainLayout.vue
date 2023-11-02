@@ -16,7 +16,7 @@
               <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg" />
             </q-avatar>
             <div v-if="$q.platform.is.desktop" class="q-ml-md">
-              ITL srl Impresa di Pulizie Genova
+              ITL srl Impresa di pulizie Genova
             </div>
 
             <div v-if="$q.platform.is.mobile" class="q-ml-md">
@@ -27,19 +27,10 @@
         </q-toolbar-title>
       </q-toolbar>
       <TabsComponent />
-      <div class="row justify-center">
-        <div class="row q-pa-md">
-          <q-icon name="location_on" />
-          <p class="q-ml-sm">Via Archimede 58r, Genova</p>
-
-          <q-icon name="phone" class="q-ml-md" />
-          <p class="q-ml-sm">+39 335 126 7227</p>
-
-          <q-icon name="email" class="q-ml-md" />
-          <p class="q-ml-sm">itl.sas@virgilio.it</p>
-
-          <q-icon name="email" class="q-ml-md" />
-          <p class="q-ml-sm">fmorasrl96@gmail.com</p>
+      <div class="row justify-center q-pa-md">
+        <div class="row" v-for="(contact, index) in contacts" :key="index">
+          <q-icon :name="contact.icon" class="q-ml-md" />
+          <p class="q-ml-sm">{{ contact.text }}</p>
         </div>
       </div>
     </q-footer>
@@ -66,6 +57,7 @@ export default {
       { label: "Servizi", route: "/servizi" },
       { label: "Chi Siamo", route: "/chi-siamo" },
       { label: "Contatti", route: "/contatti" },
+
     ];
 
     const navigate = (route) => {
@@ -77,5 +69,16 @@ export default {
       navigate,
     };
   },
+  data() {
+    return {
+      contacts: [
+        { icon: 'location_on', text: 'Via Archimede 58r, Genova' },
+        { icon: 'phone', text: '+39 335 126 7227' },
+        { icon: 'email', text: 'itl.sas@virgilio.it' },
+        { icon: 'email', text: 'fmorasrl96@gmail.com' },
+        { icon: 'email', text: 'sas.ilforte@gmail.com' }
+      ]
+    };
+  }
 };
 </script>

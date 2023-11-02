@@ -1,36 +1,36 @@
 <template>
   <q-page>
-    <!-- <q-intersection :key="'h2-principles'" v-scroll-fire="bounceImage"> -->
-    <transition type="animation" mode="out-in" appear enter-active-class="animated fadeInLeftBig slower">
-      <div class="row q-mt-xl justify-center">
-        <h2 class="text-body text-center text-italic" data-index="h2-principles">
-          Dove trovarci
-        </h2>
+
+    <!-- <q-intersection :key="'catchingClient'"> -->
+    <transition-group type="animation" appear mode="out-in" enter-active-class="animated bounce slower">
+      <div key="div_contact" class="row justify-center q-mt-xl">
+        <h2 class="text-bold text-italic">Contattaci subito!</h2>
       </div>
-
-    </transition>
+      <div key="catchingClient" class="row justify-center">
+        <div class="shadow-10">
+          <CatchingClientComponent />
+        </div>
+      </div>
+    </transition-group>
     <!-- </q-intersection> -->
-
-    <MapComponent address="ITL Srl IMPRESA PULIZIA, Genova Italy"/>
-
-    <div class="description-container q-mt-xl">
+    <div key="div_description" class="row justify-center">
       <h5 class="text-italic text-center">Mandaci subito un messaggio, lascia un recapito telefonico e verrai ricontattato
-        il prima possibile. Affidati a ITL impresa di pulizie per un preventivo senza impegno. Contattaci subito, cosa
+        il prima possibile.<br>Affidati a ITL impresa di pulizie per un preventivo senza impegno. Contattaci subito, cosa
         aspetti?</h5>
     </div>
 
-    <q-intersection :key="'h2-principles'">
-      <transition-group type="animation" appear mode="out-in" enter-active-class="animated bounce slower">
-        <div key="div_contact" class="row justify-center q-mt-sm">
-          <h2 class="text-bold text-italic">Contattaci subito!</h2>
+    <q-intersection :key="'FindUs'" v-scroll-fire="bounceImage">
+      <transition type="animation" mode="out-in" appear enter-active-class="animated fadeInLeftBig slower">
+        <div class="row justify-center">
+          <h2 class="text-body text-center text-italic" data-index="h2-principles">
+            Dove trovarci
+          </h2>
         </div>
-        <div key="catchingClient" class="row justify-center">
-          <div class="shadow-10">
-            <CatchingClientComponent />
-          </div>
-        </div>
-      </transition-group>
+
+      </transition>
     </q-intersection>
+
+    <MapComponent address="ITL Srl IMPRESA PULIZIA, Genova Italy" />
 
     <q-intersection :key="'button-finish'">
       <transition type="animation" mode="out-in" appear enter-active-class="animated tada slower">
@@ -52,7 +52,7 @@ export default defineComponent({
   name: "ContactUsPage",
   components: {
     CatchingClientComponent,
-    MapComponent
+    MapComponent,
   },
 });
 </script>
