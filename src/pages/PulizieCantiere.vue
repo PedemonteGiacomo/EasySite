@@ -93,12 +93,10 @@
 
     <q-intersection :key="'button-finish'">
       <transition type="animation" mode="out-in" appear enter-active-class="animated tada slower">
-        <router-link to="/contattaci" class="router-link-no-style-title">
-          <div class="row justify-center q-mt-xl">
-            <q-btn style="width: 80%" color="secondary" label="Richiedi subito un preventivo! Contattaci Ora!"
-              icon="phone" />
-          </div>
-        </router-link>
+        <div class="row justify-center q-mt-xl">
+          <q-btn style="width: 80%" color="secondary" label="Richiedi subito un preventivo! Contattaci Ora!"
+            icon="phone" href="#/contattaci"/>
+        </div>
       </transition>
     </q-intersection>
 
@@ -160,23 +158,6 @@ export default defineComponent({
   },
 });
 </script>
-
-<!--
-  // Google tag (gtag.js)
-  <script
-    async
-    src="https://www.googletagmanager.com/gtag/js?id=G-ZE492RNM0C"
-  ></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-
-    gtag("config", "G-ZE492RNM0C");
-  </script>
--->
 
 <style lang="sass" scoped>
 .router-link-no-style-title

@@ -1,7 +1,7 @@
 <template>
   <q-page padding>
 
-    <div class="row justify-center q-mt-xl shadow-20">
+    <div class="row justify-center q-mt-xl shadow-20" ref="storia"  v-scroll-fire="bounceImage">
       <q-card dark bordered class="bg-blue-8 my-card">
         <q-card-section>
           <div class="text-h3 text-bold text-italic">Storia dell'impresa</div>
@@ -31,7 +31,7 @@
       </q-card>
     </div>
 
-    <q-card v-if="$q.platform.is.desktop" dark bordered class="q-mt-xl shadow-20 row bg-blue-8">
+    <q-card v-if="$q.platform.is.desktop" dark bordered class="q-mt-xl shadow-20 row bg-blue-8" ref="missioni"  v-scroll-fire="bounceImage">
       <!-- Left Column - Description -->
       <div class="bg-blue-8 my-card-row2 col-6">
         <q-card-section>
@@ -70,7 +70,7 @@
       </p>
     </q-card>
 
-    <div v-if="$q.platform.is.mobile" class="row justify-center q-mt-xl shadow-20">
+    <div v-if="$q.platform.is.mobile" class="row justify-center q-mt-xl shadow-20" ref="missioni_tel" v-scroll-fire="bounceImage">
       <q-card dark bordered class="bg-blue-8 my-card">
         <q-card-section>
           <div class="text-h3 text-bold text-italic">Missioni e Valori</div>
@@ -91,7 +91,7 @@
             standard più elevati di professionalità e adattiamo ogni servizio alle
             esigenze uniche dei nostri clienti.
           </p>
-          <p class="text-h5 q-ml-md">
+          <p class="text-h5">
             Siamo grati per la fiducia che i nostri clienti ci hanno dimostrato in tutti
             questi anni e continueremo a lavorare instancabilmente per onorare quella
             fiducia, offrendo servizi di pulizia eccezionali e costruendo relazioni durature.
@@ -100,10 +100,10 @@
       </q-card>
     </div>
 
-    <div class="row justify-center q-mt-xl shadow-20">
+    <div class="row justify-center q-mt-xl shadow-20" v-scroll-fire="bounceImage">
       <q-card dark bordered class="bg-blue-8 my-card">
         <q-card-section>
-          <div class="text-h3 text-bold text-italic">Testimonianze</div>
+          <div class="text-h3 text-bold text-italic" ref="testimonianze">Testimonianze</div>
           <div class="text-subtitle2 text-bold text-italic">ITL - Impresa di Pulizie</div>
         </q-card-section>
 
@@ -129,24 +129,24 @@
       <AboutUsCarousel style="width: 100%;" />
     </div>
 
-    <q-intersection :key="'h2-principles'" v-scroll-fire="bounceImage">
+    <div class="row justify-center">
+    <q-intersection :key="'h2-principles'">
       <transition type="animation" mode="out-in" appear enter-active-class="animated fadeInLeftBig slower">
         <h2 class="text-body text-center text-italic" data-index="h2-principles">
           Dove trovarci
         </h2>
       </transition>
     </q-intersection>
+    </div>
 
     <MapComponent address="ITL Srl IMPRESA PULIZIA, Genova Italy" />
 
     <q-intersection :key="'button-finish'">
       <transition type="animation" mode="out-in" appear enter-active-class="animated tada slower">
-        <router-link to="/contattaci" class="router-link-no-style-title">
-          <div class="row justify-center q-mt-xl">
-            <q-btn style="width: 80%" color="secondary" label="Richiedi subito un preventivo! Contattaci Ora!"
-              icon="phone" />
-          </div>
-        </router-link>
+        <div class="row justify-center q-mt-xl">
+          <q-btn style="width: 80%" color="secondary" label="Richiedi subito un preventivo! Contattaci Ora!"
+            icon="phone" href="#/contattaci"/>
+        </div>
       </transition>
     </q-intersection>
 
@@ -155,7 +155,6 @@
 
 <script>
 import AboutUsCarousel from 'src/components/AboutUsCarousel.vue';
-import { useQuasar } from 'quasar'
 import MapComponent from 'src/components/MapComponent.vue';
 
 export default {
@@ -165,31 +164,56 @@ export default {
   },
   name: 'AboutUsPage',
   setup() {
-    const $q = useQuasar()
-  },
-  mounted() {
-    this.setupSmoothScroll();
-  },
-  methods: {
-    setupSmoothScroll() {
-      // Add click event listeners to anchor links for smooth scrolling
-      const anchorLinks = document.querySelectorAll('.anchor-link');
-      anchorLinks.forEach(link => {
-        link.addEventListener('click', event => {
-          event.preventDefault();
-          const targetId = event.currentTarget.getAttribute('href');
-          const targetElement = document.querySelector(targetId);
-          if (targetElement) {
-            const offset = targetElement.getBoundingClientRect().top + window.scrollY;
-            window.scrollTo({
-              top: offset,
-              behavior: 'smooth',
-            });
+    return {
+      bounceImage(el) {
+        // in this example, when the `<div>` comes into view,
+        // we bounce it for 2 seconds
+        el.classList.add('animate-bounce')
+
+        setTimeout(() => {
+          // we make sure the node is still in DOM
+          // (user hasn't navigated away from the Vue component
+          // rendering our `<div>`)
+          // so we don't generate an error
+          if (document.body.contains(el)) {
+            // then remove the helper class to
+            // stop bouncing
+            el.classList.remove('animate-bounce')
           }
-        });
-      });
-    },
-  },
+        }, 2000)
+      },
+
+      fadeIn(el) {
+        el.classList.add('animate-fadeIn');
+
+        setTimeout(() => {
+          if (document.body.contains(el)) {
+            el.classList.remove('animate-fadeIn');
+          }
+        }, 2000);
+      },
+
+      slideInRight(el) {
+        el.classList.add('animate-slideInRight');
+
+        setTimeout(() => {
+          if (document.body.contains(el)) {
+            el.classList.remove('animate-slideInRight');
+          }
+        }, 2000);
+      },
+
+      slideInLeft(el) {
+        el.classList.add('animate-slideInLeft');
+
+        setTimeout(() => {
+          if (document.body.contains(el)) {
+            el.classList.remove('animate-slideInLeft');
+          }
+        }, 2000);
+      },
+    }
+  }
 };
 </script>
 
@@ -202,4 +226,43 @@ export default {
 .my-card-row2
   width: 50%
 
+.animate-bounce
+  animation: q-bounce 2s infinite
+
+@keyframes q-bounce
+  0%, 20%, 50%, 80%, 100%
+    transform: translateY(0)
+  40%
+    transform: translateY(-30px)
+  60%
+    transform: translateY(-15px)
+
+.animate-fadeIn
+  animation: fadeIn 2s
+
+.animate-slideInRight
+  animation: slideInRight 2s
+
+.animate-slideInLeft
+  animation: slideInLeft 2s
+
+@keyframes fadeIn
+  from
+    opacity: 0
+  to
+    opacity: 1
+
+@keyframes slideInRight
+  from
+    transform: translateX(100%)
+    opacity: 0
+  to
+    transform: t
+
+@keyframes slideInLeft
+  from
+    transform: translateX(100%)
+    opacity: 0
+  to
+    transform: t
 </style>

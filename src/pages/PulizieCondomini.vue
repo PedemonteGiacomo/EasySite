@@ -90,12 +90,10 @@
 
     <q-intersection :key="'button-finish'">
       <transition type="animation" mode="out-in" appear enter-active-class="animated tada slower">
-        <router-link to="/contattaci" class="router-link-no-style-title">
-          <div class="row justify-center q-mt-xl">
-            <q-btn style="width: 80%" color="secondary" label="Richiedi subito un preventivo! Contattaci Ora!"
-              icon="phone" />
-          </div>
-        </router-link>
+        <div class="row justify-center q-mt-xl">
+          <q-btn style="width: 80%" color="secondary" label="Richiedi subito un preventivo! Contattaci Ora!"
+            icon="phone" href="#/contattaci"/>
+        </div>
       </transition>
     </q-intersection>
   </q-page>

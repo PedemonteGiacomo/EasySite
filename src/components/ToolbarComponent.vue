@@ -1,28 +1,23 @@
-<!-- Toolbar above the Tabs in the header -->
-
 <template>
   <q-header elevated>
-    <!--
-      <div class="row no-wrap shadow-1">
-    -->
-    <q-toolbar class="custom-toolbar text-white q-my-sm">
-      <q-avatar class="shadow-2">
-        <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg" />
-      </q-avatar>
+      <q-toolbar class="custom-toolbar text-white">
+        <div class="row items-center justify-center q-gutter-md q-mb-sm">
+          <q-avatar square size="100px" style="width: 200px;">
+            <img src="icons/ITL_Logo.png" />
+          </q-avatar>
 
-      <q-toolbar-title v-if="$q.platform.is.desktop">ITL srl Impresa di pulizie Genova</q-toolbar-title>
-
-      <q-toolbar-title v-if="$q.platform.is.mobile">ITL - Pulizie Genova</q-toolbar-title>
-
-      <q-btn class="shadow-2" flat round dense icon="favorite" />
-    </q-toolbar>
-    <TabsComponent />
-
-    <!--
-      </div>
-    -->
+          <div class="q-gutter-sm">
+            <q-toolbar-title v-if="$q.platform.is.desktop" class="text-h4 text-bold">ITL srl Impresa di Pulizie Genova</q-toolbar-title>
+            <q-toolbar-title v-if="$q.platform.is.mobile" class="text-bold">ITL - Pulizie Genova</q-toolbar-title>
+          </div>
+        </div>
+      </q-toolbar>
+   <!-- Conclude the header with TABS -->
+    <TabsComponent/>
   </q-header>
 </template>
+
+
 
 <script>
 import { defineComponent } from "vue";
@@ -43,6 +38,7 @@ export default defineComponent({
 <style scoped>
 .custom-toolbar {
   width: 100%;
+  height: fit-content;
   /* Adjust the width as needed */
   display: flex;
   justify-content: space-between;

@@ -51,81 +51,20 @@
         <br />
       </p>
     </div>
-    <!-- </transition>
-    </q-intersection> -->
+
+    <!--BEFORE/AFTER block-->
     <div class="q-pa-md">
       <div class="row items-start justify-center">
-        <!-- <q-intersection v-for="index in 3" :key="index">
-          <transition-group
-            type="animation"
-            mode="out-in"
-            appear
-            enter-active-class="animated pulse slower"
-          >-->
-        <q-card class="my-card shadow-2 q-ml-md q-mr-md q-mb-md">
-          <div class="row items-center">
-            <div class="col">
-              <h6 class="text-caption text-center text-italic text-weight-bold">
-                Prima
-              </h6>
-              <q-img class="col" style="height: 223px" src="images/before-after/before-1.jpg" />
-            </div>
-
-            <q-separator vertical />
-
-            <div class="col">
-              <h6 class="text-caption text-center text-italic text-weight-bold">
-                Dopo
-              </h6>
-              <q-img class="col" style="height: 223px" src="images/before-after/after-1.jpg" />
-            </div>
-          </div>
-        </q-card>
-
-        <q-card class="my-card shadow-2 q-ml-md q-mr-md q-mb-md">
-          <div class="row items-center">
-            <div class="col">
-              <h6 class="text-caption text-center text-italic text-weight-bold">
-                Prima
-              </h6>
-              <q-img class="col" style="height: 223px" src="images/before-after/before-2.jpg" />
-            </div>
-
-            <q-separator vertical />
-
-            <div class="col">
-              <h6 class="text-caption text-center text-italic text-weight-bold">
-                Dopo
-              </h6>
-              <q-img class="col" style="height: 223px" src="images/before-after/after-2.jpg" />
-            </div>
-          </div>
-        </q-card>
-
-        <q-card class="my-card shadow-2 q-ml-md q-mr-md q-mb-md">
-          <div class="row items-center">
-            <div class="col">
-              <h6 class="text-caption text-center text-italic text-weight-bold">
-                Prima
-              </h6>
-              <q-img class="col" style="height: 223px" src="images/before-after/real-1.jpg" />
-            </div>
-
-            <q-separator vertical />
-
-            <div class="col">
-              <h6 class="text-caption text-center text-italic text-weight-bold">
-                Dopo
-              </h6>
-              <q-img class="col" style="height: 223px" src="images/before-after/after-real-1.jpg" />
-            </div>
-          </div>
-        </q-card>
-        <!-- </transition-group>
-        </q-intersection>
-      -->
+        <before-after-card before-text="Prima" before-image="images/before-after/before-1.jpg" after-text="Dopo"
+          after-image="images/before-after/after-1.jpg" card-height="223" v-scroll-fire="rubberBand" />
+        <before-after-card before-text="Prima" before-image="images/before-after/before-sanification.jpg"
+          after-text="Dopo" after-image="images/before-after/after-sanification.jpg" card-height="223"
+          v-scroll-fire="rubberBand" />
+        <before-after-card before-text="Prima" before-image="images/before-after/real-1.jpg" after-text="Dopo"
+          after-image="images/before-after/after-real-1.jpg" card-height="223" v-scroll-fire="rubberBand" />
       </div>
     </div>
+
     <!-- <q-intersection :key="'fourth-label'">
       <transition type="animation" mode="out-in" appear enter-active-class="animated fadeIn slower"> -->
     <div class="description-container q-mt-xl">
@@ -155,13 +94,9 @@
       <p class="text-h5 text-center">
         Un passo verso un futuro più verde: i nostri servizi di pulizia non solo
         valorizzano i tuoi spazi, ma contribuiscono anche a un ambiente più
-        sano.
-        La tua soddisfazione è il nostro traguardo: lavoriamo incessantemente
+        sano. La tua soddisfazione è il nostro traguardo: lavoriamo incessantemente
         per offrire un'esperienza cliente indimenticabile, basata su servizi
-        personalizzati e risultati straordinari.<br>
-        Oltre a uno spazio impeccabile, ti garantiamo un viaggio cliente senza
-        intoppi, in cui le tue esigenze sono al centro di tutto ciò che
-        facciamo.
+        personalizzati e risultati straordinari.
       </p>
     </div>
     <!-- </transition>
@@ -204,8 +139,7 @@
       <p class="text-h5 text-center">
         Abbiamo abbracciato l'innovazione: le nostre metodologie avanzate, unite
         alla passione per il servizio, ci permettono di raggiungere livelli di
-        pulizia ineguagliabili. <br />
-        Il nostro approccio moderno e le tecnologie all'avanguardia ci
+        pulizia ineguagliabili. Il nostro approccio moderno e le tecnologie all'avanguardia ci
         consentono di offrire una pulizia efficace e un ambiente che trasmette
         vitalità
       </p>
@@ -213,80 +147,23 @@
     <!-- </transition>
     </q-intersection> -->
 
-    <!--<q-intersection>-->
+    <!-- Descriptions Cards for Business Engagment -->
     <div class="q-pa-md row justify-center">
-      <!-- <transition type="animation" mode="" appear enter-active-class="animated bounceInLeft slower">-->
-      <q-card class="q-mr-xl q-ml-xl q-mb-md shadow-10" style="width: 310px" :key="'cura-ambiente'"
-        v-scroll-fire="bounceImage">
-        <q-card-section class="q-pt-lg q-pb-xl text-center">
-          <q-avatar size="225px" color="teal" text-color="white" class="shadow-20">
-            <q-icon name="compost" size="100px" />
-          </q-avatar>
-          <div class="q-mt-md icon-description">
-            <h6 class="text-subtitle2">Cura dell'ambiente</h6>
-            <p class="text-caption">
-              Preserviamo il nostro prezioso ambiente utilizzando prodotti
-              ecologici a basso impatto e adottando mezzi di trasporto
-              ibridi, contribuendo così a un futuro più sostenibile con
-              servizi efficienti.
-            </p>
-          </div>
-        </q-card-section>
-      </q-card>
-      <!--</transition>
-         </q-intersection>
-      <q-intersection :key="'soddisfazione-cliente'">
-        <transition type="animation" mode="out-in" appear enter-active-class="animated bounceInUp slower">-->
-      <q-card class="q-mr-xl q-ml-xl q-mb-md shadow-10" style="width: 310px" :key="'soddisfazione-cliente'"
-        v-scroll-fire="bounceImage">
-        <q-card-section class="q-pt-lg q-pb-xl text-center">
-          <q-avatar size="225px" color="teal" text-color="white" class="shadow-20">
-            <q-icon name="diversity_1" size="100px" />
-          </q-avatar>
-          <div class="q-mt-md icon-description">
-            <h6 class="text-subtitle2">Soddisfazione del Cliente</h6>
-            <p class="text-caption">
-              La tua soddisfazione è la nostra priorità. Lavoriamo con
-              impegno costante per superare le tue aspettative, offrendo
-              servizi personalizzati che riflettono le tue esigenze e
-              garantendo un'esperienza cliente positiva.
-            </p>
-          </div>
-        </q-card-section>
-      </q-card>
-      <!-- </transition>
-        </q-intersection>
-      <q-intersection :key="'pulizia-imppeccabile'">
-        <transition type="animation" mode="out-in" appear enter-active-class="animated bounceInRight slower">-->
-      <q-card class="q-mb-md q-ml-xl q-mr-xl shadow-10" style="width: 310px" :key="'pulizia-efficace'"
-        v-scroll-fire="bounceImage">
-        <q-card-section class="q-pt-lg q-pb-xl text-center">
-          <q-avatar size="225px" color="teal" text-color="white" class="shadow-20">
-            <q-icon name="cleaning_services" size="100px" />
-          </q-avatar>
-          <div class="q-mt-md icon-description">
-            <h6 class="text-subtitle2">Pulizia efficace</h6>
-            <p class="text-caption">
-              La pulizia impeccabile è il nostro marchio di fabbrica.
-              Attraverso metodologie avanzate e personale esperto,
-              assicuriamo un livello di pulizia che conferisce freschezza e
-              vitalità ai tuoi spazi.
-            </p>
-          </div>
-        </q-card-section>
-      </q-card>
-      <!--  </transition>-->
+      <ServiceCard iconName="compost" title="Cura dell'ambiente"
+        description="Preserviamo il nostro prezioso ambiente utilizzando prodotti ecologici a basso impatto e adottando mezzi di trasporto ibridi, contribuendo così a un futuro più sostenibile con servizi efficienti." />
+      <ServiceCard iconName="diversity_1" title="Soddisfazione del Cliente"
+        description="La tua soddisfazione è la nostra priorità. Lavoriamo con impegno costante per superare le tue aspettative, offrendo servizi personalizzati che riflettono le tue esigenze e garantendo un'esperienza cliente positiva." />
+      <ServiceCard iconName="cleaning_services" title="Pulizia efficace"
+        description="La pulizia impeccabile è il nostro marchio di fabbrica. Attraverso metodologie avanzate e personale esperto, assicuriamo un livello di pulizia che conferisce freschezza e vitalità ai tuoi spazi, qualsiasi essi siano." />
     </div>
-    <!--  </q-intersection>-->
 
     <!-- <q-intersection :key="'fourth-label'">
       <transition type="animation" mode="out-in" appear enter-active-class="animated fadeIn slower"> -->
     <div class="description-container q-mt-xl">
       <p class="text-h5 text-center">
         Siamo guidati dalla costante ricerca di innovazione: attraverso l'integrazione di metodologie all'avanguardia e
-        una profonda dedizione al servizio, siamo in grado di raggiungere livelli di eccellenza nella pulizia che superano
-        qualsiasi aspettativa. Il nostro approccio rivoluzionario e l'impiego di tecnologie all'avanguardia ci permettono
-        di offrire una pulizia che va al di là dell'ordinario, conferendo agli ambienti una vitalità rinnovata.
+        una profonda dedizione al servizio, siamo in grado di raggiungere livelli di eccellenza nella qualità delle
+        pulizie.
       </p>
     </div>
 
@@ -298,16 +175,14 @@
       </transition>
     </q-intersection>
 
-    <MapComponent address="ITL Srl IMPRESA PULIZIA, Genova Italy"/>
+    <MapComponent address="ITL Srl IMPRESA PULIZIA, Genova Italy" />
 
-    <q-intersection :key="'button-finish'" v-scroll-fire="bounceImage">
+    <q-intersection :key="'button-finish'">
       <transition type="animation" mode="out-in" appear enter-active-class="animated tada slower">
-        <router-link to="/contattaci" class="router-link-no-style-title"> <!-- Since this is present the transition animation is not displayed -->
-          <div class="row justify-center q-mt-xl">
-            <q-btn style="width: 80%" color="secondary" label="Richiedi subito un preventivo! Contattaci Ora!"
-              icon="phone" />
-          </div>
-        </router-link>
+        <div class="row justify-center q-mt-xl">
+          <q-btn style="width: 80%" color="secondary" label="Richiedi subito un preventivo! Contattaci Ora!" icon="phone"
+            href="#/contattaci" />
+        </div>
       </transition>
     </q-intersection>
   </q-page>
@@ -319,7 +194,10 @@ import { defineComponent, ref, onMounted } from "vue";
 import GalleryCarousel from "../components/GalleryCarousel.vue";
 import { useMeta } from 'quasar';
 import MapComponent from "src/components/MapComponent.vue";
+import BeforeAfterCard from "src/components/BeforeAfterCard.vue";
+import ServiceCard from "src/components/ServiceCard.vue";
 
+// all the MetaData that application needs to have like API handlers for G-Analytics and SEO
 const metaData = {
   // sets document title
   title: 'ITL srl impresa di pulizie',
@@ -347,7 +225,7 @@ const metaData = {
     },
     // Add the Google Tag for Analytics script and tracking code provided by Firebase
     gtag: {
-      src: 'https://www.googletagmanager.com/gtag/js?id=G-ZE492RNM0C',
+      src: 'https://www.googletagmanager.com/gtag/js?id=YOUR_GOOGLE_ANALYTIC_TAG',
       async: true
     },
     gtagConfig: {
@@ -357,7 +235,7 @@ const metaData = {
           dataLayer.push(arguments);
         };
         gtag("js", new Date());
-        gtag("config", "G-ZE492RNM0C");
+        gtag("config", "YOUR_GOOGLE_ANALYTIC_TAG");
       `,
     },
   },
@@ -380,11 +258,12 @@ const metaData = {
   }
 }
 
-
 export default defineComponent({
   components: {
     GalleryCarousel,
     MapComponent,
+    BeforeAfterCard,
+    ServiceCard
   },
   name: "IndexPage",
   setup() {
@@ -410,7 +289,7 @@ export default defineComponent({
           }
         }, 2000)
       },
-
+      // other animation that can be useful
       fadeIn(el) {
         el.classList.add('animate-fadeIn');
 
@@ -440,6 +319,16 @@ export default defineComponent({
           }
         }, 2000);
       },
+
+      rubberBand(el) {
+        el.classList.add('animate-rubberBand');
+
+        setTimeout(() => {
+          if (document.body.contains(el)) {
+            el.classList.remove('animate-rubberBand');
+          }
+        }, 4000);
+      },
     }
   },
 });
@@ -464,14 +353,11 @@ export default defineComponent({
   left: 50%
   transform: translate(-50%, -2%)
   width: 80%
-
 .icon-size
   font-size: 48px
-
 .icon-description
   width: 100%
   text-align: center
-
 .animate-bounce
   animation: q-bounce 2s infinite
 
@@ -482,13 +368,10 @@ export default defineComponent({
     transform: translateY(-30px)
   60%
     transform: translateY(-15px)
-
 .animate-fadeIn
   animation: fadeIn 2s
-
 .animate-slideInRight
   animation: slideInRight 2s
-
 .animate-slideInLeft
   animation: slideInLeft 2s
 
@@ -511,4 +394,23 @@ export default defineComponent({
     opacity: 0
   to
     transform: t
+
+@keyframes rubberBand
+  from
+    transform: scale3d(1, 1, 1)
+  30%
+    transform: scale3d(1.25, 0.75, 1)
+  40%
+    transform: scale3d(0.75, 1.25, 1)
+  50%
+    transform: scale3d(1.15, 0.85, 1)
+  65%
+    transform: scale3d(0.95, 1.05, 1)
+  75%
+    transform: scale3d(1.05, 0.95, 1)
+  to
+    transform: scale3d(1, 1, 1)
+.animate-rubberBand
+  animation: rubberBand 1.5s
+
 </style>

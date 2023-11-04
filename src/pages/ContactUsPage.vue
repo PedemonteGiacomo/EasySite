@@ -36,7 +36,7 @@
       <transition type="animation" mode="out-in" appear enter-active-class="animated tada slower">
         <div class="row justify-center q-mt-xl">
           <q-btn style="width: 80%" color="secondary" label="Richiedi subito un preventivo! Contattaci Ora!"
-            icon="phone" />
+            icon="phone" href="#/contattaci"/>
         </div>
       </transition>
     </q-intersection>

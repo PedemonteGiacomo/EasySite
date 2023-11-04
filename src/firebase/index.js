@@ -10,8 +10,7 @@ import "firebase/firestore";
 const firebaseConfig = {
   apiKey: ..., // this is the key relevant to your project
   authDomain: ..., // relevant to your application of your project
-  databaseURL:
-    ..., // firebase db url (depends on Timezones)
+  databaseURL: ..., // firebase db url (depends on Timezones)
   projectId: ..., // project ID
   storageBucket: ..., // bucket of your application
   messagingSenderId: ...,

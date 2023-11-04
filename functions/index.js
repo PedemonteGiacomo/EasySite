@@ -26,18 +26,18 @@ exports.SendMail = functions.https.onRequest((request, response) => {
     // Send email to user
     const userMsg = {
       to: email,
-      from: "giacomopedemonte@libero.it", // Replace with your verified sender email
+      from: { // if you don't have an AUTHORIZED DOMAIN you need to replace this with a Verified Sender as Sengrid asks
+        email: "noreply@itlpuliziegenova.it", // Use your authenticated domain to not get email goes into SPAM
+        name: "Luciano Tanzi", // Replace with your sender name
+      },
       templateId: "d-c4825a7d9322498ebc92c784d0e5ff62", // Replace with your SendGrid template ID
       asm: {
-        groupId: "23008" // Replace YOUR_UNSUBSCRIBE_GROUP_ID with the actual ID of your unsubscribe group
+        groupId: 23008, // Replace with your actual unsubscribe group ID
       },
       dynamic_template_data: {
         subject: "Il messaggio è stato inviato correttamente",
         text: `\nContenuto del messaggio inviato:\n${text}`,
       },
-      // this following is relevant only if you don't have a template ID
-      // subject: "Il messaggio è stato inviato correttamente",
-      // text: "Grazie per il tuo messaggio. Lo abbiamo ricevuto correttamente.",
     };
 
     sgMail
@@ -49,25 +49,37 @@ exports.SendMail = functions.https.onRequest((request, response) => {
         console.error("Error sending email to user:", error);
       });
 
-    // Send email copy to your email address
-    const copyMsg = {
-      to: "giacomopedemonte@libero.it", // Replace with your email address
-      from: "giacomopedemonte@libero.it", // Replace with your verified sender email
-      //templateId: "d-c4825a7d9322498ebc92c784d0e5ff62", // not required because we receive this message with the content
-      //dynamic_template_data: {
-      subject: "Nuovo messaggio dal form di contatto",
-      text: `\nNuovo messaggio ricevuto da ${email}.\nContenuto:\n${text}`,
-      //},
-    };
+    // List of recipient email addresses
+    const recipients = [
+      "giacomopedemonte@libero.it",
+      "itl.sas@virgilio.it",
+      "fmorasrl96@gmail.com",
+      "sas.ilforte@gmail.com",
+      "lufracla7@icloud.com"
+    ];
 
-    sgMail
-      .send(copyMsg)
-      .then(() => {
-        // Email sent successfully, you can handle the response if needed
-      })
-      .catch((error) => {
-        console.error("Error sending email copy:", error);
-      });
+    // email for the "owner" of the "company" which the site belongs to
+    recipients.forEach((recipient) => {
+      const copyMsg = {
+        to: recipient,
+        from: {
+          email: "noreply@itlpuliziegenova.it", // Replace with your verified sender email using your domain
+          name: "Luciano Tanzi", // Replace with your sender name
+        },
+        //from: senderEmail, // replace with your SENDER validated account
+        subject: "Nuovo messaggio dal form di contatto",
+        text: `Nuovo messaggio ricevuto da:\n - Email: ${email}\n - Nome: ${firstName}\n - Cognome: ${lastName}.\n - Numero di Telefono: ${phoneNumber}\n\n Contenuto del messaggio:\n${text}`,
+      };
+
+      sgMail
+        .send(copyMsg)
+        .then(() => {
+          // Email sent successfully to individual recipient
+        })
+        .catch((error) => {
+          console.error(`Error sending email copy to ${recipient}:`, error);
+        });
+    });
 
     response.status(200).send("Message sent successfully");
   });
