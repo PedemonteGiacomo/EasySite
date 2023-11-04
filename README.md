@@ -228,7 +228,7 @@ firebase.initializeApp(firebaseConfig);
 const analytics = firebase.analytics();
 
 analytics.setAnalyticsCollectionEnabled; // set the analytics collection on that tag
-//(don't deserve google tag manager if you copy the ga(google-analytics) tag that firebase provide you directly from the dashboard of your project)
+//P.S. don't deserve google tag manager if you copy the ga(google-analytics) tag that firebase provide you directly from the dashboard of your project
 
 // Initialize Cloud Firestore and get a reference to the service
 const db = firebase.firestore();
@@ -292,7 +292,7 @@ export default {
 
 And then to utilize this component simply modify the string that refers to the place that want to visualize.
 
-Example of usage in the [AboutUs.vue Page](https://github.com/PedemonteGiacomo/EasySite/blob/main/src/pages/AboutUsPage.vue#L152):
+Example of usage in the [AboutUs.vue Page](https://github.com/PedemonteGiacomo/EasySite/blob/main/src/pages/AboutUsPage.vue#L142):
 
 ```js
 <MapComponent address="ITL Srl IMPRESA PULIZIA, Genova Italy"/>
@@ -326,7 +326,7 @@ To generate a Google Analytic TAG there are two possible way:
 - Go directly to the [Google Analytic web page](https://analytics.google.com/analytics/web/) and setup following the instruction provided inside the page.
 
 
-When you have a Google Analytic TAG, go in the IndexPage. To make work properly the G-TAG, if you have enable it from firebase, you will have to change the "GOOGLE_ANALYTIC_TAG" with your own inside [IndexPage following lines](https://github.com/PedemonteGiacomo/EasySite/blob/main/src/pages/IndexPage.vue#L356):
+When you have a Google Analytic TAG, go in the IndexPage. To make work properly the G-TAG, if you have enable it from firebase, you will have to change the "GOOGLE_ANALYTIC_TAG" with your own inside [IndexPage following lines](https://github.com/PedemonteGiacomo/EasySite/blob/main/src/pages/IndexPage.vue#L221-L241):
 
 ```js
 ...
@@ -375,7 +375,12 @@ exports.SendMail = functions.https.onRequest((request, response) => {
 // Send email to user
     const userMsg = {
       to: email, // Email of the user obtained by the contact form
-      from: "giacomopedemonte@libero.it", // Replace with your verified sender email
+      from: {
+        email: "noreply@itlpuliziegenova.it", // Use your authenticated domain to not get email goes into SPAM
+        name: "Luciano Tanzi", // Replace with your sender name
+      },
+      // if you don't have an AUTHORIZED DOMAIN you need to replace this with a Verified Sender as Sengrid asks, example:
+      // from: "giacomopedemonte@libero.it", // Replace with your verified sender email
       templateId: "d-c4825a7d9322498ebc92c784d0e5ff62", // Replace with your SendGrid template ID
       asm: {
         groupId: "YOUR_UNSUBSCRIBE_GROUP_ID" // Replace YOUR_UNSUBSCRIBE_GROUP_ID with the actual ID of your unsubscribe group
