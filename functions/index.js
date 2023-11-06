@@ -68,7 +68,7 @@ exports.SendMail = functions.https.onRequest((request, response) => {
         },
         //from: senderEmail, // replace with your SENDER validated account
         subject: "Nuovo messaggio dal form di contatto",
-        text: `Nuovo messaggio ricevuto da:\n - Email: ${email}\n - Nome: ${firstName}\n - Cognome: ${lastName}.\n - Numero di Telefono: ${phoneNumber}\n\n Contenuto del messaggio:\n${text}`,
+        text: `Nuovo messaggio ricevuto da:\n - Email: ${email}\n - Nome: ${firstName}\n - Cognome: ${lastName}.\n - Numero di Telefono: ${phoneNumber}\n\nContenuto del messaggio:\n${text}`,
       };
 
       sgMail

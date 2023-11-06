@@ -1,36 +1,29 @@
 <template>
   <q-page>
-    <!-- TITLE DESCRIPTION AND CAROUSEL-->
+    <!-- TITLE DESCRIPTION AND GALLERY CAROUSEL -->
     <transition-group type="animation" appear mode="out-in" enter-active-class="animated slideInRight slower">
       <br />
       <h2 key="title" class="q-mb-md text-h2 text-center text-italic text-weight-bold">
         ITL - Impresa di Pulizie Genova
       </h2>
 
-      <div class="description-container q-mb-sm">
-        <h6 key="description" class="text-body text-center text-italic" style="width: 100%">
-          Una realtà fondata sulla soddisfazione del cliente, caratterizzata
+      <DescriptionContainer :containerClass="'description-container'" :textClass="'text-h6 text-body text-center text-italic'">
+        Una realtà fondata sulla soddisfazione del cliente, caratterizzata
           dalla velocità e dall'accuratezza nell'effettuare pulizie complete per
           varie tipologie di immobili. Dalle abitazioni condominiali agli
           uffici, dai magazzini ai garage, ci occupiamo anche delle pulizie
           post-cantiere e di interventi di pulizia approfondita.
-        </h6>
-      </div>
+      </DescriptionContainer>
 
-      <GalleryCarousel key="carousel" />
+      <GalleryCarousel key="carousel"/>
     </transition-group>
-    <!-- <q-intersection :key="'fourth-label'">
-      <transition type="animation" mode="out-in" appear enter-active-class="animated fadeIn slower"> -->
-    <div class="description-container q-mt-xl">
-      <p class="text-h5 text-center">
-        Eccellenza in ogni dettaglio: il nostro servizio di pulizia offre
-        risultati impeccabili che superano le tue aspettative. <br />Ogni spazio
-        trasformato in uno scenario di pulizia e freschezza, grazie alla nostra
-        attenzione ai dettagli e all'uso di prodotti di alta qualità.
-      </p>
-    </div>
-    <!-- </transition>
-    </q-intersection> -->
+
+    <DescriptionContainer :containerClass="'description-container'" :textClass="'text-h5 text-center'" class="q-mt-xl">
+      Eccellenza in ogni dettaglio: il nostro servizio di pulizia offre risultati impeccabili che superano le tue
+      aspettative. <br />Ogni spazio trasformato in uno scenario di pulizia e freschezza, grazie alla nostra attenzione ai
+      dettagli e all'uso di prodotti di alta qualità.
+    </DescriptionContainer>
+
     <!-- QUALITY SECTION -->
     <q-intersection :key="'h6-description'" v-scroll-fire="bounceImage">
       <transition type="animation" mode="out-in" appear enter-active-class="animated fadeInLeftBig slower">
@@ -39,18 +32,14 @@
         </h2>
       </transition>
     </q-intersection>
-    <!-- <q-intersection :key="'fourth-label'">
-      <transition type="animation" mode="out-in" appear enter-active-class="animated fadeIn slower"> -->
-    <div class="description-container q-mt-xl">
-      <p class="text-h5 text-center">
-        La nostra dedizione alla qualità è tangibile attraverso i risultati
-        concreti del nostro impegno! Qui di seguito, potrai ammirare una
-        selezione di foto che testimoniano il trasformarsi degli spazi grazie
-        all'intervento professionale dell'impresa di pulizie ITL. Dai uffici
-        agli appartamenti, fino ai cantieri a Genova, la differenza è evidente.
-        <br />
-      </p>
-    </div>
+
+    <DescriptionContainer :containerClass="'description-container'" :textClass="'text-h5 text-center'">
+      La nostra dedizione alla qualità è tangibile attraverso i risultati
+      concreti del nostro impegno! Qui di seguito, potrai ammirare una
+      selezione di foto che testimoniano il trasformarsi degli spazi grazie
+      all'intervento professionale dell'impresa di pulizie ITL. Dai uffici
+      agli appartamenti, fino ai cantieri a Genova, la differenza è evidente.
+    </DescriptionContainer>
 
     <!--BEFORE/AFTER block-->
     <div class="q-pa-md">
@@ -65,22 +54,17 @@
       </div>
     </div>
 
-    <!-- <q-intersection :key="'fourth-label'">
-      <transition type="animation" mode="out-in" appear enter-active-class="animated fadeIn slower"> -->
-    <div class="description-container q-mt-xl">
-      <p class="text-h5 text-center">
-        La nostra squadra di professionisti esperti è dedicata a rendere il tuo
+    <!-- ANOTHER DESCRIPTION - HOW THE COMPANY WORKS IN BRIEF -->
+    <DescriptionContainer :containerClass="'description-container'" :textClass="'text-h5 text-center'">
+      La nostra squadra di professionisti esperti è dedicata a rendere il tuo
         ambiente brillante e incontaminato, garantendo standard di pulizia
         elevati. Affidati a un team di esperti, appassionati della propria arte, che cura
         ogni angolo con cura e precisione. La nostra filosofia abbraccia la sostenibilità: utilizziamo prodotti
         ecologici e pratiche a basso impatto per preservare l'ambiente e il
         futuro delle generazioni.<br />
-      </p>
-    </div>
-    <!-- </transition>
-    </q-intersection> -->
+    </DescriptionContainer>
 
-    <!-- IMAGE WITH DESCRIPTION-->
+    <!-- ABOUT THE COMPANY INTRODUCTION -->
     <q-intersection :key="'h2-description'" v-scroll-fire="bounceImage">
       <transition type="animation" mode="out-in" appear enter-active-class="animated fadeInLeftBig slower">
         <h2 class="text-body text-center text-italic" data-index="h2-description">
@@ -88,21 +72,16 @@
         </h2>
       </transition>
     </q-intersection>
-    <!-- <q-intersection :key="'fourth-label'"  v-scroll-fire="bounceImage">
-      <transition type="animation" mode="out-in" appear enter-active-class="animated fadeIn slower"> -->
-    <div class="description-container q-mt-xl">
-      <p class="text-h5 text-center">
-        Un passo verso un futuro più verde: i nostri servizi di pulizia non solo
+
+    <DescriptionContainer :containerClass="'description-container'" :textClass="'text-h5 text-center'">
+      Un passo verso un futuro più verde: i nostri servizi di pulizia non solo
         valorizzano i tuoi spazi, ma contribuiscono anche a un ambiente più
         sano. La tua soddisfazione è il nostro traguardo: lavoriamo incessantemente
         per offrire un'esperienza cliente indimenticabile, basata su servizi
         personalizzati e risultati straordinari.
-      </p>
-    </div>
-    <!-- </transition>
-    </q-intersection> -->
-    <!-- <q-intersection>
-      <transition v-if="animate" type="animation" mode="out-in" appear enter-active-class="animated fadeIn slower"> -->
+    </DescriptionContainer>
+
+    <!-- IMAGE WITH TEXT -->
     <div :key="'qualità-content'" class="q-pa-md row justify-center">
       <q-img src="images/office/material.jpg" spinner-color="white" style="height: 500px; width: 80%"
         img-class="my-custom-image" class="rounded-borders justify-center">
@@ -122,8 +101,6 @@
         </div>
       </q-img>
     </div>
-    <!-- </transition>
-    </q-intersection> -->
 
     <!-- PRINCIPLES -->
     <q-intersection :key="'h2-principles'" v-scroll-fire="bounceImage">
@@ -133,21 +110,16 @@
         </h2>
       </transition>
     </q-intersection>
-    <!-- <q-intersection :key="'fourth-label'">
-      <transition type="animation" mode="out-in" appear enter-active-class="animated fadeIn slower"> -->
-    <div class="description-container q-mt-xl">
-      <p class="text-h5 text-center">
-        Abbiamo abbracciato l'innovazione: le nostre metodologie avanzate, unite
+
+    <DescriptionContainer :containerClass="'description-container'" :textClass="'text-h5 text-center'">
+      Abbiamo abbracciato l'innovazione: le nostre metodologie avanzate, unite
         alla passione per il servizio, ci permettono di raggiungere livelli di
         pulizia ineguagliabili. Il nostro approccio moderno e le tecnologie all'avanguardia ci
         consentono di offrire una pulizia efficace e un ambiente che trasmette
         vitalità
-      </p>
-    </div>
-    <!-- </transition>
-    </q-intersection> -->
+    </DescriptionContainer>
 
-    <!-- Descriptions Cards for Business Engagment -->
+    <!-- Icon Cards for Business Engagment -->
     <div class="q-pa-md row justify-center">
       <ServiceCard iconName="compost" title="Cura dell'ambiente"
         description="Preserviamo il nostro prezioso ambiente utilizzando prodotti ecologici a basso impatto e adottando mezzi di trasporto ibridi, contribuendo così a un futuro più sostenibile con servizi efficienti." />
@@ -157,15 +129,11 @@
         description="La pulizia impeccabile è il nostro marchio di fabbrica. Attraverso metodologie avanzate e personale esperto, assicuriamo un livello di pulizia che conferisce freschezza e vitalità ai tuoi spazi, qualsiasi essi siano." />
     </div>
 
-    <!-- <q-intersection :key="'fourth-label'">
-      <transition type="animation" mode="out-in" appear enter-active-class="animated fadeIn slower"> -->
-    <div class="description-container q-mt-xl">
-      <p class="text-h5 text-center">
-        Siamo guidati dalla costante ricerca di innovazione: attraverso l'integrazione di metodologie all'avanguardia e
+    <DescriptionContainer :containerClass="'description-container'" :textClass="'text-h5 text-center'">
+      Siamo guidati dalla costante ricerca di innovazione: attraverso l'integrazione di metodologie all'avanguardia e
         una profonda dedizione al servizio, siamo in grado di raggiungere livelli di eccellenza nella qualità delle
         pulizie.
-      </p>
-    </div>
+    </DescriptionContainer>
 
     <q-intersection :key="'h2-principles'" v-scroll-fire="bounceImage">
       <transition type="animation" mode="out-in" appear enter-active-class="animated fadeInLeftBig slower">
@@ -177,12 +145,8 @@
 
     <MapComponent address="ITL Srl IMPRESA PULIZIA, Genova Italy" />
 
-    <CallToActionButton
-      intersectionKey="button-finish"
-      buttonLabel="Richiedi subito un preventivo! Contattaci Ora!"
-      buttonIcon="phone"
-      buttonLink="#/contattaci"
-    />
+    <CallToActionButton intersectionKey="button-finish" buttonLabel="Richiedi subito un preventivo! Contattaci Ora!"
+      buttonIcon="phone" buttonLink="#/contattaci" />
   </q-page>
 </template>
 
@@ -195,6 +159,7 @@ import MapComponent from "src/components/MapComponent.vue";
 import BeforeAfterCard from "src/components/BeforeAfterCard.vue";
 import ServiceCard from "src/components/ServiceCard.vue";
 import CallToActionButton from "src/components/CallToActionButton.vue";
+import DescriptionContainer from "src/components/DescriptionContainer.vue";
 
 // all the MetaData that application needs to have like API handlers for G-Analytics and SEO
 const metaData = {
@@ -263,7 +228,8 @@ export default defineComponent({
     MapComponent,
     BeforeAfterCard,
     ServiceCard,
-    CallToActionButton
+    CallToActionButton,
+    DescriptionContainer
   },
   name: "IndexPage",
   setup() {
