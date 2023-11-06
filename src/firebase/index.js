@@ -15,7 +15,7 @@ const firebaseConfig = {
   storageBucket: "YOUR_STORAGE_BUCKET", // bucket of your application
   messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
   appId: "YOUR_APP_ID",
-  measurementId: "yOUR_MEASUREMENT_ID" // google analytics tag (if needed)
+  measurementId: "YOUR_MEASUREMENT_ID" // google analytics tag (if needed)
 };
 
 

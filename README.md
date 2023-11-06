@@ -28,6 +28,7 @@ Watch [this site realized with this template](https://itlpuliziegenova.it)
   - [Adapt Packages \& Configuration with your Project Name](#adapt-packages--configuration-with-your-project-name)
     - [Configuration](#configuration)
     - [Pakages](#pakages)
+      - [Change Title and MetaData](#change-title-and-metadata)
   - [Adapt Firebase Configuration](#adapt-firebase-configuration)
     - [Change Firebase Project Name](#change-firebase-project-name)
     - [Use the Firestore Database](#use-the-firestore-database)
@@ -169,6 +170,26 @@ You need to do the same in the [package.json](https://github.com/PedemonteGiacom
 }
 ```
 
+#### Change Title and MetaData
+Inside the script tag of [IndexPage](https://github.com/PedemonteGiacomo/EasySite/blob/main/src/pages/IndexPage.vue#L165-L177) adapt your web app metadata to your needs:
+```js
+// all the MetaData that application needs to have like API handlers for G-Analytics and SEO
+const metaData = {
+  // sets document title
+  title: 'ITL srl impresa di pulizie',
+  // optional; sets final title as "Index Page - My Website", useful for multiple level meta
+  titleTemplate: title => `${title} - Genova`,
+
+  // meta tags
+  meta: {
+    //title: { name: "title", content: 'ITL sas Impresa di pulizie'},
+    description: { name: 'description', content: 'ITL impresa di pulizie genova, servizi di pulizie' },
+    keywords: { name: 'keywords', content: 'ITL impresa di pulizi Genova' },
+    equiv: { 'http-equiv': 'Content-Type', content: 'text/html; charset=UTF-8' },
+  },
+  //... other metadata if needed
+}
+```
 ## Adapt Firebase Configuration
 Go to [Firebase](https://firebase.google.com/) official site and follow the instructions to create a new project and link this project to Firebase. I suggest having a hosting based on Firebase that makes you obtain a development server that is reachable also for possible users.
 

@@ -174,52 +174,9 @@ const metaData = {
     description: { name: 'description', content: 'ITL impresa di pulizie genova, servizi di pulizie' },
     keywords: { name: 'keywords', content: 'ITL impresa di pulizi Genova' },
     equiv: { 'http-equiv': 'Content-Type', content: 'text/html; charset=UTF-8' },
-  },
-
-  // CSS tags
-  link: {
-    material: { rel: 'stylesheet', href: 'https://fonts.googleapis.com/icon?family=Material+Icons' }
-  },
-
-  // JS tags
-  script: {
-    ldJson: {
-      type: 'application/ld+json',
-      innerHTML: `{ "@context": "http://schema.org" }`
-    },
-    // Add the Google Tag for Analytics script and tracking code provided by Firebase
-    gtag: {
-      src: 'https://www.googletagmanager.com/gtag/js?id=YOUR_GOOGLE_ANALYTIC_TAG',
-      async: true
-    },
-    gtagConfig: {
-      content: `
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {
-          dataLayer.push(arguments);
-        };
-        gtag("js", new Date());
-        gtag("config", "YOUR_GOOGLE_ANALYTIC_TAG");
-      `,
-    },
-  },
-
-  // <html> attributes
-  htmlAttr: {
-    'xmlns:cc': 'http://creativecommons.org/ns#', // generates <html xmlns:cc="http://creativecommons.org/ns#">,
-    empty: undefined // generates <html empty>
-  },
-
-  // <body> attributes
-  bodyAttr: {
-    'action-scope': 'xyz', // generates <body action-scope="xyz">
-    empty: undefined // generates <body empty>
-  },
-
-  // <noscript> tags
-  noscript: {
-    default: 'This is content for browsers with no JS (or disabled JS)'
   }
+
+  // other metadata if needed
 }
 
 export default defineComponent({
