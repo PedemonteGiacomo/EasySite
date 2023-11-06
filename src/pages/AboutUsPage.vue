@@ -1,7 +1,7 @@
 <template>
   <q-page padding>
 
-    <div class="row justify-center q-mt-xl shadow-20" ref="storia"  v-scroll-fire="bounceImage">
+    <div class="row justify-center q-mt-xl shadow-20" ref="storia" v-scroll-fire="bounceImage">
       <q-card dark bordered class="bg-blue-8 my-card">
         <q-card-section>
           <div class="text-h3 text-bold text-italic">Storia dell'impresa</div>
@@ -31,7 +31,8 @@
       </q-card>
     </div>
 
-    <q-card v-if="$q.platform.is.desktop" dark bordered class="q-mt-xl shadow-20 row bg-blue-8" ref="missioni"  v-scroll-fire="bounceImage">
+    <q-card v-if="$q.platform.is.desktop" dark bordered class="q-mt-xl shadow-20 row bg-blue-8" ref="missioni"
+      v-scroll-fire="bounceImage">
       <!-- Left Column - Description -->
       <div class="bg-blue-8 my-card-row2 col-6">
         <q-card-section>
@@ -70,7 +71,8 @@
       </p>
     </q-card>
 
-    <div v-if="$q.platform.is.mobile" class="row justify-center q-mt-xl shadow-20" ref="missioni_tel" v-scroll-fire="bounceImage">
+    <div v-if="$q.platform.is.mobile" class="row justify-center q-mt-xl shadow-20" ref="missioni_tel"
+      v-scroll-fire="bounceImage">
       <q-card dark bordered class="bg-blue-8 my-card">
         <q-card-section>
           <div class="text-h3 text-bold text-italic">Missioni e Valori</div>
@@ -130,13 +132,13 @@
     </div>
 
     <div class="row justify-center">
-    <q-intersection :key="'h2-principles'">
-      <transition type="animation" mode="out-in" appear enter-active-class="animated fadeInLeftBig slower">
-        <h2 class="text-body text-center text-italic" data-index="h2-principles">
-          Dove trovarci
-        </h2>
-      </transition>
-    </q-intersection>
+      <q-intersection :key="'h2-principles'">
+        <transition type="animation" mode="out-in" appear enter-active-class="animated fadeInLeftBig slower">
+          <h2 class="text-body text-center text-italic" data-index="h2-principles">
+            Dove trovarci
+          </h2>
+        </transition>
+      </q-intersection>
     </div>
 
     <MapComponent address="ITL Srl IMPRESA PULIZIA, Genova Italy" />
@@ -144,8 +146,8 @@
     <q-intersection :key="'button-finish'">
       <transition type="animation" mode="out-in" appear enter-active-class="animated tada slower">
         <div class="row justify-center q-mt-xl">
-          <q-btn style="width: 80%" color="secondary" label="Richiedi subito un preventivo! Contattaci Ora!"
-            icon="phone" href="#/contattaci"/>
+          <q-btn style="width: 80%" color="secondary" label="Richiedi subito un preventivo! Contattaci Ora!" icon="phone"
+            href="#/contattaci" />
         </div>
       </transition>
     </q-intersection>
@@ -223,6 +225,7 @@ export default {
   color: white
 .my-card
   width: 100%
+
 .my-card-row2
   width: 50%
 

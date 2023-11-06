@@ -32,14 +32,12 @@
 
     <MapComponent address="ITL Srl IMPRESA PULIZIA, Genova Italy" />
 
-    <q-intersection :key="'button-finish'">
-      <transition type="animation" mode="out-in" appear enter-active-class="animated tada slower">
-        <div class="row justify-center q-mt-xl">
-          <q-btn style="width: 80%" color="secondary" label="Richiedi subito un preventivo! Contattaci Ora!"
-            icon="phone" href="#/contattaci"/>
-        </div>
-      </transition>
-    </q-intersection>
+    <CallToActionButton
+      intersectionKey="button-finish"
+      buttonLabel="Richiedi subito un preventivo! Contattaci Ora!"
+      buttonIcon="phone"
+      buttonLink="#/contattaci"
+    />
   </q-page>
 </template>
 
@@ -47,12 +45,14 @@
 import { defineComponent, ref, onMounted } from "vue";
 import CatchingClientComponent from "src/components/CatchingClientComponent.vue";
 import MapComponent from "src/components/MapComponent.vue";
+import CallToActionButton from "src/components/CallToActionButton.vue";
 
 export default defineComponent({
   name: "ContactUsPage",
   components: {
     CatchingClientComponent,
     MapComponent,
+    CallToActionButton
   },
 });
 </script>
