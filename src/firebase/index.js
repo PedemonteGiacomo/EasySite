@@ -8,14 +8,14 @@ import "firebase/firestore";
 // Your web app's Firebase configuration: follow firebase documentation when you setup your firebase project
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: ..., // this is the key relevant to your project
-  authDomain: ..., // relevant to your application of your project
-  databaseURL: ..., // firebase db url (depends on Timezones)
-  projectId: ..., // project ID
-  storageBucket: ..., // bucket of your application
-  messagingSenderId: ...,
-  appId: ...,
-  measurementId: ..., // google analytics tag [not necessary depending of the enabling of google analytics]
+  apiKey: "YOUR_API_KEY", // this is the key relevant to your project
+  authDomain: "YOUR_AUTH_DOMAIN", // relevant to your application of your project
+  databaseURL: "YOUR_DATABASE_URL", // firebase db url (depends on Timezones)
+  projectId: "YOUR_PROJECT_ID", // project ID
+  storageBucket: "YOUR_STORAGE_BUCKET", // bucket of your application
+  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+  appId: "YOUR_APP_ID",
+  measurementId: "yOUR_MEASUREMENT_ID" // google analytics tag (if needed)
 };
 
 
