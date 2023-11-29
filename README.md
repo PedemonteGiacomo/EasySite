@@ -29,6 +29,7 @@ Watch [this site realized with this template](https://itlpuliziegenova.it)
     - [Configuration](#configuration)
     - [Pakages](#pakages)
       - [Change Title and MetaData](#change-title-and-metadata)
+    - [Create a brand icon utilizing quasar icongenie](#create-a-brand-icon-utilizing-quasar-icongenie)
   - [Adapt Firebase Configuration](#adapt-firebase-configuration)
     - [Change Firebase Project Name](#change-firebase-project-name)
     - [Use the Firestore Database](#use-the-firestore-database)
@@ -189,6 +190,23 @@ const metaData = {
   },
   //... other metadata if needed
 }
+```
+
+### Create a brand icon utilizing quasar icongenie
+
+To easily adapt the the icon to you needs just follow the [icongenie configuration and setup](https://quasar.dev/quasar-cli-webpack/convert-to-quasar-cli-with-webpack).
+
+This will generate a brand new icon from a picture that you insert in the path argument.
+```bash
+icongenie generate -m spa -i .\path\to\your\image
+```
+ANd then put the code that the command generat and insert it in the index.html file.
+```html
+<link rel="icon" type="image/png" sizes="128x128" href="icons/favicon-128x128.png">
+<link rel="icon" type="image/png" sizes="96x96" href="icons/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+<link rel="icon" type="image/ico" href="favicon.ico">
 ```
 ## Adapt Firebase Configuration
 Go to [Firebase](https://firebase.google.com/) official site and follow the instructions to create a new project and link this project to Firebase. I suggest having a hosting based on Firebase that makes you obtain a development server that is reachable also for possible users.
