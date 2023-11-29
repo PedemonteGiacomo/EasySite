@@ -8,19 +8,19 @@
     <q-tab color="primary" name="About" label="Chi siamo?">
       <q-menu transition-show="jump-down" transition-hide="jump-up">
         <q-list style="min-width: 100px">
-          <router-link to="/about" class="router-link-no-style">
+          <router-link to="/about#storia" class="router-link-no-style">
             <q-item clickable>
               <q-item-section>Storia dell'impresa</q-item-section>
             </q-item>
           </router-link>
           <q-separator />
-          <router-link to="/about" class="router-link-no-style">
+          <router-link to="/about#missioni" class="router-link-no-style">
             <q-item clickable>
               <q-item-section>Missioni e Valori</q-item-section>
             </q-item>
             <q-separator />
           </router-link>
-          <router-link to="/about" class="router-link-no-style">
+          <router-link to="/about#testimonianze" class="router-link-no-style">
             <q-item clickable>
               <q-item-section>Testimonianze dei Clienti</q-item-section>
             </q-item>

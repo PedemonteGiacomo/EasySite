@@ -17,7 +17,32 @@ export default route(function (/* { store, ssrContext } */) {
     : (process.env.VUE_ROUTER_MODE === 'history' ? createWebHistory : createWebHashHistory)
 
   const Router = createRouter({
-    scrollBehavior: () => ({ left: 0, top: 0 }),
+    scrollBehavior(to, from, savedPosition) {
+      if (to.hash) {
+        return new Promise((resolve) => {
+          const element = document.querySelector(to.hash);
+
+          if (element) {
+            // Smoothly scroll to the element
+            element.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start', // You can adjust this as needed
+            });
+
+            // Wait for the scroll to finish before resolving
+            setTimeout(() => {
+              resolve({ el: to.hash });
+            }, 500); // Adjust the delay to fit your needs
+          } else {
+            resolve({ el: to.hash });
+          }
+        });
+      } else if (savedPosition) {
+        return savedPosition;
+      } else {
+        return { top: 0 };
+      }
+    },
     routes,
 
     // Leave this as is and make changes in quasar.conf.js instead!
