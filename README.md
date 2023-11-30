@@ -30,6 +30,7 @@ Watch [this site realized with this template](https://itlpuliziegenova.it)
     - [Pakages](#pakages)
       - [Change Title and MetaData](#change-title-and-metadata)
     - [Create a brand icon utilizing quasar icongenie](#create-a-brand-icon-utilizing-quasar-icongenie)
+    - [Use trustmary plugin](#use-trustmary-plugin)
   - [Adapt Firebase Configuration](#adapt-firebase-configuration)
     - [Change Firebase Project Name](#change-firebase-project-name)
     - [Use the Firestore Database](#use-the-firestore-database)
@@ -208,6 +209,81 @@ ANd then put the code that the command generat and insert it in the index.html f
 <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
 <link rel="icon" type="image/ico" href="favicon.ico">
 ```
+
+###  Use trustmary plugin
+[Trustmary](https://app.trustmary.com/) is the plugin that is simply used to get Google reviews inside the AboutUsPage by using the following code which is already implemented, you will follow the instruction on [Trustmary plugin site](https://app.trustmary.com/widget) to get the correct setup and you need to organize it like the following inside the ```<script>``` tag of the component GoogleReview:
+
+```js
+<template>
+  <div id="trustmary"></div>
+</template>
+
+<script>
+export default {
+  mounted() {
+    // Dynamically add Trustmary script tag to the document
+    this.addTrustmaryScript();
+  },
+  methods: {
+    addTrustmaryScript() {
+      // Create script element for Trustmary widget
+      const script = document.createElement('script');
+      script.src = 'https://widget.trustmary.com/X6xhp1Y1h';
+
+      // Append the script to the document's body or head
+      //document.body.appendChild(script); // or document.head.appendChild(script);
+      document.getElementById('trustmary').appendChild(script);
+
+      // Initialize Trustmary widget after the script is loaded (might need some delay)
+      script.onload = () => {
+        this.initTrustmaryWidget();
+      };
+    },
+    initTrustmaryWidget() {
+      // Trigger the Trustmary widget creation
+      // This assumes Trustmary widget has a specific method to initialize it, replace with correct code if needed
+      window.TrustmaryWidget?.initWidget({
+        target: '#trustmary-widget', // The element to attach the widget to
+        // Other configuration options as needed for Trustmary widget initialization
+      });
+    },
+  },
+}
+</script>
+```
+
+So, to remain simple, the only thing you should take care is to change the code in the following code inside the ```<script>``` tag:
+```js
+      ...
+      // Create script element for Trustmary widget
+      const script = document.createElement('script');
+      script.src = 'https://widget.trustmary.com/X6xhp1Y1h';
+      // CHANGE THIS YOUR OWN CODE OF THE SCRIPT THAT YOU GET FROM TRUSTMARY
+      ...
+```
+
+Than you should simple use the components as usual in the page that you want to insert it without repeating code like the following:
+```html
+...
+<GoogleReviews/>
+...
+<script>
+import AboutUsCarousel from 'src/components/AboutUsCarousel.vue';
+import MapComponent from 'src/components/MapComponent.vue';
+import CallToActionButton from 'src/components/CallToActionButton.vue';
+import GoogleReviews from 'src/components/GoogleReviews.vue';
+
+export default {
+  components: {
+    AboutUsCarousel,
+    MapComponent,
+    CallToActionButton,
+    GoogleReviews
+  },
+...
+<script/>
+```
+
 ## Adapt Firebase Configuration
 Go to [Firebase](https://firebase.google.com/) official site and follow the instructions to create a new project and link this project to Firebase. I suggest having a hosting based on Firebase that makes you obtain a development server that is reachable also for possible users.
 

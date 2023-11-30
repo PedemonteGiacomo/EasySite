@@ -131,6 +131,8 @@
       <AboutUsCarousel style="width: 100%;" />
     </div>
 
+    <GoogleReviews/>
+
     <div class="row justify-center">
       <q-intersection :key="'h2-principles'">
         <transition type="animation" mode="out-in" appear enter-active-class="animated fadeInLeftBig slower">
@@ -157,14 +159,15 @@
 import AboutUsCarousel from 'src/components/AboutUsCarousel.vue';
 import MapComponent from 'src/components/MapComponent.vue';
 import CallToActionButton from 'src/components/CallToActionButton.vue';
+import GoogleReviews from 'src/components/GoogleReviews.vue';
 
 export default {
   components: {
     AboutUsCarousel,
     MapComponent,
-    CallToActionButton
+    CallToActionButton,
+    GoogleReviews
   },
-  name: 'AboutUsPage',
   setup() {
     return {
       bounceImage(el) {
