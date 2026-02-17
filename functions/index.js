@@ -8,79 +8,119 @@
  */
 
 const functions = require("firebase-functions");
-const cors = require("cors")({ origin: true }); // Enable CORS for all routes
+const cors = require("cors")({ 
+  origin: ["http://localhost:9000", "https://itl-impresadipulizie-genova.web.app", "https://itl-impresadipulizie-genova.firebaseapp.com"],
+  methods: ["GET", "POST", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"]
+});
 const sgMail = require("@sendgrid/mail");
 
-// Initialize SendGrid API key
-sgMail.setApiKey("YOUR_SENDGRID_API_KEY");
+// Initialize SendGrid API key from environment variables
+const SENDGRID_API_KEY = functions.config().sendgrid?.key || process.env.SENDGRID_API_KEY;
+if (SENDGRID_API_KEY) {
+  sgMail.setApiKey(SENDGRID_API_KEY);
+}
 
 exports.SendMail = functions.https.onRequest((request, response) => {
-  cors(request, response, () => {
-    // Your function logic here
-    // You can access the request body using request.body
-    // You can send emails using sgMail.send()
+  // Handle preflight OPTIONS request
+  if (request.method === 'OPTIONS') {
+    response.set('Access-Control-Allow-Origin', request.headers.origin || '*');
+    response.set('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+    response.set('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    response.set('Access-Control-Max-Age', '3600');
+    return response.status(204).send('');
+  }
+  
+  return cors(request, response, async () => {
+    try {
+      // Check if SendGrid is configured
+      if (!SENDGRID_API_KEY) {
+        console.error('SendGrid API key not configured');
+        return response.status(500).json({ 
+          error: 'Email service not configured',
+          success: false 
+        });
+      }
 
-    // Example:
-    const { firstName, lastName, email, phoneNumber, text } = request.body;
+      // Only allow POST requests for actual email sending
+      if (request.method !== 'POST') {
+        return response.status(405).json({ 
+          error: 'Method not allowed',
+          success: false 
+        });
+      }
 
-    // Send email to user
-    const userMsg = {
-      to: email,
-      from: { // if you don't have an AUTHORIZED DOMAIN you need to replace this with a Verified Sender as Sengrid asks
-        email: "noreply@itlpuliziegenova.it", // Use your authenticated domain to not get email goes into SPAM
-        name: "Luciano Tanzi", // Replace with your sender name
-      },
-      templateId: "d-c4825a7d9322498ebc92c784d0e5ff62", // Replace with your SendGrid template ID
-      asm: {
-        groupId: 23008, // Replace with your actual unsubscribe group ID
-      },
-      dynamic_template_data: {
-        subject: "Il messaggio è stato inviato correttamente",
-        text: `\nContenuto del messaggio inviato:\n${text}`,
-      },
-    };
+      const { firstName, lastName, email, phoneNumber, text } = request.body;
 
-    sgMail
-      .send(userMsg)
-      .then(() => {
-        // Email sent successfully, you can handle the response if needed
-      })
-      .catch((error) => {
-        console.error("Error sending email to user:", error);
-      });
+      // Validate required fields
+      if (!firstName || !lastName || !email || !text) {
+        return response.status(400).json({ 
+          error: 'Missing required fields',
+          success: false 
+        });
+      }
 
-    // List of recipient email addresses
-    const recipients = [
-      "giacomopedemonte@libero.it",
-      "itl.sas@virgilio.it",
-      "fmorasrl96@gmail.com",
-      "sas.ilforte@gmail.com",
-      "lufracla7@icloud.com"
-    ];
-
-    // email for the "owner" of the "company" which the site belongs to
-    recipients.forEach((recipient) => {
-      const copyMsg = {
-        to: recipient,
+      // Send email to user
+      const userMsg = {
+        to: email,
         from: {
-          email: "noreply@itlpuliziegenova.it", // Replace with your verified sender email using your domain
-          name: "Luciano Tanzi", // Replace with your sender name
+          email: "noreply@itlpuliziegenova.it",
+          name: "ITL Pulizie Genova",
         },
-        //from: senderEmail, // replace with your SENDER validated account
-        subject: "Nuovo messaggio dal form di contatto",
-        text: `Nuovo messaggio ricevuto da:\n - Email: ${email}\n - Nome: ${firstName}\n - Cognome: ${lastName}.\n - Numero di Telefono: ${phoneNumber}\n\nContenuto del messaggio:\n${text}`,
+        templateId: "d-c4825a7d9322498ebc92c784d0e5ff62",
+        asm: {
+          groupId: 23008,
+        },
+        dynamic_template_data: {
+          subject: "Il messaggio è stato inviato correttamente",
+          text: `\nContenuto del messaggio inviato:\n${text}`,
+        },
       };
 
-      sgMail
-        .send(copyMsg)
-        .then(() => {
-          // Email sent successfully to individual recipient
-        })
-        .catch((error) => {
-          console.error(`Error sending email copy to ${recipient}:`, error);
-        });
-    });
+      // List of recipient email addresses
+      const recipients = [
+        "giacomopedemonte@libero.it",
+        "itl.sas@virgilio.it", 
+        "fmorasrl96@gmail.com",
+        "sas.ilforte@gmail.com",
+        "lufracla7@icloud.com"
+      ];
 
-    response.status(200).send("Message sent successfully");
+      // Send email copies to company recipients
+      const companyEmails = recipients.map(recipient => {
+        const copyMsg = {
+          to: recipient,
+          from: {
+            email: "noreply@itlpuliziegenova.it",
+            name: "ITL Pulizie Genova",
+          },
+          subject: "Nuovo messaggio dal form di contatto",
+          text: `Nuovo messaggio ricevuto da:\n - Email: ${email}\n - Nome: ${firstName}\n - Cognome: ${lastName}\n - Numero di Telefono: ${phoneNumber || 'Non fornito'}\n\nContenuto del messaggio:\n${text}`,
+        };
+        return sgMail.send(copyMsg);
+      });
+
+      // Send all emails concurrently
+      const emailPromises = [
+        sgMail.send(userMsg),
+        ...companyEmails
+      ];
+
+      await Promise.all(emailPromises);
+      
+      console.log('All emails sent successfully');
+      return response.status(200).json({ 
+        message: "Message sent successfully",
+        success: true 
+      });
+
+    } catch (error) {
+      console.error("Error in SendMail function:", error);
+      return response.status(500).json({ 
+        error: 'Failed to send email',
+        success: false,
+        details: process.env.NODE_ENV === 'development' ? error.message : undefined
+      });
+    }
   });
 });

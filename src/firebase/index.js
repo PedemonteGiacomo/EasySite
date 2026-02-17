@@ -8,22 +8,21 @@ import "firebase/firestore";
 // Your web app's Firebase configuration: follow firebase documentation when you setup your firebase project
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY", // this is the key relevant to your project
-  authDomain: "YOUR_AUTH_DOMAIN", // relevant to your application of your project
-  databaseURL: "YOUR_DATABASE_URL", // firebase db url (depends on Timezones)
-  projectId: "YOUR_PROJECT_ID", // project ID
-  storageBucket: "YOUR_STORAGE_BUCKET", // bucket of your application
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID",
-  measurementId: "YOUR_MEASUREMENT_ID" // google analytics tag (if needed)
+  apiKey: "AIzaSyAIoLD4ZGR4Juz2MGxxUraiuX9uG2E7Mx4",
+  authDomain: "itl-impresadipulizie-genova.firebaseapp.com",
+  databaseURL: "https://itl-impresadipulizie-genova-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "itl-impresadipulizie-genova",
+  storageBucket: "itl-impresadipulizie-genova.firebasestorage.app",
+  messagingSenderId: "56740144444",
+  appId: "1:56740144444:web:674e54652a3471d898aa39",
+  measurementId: "G-ZE492RNM0C"
 };
-
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 const analytics = firebase.analytics();
 
-analytics.setAnalyticsCollectionEnabled; // set the analytics collection on that tag
+analytics.setAnalyticsCollectionEnabled(true); // set the analytics collection on that tag
 //(don't deserve google tag manager if you copy the ga(google-analytics) tag that firebase provide you directly from the dashboard of your project)
 
 // Initialize Cloud Firestore and get a reference to the service

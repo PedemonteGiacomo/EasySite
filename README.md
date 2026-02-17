@@ -178,7 +178,7 @@ Inside the script tag of [IndexPage](https://github.com/PedemonteGiacomo/EasySit
 // all the MetaData that application needs to have like API handlers for G-Analytics and SEO
 const metaData = {
   // sets document title
-  title: 'ITL srl impresa di pulizie',
+  title: 'ITL s.r.l. impresa di pulizie',
   // optional; sets final title as "Index Page - My Website", useful for multiple level meta
   titleTemplate: title => `${title} - Genova`,
 
@@ -418,7 +418,7 @@ And then to utilize this component simply modify the string that refers to the p
 Example of usage in [AboutUs.vue Page](https://github.com/PedemonteGiacomo/EasySite/blob/main/src/pages/AboutUsPage.vue#L144):
 
 ```js
-<MapComponent address="ITL Srl IMPRESA PULIZIA, Genova Italy"/>
+<MapComponent address="ITL s.r.l. IMPRESA PULIZIA, Genova Italy"/>
 ```
 
 This can be used by simply including the Map as a component in the following way in the ```<script>```:

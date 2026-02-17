@@ -1,58 +1,79 @@
 <template>
-  <q-card class="q-mr-xl q-ml-xl q-mb-md shadow-10" style="width: 310px" v-scroll-fire="bounceImage">
-    <q-card-section class="q-pt-lg q-pb-xl text-center">
-      <q-avatar size="225px" color="teal" text-color="white" class="shadow-20">
-        <q-icon :name="iconName" size="100px" />
-      </q-avatar>
-      <div class="q-mt-md icon-description">
-        <h6 class="text-subtitle2">{{ title }}</h6>
-        <p class="text-h7">{{ description }}</p>
+  <div class="itl-card service-card">
+    <q-card-section class="text-center q-pa-lg">
+      <!-- Icon container -->
+      <div class="icon-container q-mb-lg">
+        <q-avatar size="80px" color="primary-1" class="shadow-2">
+          <q-icon :name="iconName" size="40px" color="primary" />
+        </q-avatar>
+      </div>
+      
+      <!-- Content -->
+      <div class="service-content">
+        <h3 class="service-title text-h6 text-weight-bold q-mb-md text-dark">
+          {{ title }}
+        </h3>
+        <p class="service-description text-body2 text-grey-7 text-balance">
+          {{ description }}
+        </p>
       </div>
     </q-card-section>
-  </q-card>
+  </div>
 </template>
 
 <script>
 export default {
+  name: "ServiceCard",
   props: {
-    iconName: String,
-    title: String,
-    description: String
-  },
-  setup(){
-    return{
-      bounceImage(el) {
-        // in this example, when the `<div>` comes into view,
-        // we bounce it for 2 seconds
-        console.log(el)
-        el.classList.add('animate-bounce')
-
-        setTimeout(() => {
-          // we make sure the node is still in DOM
-          // (user hasn't navigated away from the Vue component
-          // rendering our `<div>`)
-          // so we don't generate an error
-          if (document.body.contains(el)) {
-            // then remove the helper class to
-            // stop bouncing
-            el.classList.remove('animate-bounce')
-          }
-        }, 2000)
-      },
+    iconName: {
+      type: String,
+      required: true
+    },
+    title: {
+      type: String,
+      required: true
+    },
+    description: {
+      type: String,
+      required: true
     }
   }
 };
 </script>
 
-<style lang="sass" scoped>
-.animate-bounce
-  animation: q-bounce 2s infinite
-
-@keyframes q-bounce
-  0%, 20%, 50%, 80%, 100%
-    transform: translateY(0)
-  40%
-    transform: translateY(-30px)
-  60%
-    transform: translateY(-15px)
+<style lang="scss" scoped>
+.service-card {
+  transition: all 0.3s ease;
+  height: 100%;
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-strong);
+    
+    @media (max-width: 767px) {
+      transform: none; // Disable hover effects on mobile
+    }
+    
+    .icon-container .q-avatar {
+      transform: scale(1.05);
+      background-color: rgba(15, 118, 110, 0.15) !important;
+    }
+  }
+  
+  .icon-container {
+    .q-avatar {
+      transition: all 0.3s ease;
+    }
+  }
+  
+  .service-content {
+    .service-title {
+      line-height: 1.3;
+    }
+    
+    .service-description {
+      line-height: 1.6;
+    }
+  }
+}
 </style>

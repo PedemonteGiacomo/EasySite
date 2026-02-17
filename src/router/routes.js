@@ -19,6 +19,7 @@ const routes = [
     path: "/servizi",
     component: () => import("layouts/MainLayout.vue"),
     children: [
+      { path: "", component: () => import("pages/ServicesOverviewPage.vue") },
       {
         path: "pulizie-cantiere",
         component: () => import("pages/PulizieCantiere.vue"),

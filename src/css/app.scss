@@ -1,1 +1,322 @@
-// app global css in SCSS form
+// ITL Design System - Global Styles
+// Modern cleaning company theme
+
+// == GLOBAL BACKGROUND ==
+body {
+  background-color: #F7FAFC;
+  font-family: 'Roboto', sans-serif;
+  color: #0B1220;
+  line-height: 1.6;
+}
+
+// == DESIGN TOKENS ==
+:root {
+  --primary: #0F766E;
+  --secondary: #38BDF8;
+  --accent: #F59E0B;
+  --background: #F7FAFC;
+  --surface: #FFFFFF;
+  --text: #0B1220;
+  --text-muted: #6B7280;
+  --border: #E5E7EB;
+  --radius: 16px;
+  --radius-small: 12px;
+  --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.06);
+  --shadow-hover: 0 8px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-strong: 0 12px 28px -4px rgba(0, 0, 0, 0.15), 0 6px 12px -2px rgba(0, 0, 0, 0.08);
+}
+
+// == LAYOUT SYSTEM ==
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+  
+  @media (min-width: 768px) {
+    padding: 0 24px;
+  }
+}
+
+.section {
+  padding: 40px 0;
+  
+  @media (min-width: 768px) {
+    padding: 56px 0;
+  }
+  
+  @media (min-width: 1024px) {
+    padding: 72px 0;
+  }
+}
+
+// == TYPOGRAPHY SYSTEM ==
+.section-title {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  color: var(--text);
+  letter-spacing: -0.01em;
+  position: relative;
+  
+  // Gradiente sottile per alcuni titoli
+  &.gradient-title {
+    background: linear-gradient(135deg, $primary 0%, $secondary 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    /* Fallback per browser che non supportano background-clip: text */
+    @supports not (-webkit-background-clip: text) {
+      background: none;
+      color: $primary;
+    }
+  }
+  
+  // Animazione per titoli in vista
+  &.animate-in-view {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease-out;
+    
+    &.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @media (min-width: 768px) {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  
+  @media (min-width: 1024px) {
+    font-size: 36px;
+    margin-bottom: 24px;
+  }
+}
+
+.section-subtitle {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin-bottom: 32px;
+  max-width: 700px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  
+  // Animazione per sottotitoli in vista
+  &.animate-in-view {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease-out 0.2s;
+    
+    &.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @media (min-width: 768px) {
+    font-size: 20px;
+    margin-bottom: 40px;
+  }
+}
+
+// == MODERN CARD SYSTEM ==
+.itl-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-2px);
+    
+    @media (max-width: 767px) {
+      transform: none; // Disable hover effects on mobile
+    }
+  }
+}
+
+// == MODERN BUTTON SYSTEM ==
+.itl-btn-primary {
+  background-color: var(--accent) !important;
+  color: white !important;
+  border-radius: var(--radius) !important;
+  padding: 12px 24px !important;
+  font-weight: 600 !important;
+  font-size: 16px !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  box-shadow: var(--shadow) !important;
+  transition: all 0.2s ease !important;
+  
+  &:hover {
+    background-color: #D97706 !important;
+    box-shadow: var(--shadow-hover) !important;
+    transform: translateY(-1px);
+  }
+}
+
+.itl-btn-secondary {
+  background-color: transparent !important;
+  color: var(--primary) !important;
+  border: 2px solid var(--primary) !important;
+  border-radius: var(--radius) !important;
+  padding: 10px 22px !important;
+  font-weight: 600 !important;
+  font-size: 16px !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  transition: all 0.2s ease !important;
+  
+  &:hover {
+    background-color: var(--primary) !important;
+    color: white !important;
+    transform: translateY(-1px);
+  }
+}
+
+.itl-btn-text {
+  background-color: transparent !important;
+  color: var(--secondary) !important;
+  border-radius: var(--radius) !important;
+  padding: 12px 16px !important;
+  font-weight: 500 !important;
+  font-size: 16px !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  
+  &:hover {
+    background-color: rgba(56, 189, 248, 0.1) !important;
+  }
+}
+
+// == FORM STYLING ==
+.itl-input {
+  .q-field__control {
+    border-radius: var(--radius-small) !important;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    
+    &:before {
+      border: none !important;
+    }
+  }
+  
+  &.q-field--focused .q-field__control {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.1);
+  }
+  
+  .q-field__label {
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+}
+
+// == FOCUS STATES (ACCESSIBILITY) ==
+button:focus-visible,
+.q-btn:focus-visible {
+  outline: 2px solid var(--primary) !important;
+  outline-offset: 2px !important;
+}
+
+// == RESPONSIVE GRID HELPERS ==
+.itl-grid {
+  display: grid;
+  gap: 24px;
+  
+  &.cols-1 {
+    grid-template-columns: 1fr;
+  }
+  
+  &.cols-2 {
+    grid-template-columns: 1fr;
+    
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  &.cols-3 {
+    grid-template-columns: 1fr;
+    
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+// == UTILITIES ==
+.text-balance {
+  text-wrap: balance;
+}
+
+.surface {
+  background-color: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.border-subtle {
+  border: 1px solid var(--border);
+}
+
+// Gradient text utilities
+.gradient-text-primary {
+  background: linear-gradient(135deg, $primary 0%, $secondary 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  @supports not (-webkit-background-clip: text) {
+    background: none;
+    color: $primary;
+  }
+}
+
+.gradient-text-full {
+  background: linear-gradient(135deg, $primary 0%, $secondary 50%, $accent 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  @supports not (-webkit-background-clip: text) {
+    background: none;
+    color: $primary;
+  }
+}
+
+// == ANIMATIONS (SUBTLE ONLY) ==
+.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+  
+  &.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Remove excessive animations
+.animated {
+  animation-duration: 0.5s !important;
+}
+
+// Disable animations on mobile for better performance
+@media (max-width: 767px) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

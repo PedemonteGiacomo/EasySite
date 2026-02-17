@@ -35,3 +35,25 @@ export default {
   name: 'GoogleReviews',
 }
 </script>
+
+<style scoped>
+/* Hide the default Trustmary title */
+#trustmary ::v-deep(.trustmary-widget-title),
+#trustmary ::v-deep(.widget-title),
+#trustmary ::v-deep(h2),
+#trustmary ::v-deep(h3) {
+  display: none !important;
+}
+
+/* Hide any text containing "Here is what our customers say" */
+#trustmary ::v-deep(*:contains("Here is what our customers say")) {
+  display: none !important;
+}
+
+/* Alternative approach: hide common title selectors */
+#trustmary ::v-deep(.title),
+#trustmary ::v-deep(.header-text),
+#trustmary ::v-deep(.widget-header) {
+  display: none !important;
+}
+</style>
