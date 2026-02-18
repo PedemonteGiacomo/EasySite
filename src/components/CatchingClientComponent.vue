@@ -197,15 +197,19 @@ export default {
           timestamp: new Date().toISOString()
         };
 
-        // Store in Firestore
-        const newMexRef = db.collection("formData").doc();
-        await newMexRef.set(formData);
-        
-        if (process.env.NODE_ENV === 'development') {
-          console.log("Document written with ID: ", newMexRef.id);
+        // Store in Firestore (backup)
+        try {
+          const newMexRef = db.collection("formData").doc();
+          await newMexRef.set(formData);
+          
+          if (process.env.NODE_ENV === 'development') {
+            console.log("Document written with ID: ", newMexRef.id);
+          }
+        } catch (firestoreError) {
+          console.log('Firestore backup failed (optional):', firestoreError);
         }
 
-        // Send email via Firebase Function
+        // Send email via Firebase Function with Resend
         await axios.post(
           'https://us-central1-itl-impresadipulizie-genova.cloudfunctions.net/SendMail', 
           formData
