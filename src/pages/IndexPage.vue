@@ -153,7 +153,7 @@
           </p>
         </div>
 
-        <div class="itl-grid cols-3">
+        <div class="itl-grid cols-4">
           <ServiceCard 
             iconName="eco" 
             title="Cura dell'ambiente"
@@ -168,6 +168,11 @@
             iconName="cleaning_services" 
             title="Pulizia professionale"
             description="Metodologie avanzate e personale esperto per un livello di pulizia che conferisce freschezza ai tuoi spazi." 
+          />
+          <ServiceCard 
+            iconName="access_time" 
+            title="Flessibilità oraria"
+            description="Lavoriamo nei momenti più convenienti per te, adattandoci alle tue esigenze di orario e frequenza." 
           />
         </div>
       </div>
@@ -241,7 +246,7 @@
           
           <div class="quote-attribution q-mt-lg">
             <div class="quote-author text-weight-bold text-primary">
-              ITL srl
+              ITL s.r.l.
             </div>
             <div class="quote-title text-grey-7">
               Impresa di Pulizie • Dal 1984
@@ -316,7 +321,7 @@
   .hero-actions {
     animation: fadeSlideIn 1s ease-out 0.4s both;
     
-    @media (max-width: 767px) {
+    @media (max-width: 1023px) {
       flex-direction: column;
       
       .q-btn {
@@ -340,19 +345,28 @@
 .gallery-container {
   width: 100%;
   
-  @media (max-width: 767px) {
-    margin-top: 3rem;
+  @media (max-width: 1023px) {
+    margin: 3rem 1rem 2rem 1rem;
     order: 2;
+    padding: 1rem;
+    border-radius: 12px;
+    box-sizing: border-box;
+    max-width: calc(100% - 2rem);
   }
   
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     display: flex;
     align-items: center;
     height: 100%;
   }
   
   &.full-width-gallery {
-    @media (min-width: 768px) {
+    @media (max-width: 1023px) {
+      width: auto !important;
+      margin-right: 1rem !important;
+    }
+    
+    @media (min-width: 1024px) {
       width: calc(50vw - 2rem);
       margin-right: calc(-25vw + 50%);
     }
@@ -360,9 +374,11 @@
 }
 
 .hero-text {
-  @media (max-width: 767px) {
+  @media (max-width: 1023px) {
     text-align: center;
     order: 1;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 }
 
@@ -400,7 +416,7 @@
   border-radius: 30px;
   border: 1px solid rgba(15, 118, 110, 0.2);
   
-  @media (max-width: 767px) {
+  @media (max-width: 1023px) {
     justify-content: center;
   }
 }
@@ -457,7 +473,7 @@
 .min-h-screen {
   min-height: 80vh;
   
-  @media (max-width: 767px) {
+  @media (max-width: 1023px) {
     min-height: auto;
   }
 }

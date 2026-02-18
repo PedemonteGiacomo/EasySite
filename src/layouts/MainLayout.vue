@@ -113,7 +113,7 @@
           <div class="row items-center justify-between q-py-md">
             <div class="col-12 col-md-auto text-center">
               <div class="text-body2 text-white">
-                © 2024 ITL s.r.l. - Impresa di Pulizie Genova
+                © 2026 ITL s.r.l. - Impresa di Pulizie Genova
               </div>
             </div>
             <div class="col-12 col-md-auto text-center q-mt-sm">
