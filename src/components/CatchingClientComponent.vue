@@ -8,7 +8,7 @@
             Richiedi un preventivo gratuito
           </h3>
           <p class="text-body2 text-grey-7">
-            Compila il modulo e ti contatteremo entro 24 ore
+            Compila il modulo: apriremo la tua app di posta per inviare la richiesta
           </p>
         </div>
 
@@ -60,7 +60,7 @@
                 v-model="email"
                 label="Email *"
                 type="email"
-                class="itl-input"
+                class="itl-input q-mb-lg"
                 lazy-rules
                 :rules="[
                   val => (val && val.length > 0) || 'L\'email è obbligatoria',
@@ -69,6 +69,11 @@
               >
                 <template v-slot:prepend>
                   <q-icon name="email" color="grey-6" />
+                </template>
+                <template v-slot:hint>
+                  <span class="text-caption text-grey-6" style="display:block; margin-bottom: 24px;">
+                    Questa sarà l'email per ricevere la risposta al preventivo
+                  </span>
                 </template>
               </q-input>
             </div>
@@ -120,12 +125,12 @@
             <div class="row q-gutter-md">
               <div class="col">
                 <q-btn 
-                  label="Invia richiesta"
+                  label="Apri app di posta e invia"
                   type="submit"
                   class="itl-btn-primary full-width"
-                  icon="send"
+                  icon="mail_outline"
                   :loading="isSubmitting"
-                  :disable="isSubmitting"
+                  :disable="isSubmitting || !isFormValid"
                   no-caps
                 />
               </div>
@@ -167,7 +172,7 @@
 
 <script>
 import { useQuasar } from 'quasar';
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import axios from 'axios';
 import { db } from "../firebase";
 
@@ -183,6 +188,16 @@ export default {
     const email = ref('');
     const phoneNumber = ref('');
     const text = ref('');
+
+    // Form validation computed
+    const isFormValid = computed(() => {
+      return firstName.value.trim().length > 0 &&
+             lastName.value.trim().length > 0 &&
+             email.value.trim().length > 0 &&
+             /.+@.+\..+/.test(email.value) &&
+             text.value.trim().length > 0 &&
+             text.value.length <= 500;
+    });
 
     const onSubmit = async () => {
       try {
@@ -209,34 +224,59 @@ export default {
           console.log('Firestore backup failed (optional):', firestoreError);
         }
 
-        // Send email via Firebase Function with Resend
-        await axios.post(
-          'https://us-central1-itl-impresadipulizie-genova.cloudfunctions.net/SendMail', 
-          formData
-        );
+        // Create email content
+        const emailSubject = `Richiesta preventivo da ${firstName.value} ${lastName.value}`;
+        const emailBody = `Gentili Signori ITL,
+
+ho compilato il modulo di richiesta preventivo sul vostro sito web con i seguenti dati:
+
+DATI DEL CLIENTE:
+• Nome: ${firstName.value}
+• Cognome: ${lastName.value}
+• Email per risposta: ${email.value}
+• Telefono: ${phoneNumber.value || 'Non fornito'}
+
+RICHIESTA:
+${text.value}
+
+Grazie per l'attenzione, attendo un vostro contatto.
+
+Distinti saluti,
+${firstName.value} ${lastName.value}
+
+---
+Messaggio generato automaticamente dal sito ITL - ${new Date().toLocaleString('it-IT')}`;
+
+        // Create mailto link
+        const mailtoLink = `mailto:itl.sas@virgilio.it?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+        
+        // Open email client
+        window.location.href = mailtoLink;
 
         // Success notification
         $q.notify({
           type: 'positive',
-          message: 'Messaggio inviato con successo!',
-          caption: 'Ti contatteremo entro 24 ore',
-          icon: 'done_all',
-          timeout: 5000,
+          message: 'App di posta aperta!',
+          caption: 'Controlla la tua app di posta e invia il messaggio',
+          icon: 'mail_outline',
+          timeout: 6000,
           position: 'top'
         });
 
-        // Reset form
-        contactForm.value.reset();
+        // Reset form after a short delay
+        setTimeout(() => {
+          contactForm.value.reset();
+        }, 1000);
         
       } catch (error) {
-        console.error('Error sending message:', error);
+        console.error('Error opening email client:', error);
         
         $q.notify({
           type: 'negative',
-          message: 'Errore nell\'invio del messaggio',
-          caption: 'Riprova o contattaci direttamente',
+          message: 'Errore nell\'apertura dell\'app di posta',
+          caption: 'Contatta ITL direttamente a itl.sas@virgilio.it',
           icon: 'error',
-          timeout: 5000,
+          timeout: 7000,
           position: 'top'
         });
       } finally {
@@ -260,6 +300,7 @@ export default {
       phoneNumber,
       text,
       isSubmitting,
+      isFormValid,
       onSubmit,
       onReset,
     };
