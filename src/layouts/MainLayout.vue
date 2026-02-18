@@ -91,6 +91,7 @@
                   <router-link to="/" class="footer-nav-link">Home</router-link>
                   <router-link to="/about" class="footer-nav-link">Chi Siamo</router-link>
                   <router-link to="/contattaci" class="footer-nav-link">Contatti</router-link>
+                  <router-link to="/privacy_policy" class="footer-nav-link">Privacy Policy</router-link>
                 </div>
                 
                 <div class="text-h6 text-weight-bold q-mb-md text-primary">Orari</div>

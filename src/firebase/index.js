@@ -20,10 +20,11 @@ const firebaseConfig = {
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-const analytics = firebase.analytics();
 
-analytics.setAnalyticsCollectionEnabled(true); // set the analytics collection on that tag
-//(don't deserve google tag manager if you copy the ga(google-analytics) tag that firebase provide you directly from the dashboard of your project)
+// NOTA: Google Analytics ora è gestito tramite Google Tag Manager (GTM-M564JXHL)
+// Commentato per evitare double tracking
+// const analytics = firebase.analytics();
+// analytics.setAnalyticsCollectionEnabled(true);
 
 // Initialize Cloud Firestore and get a reference to the service
 const db = firebase.firestore();
