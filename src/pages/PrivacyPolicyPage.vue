@@ -15,7 +15,7 @@
           <section class="q-mb-xl">
             <h2 class="text-h5 text-weight-bold text-primary q-mb-md">1. Chi siamo</h2>
             <p>
-              ITL s.r.l., con sede in Via Archimede 58r, 16142 Genova (GE), P.IVA/CF: [INSERIRE], 
+              ITL s.r.l., con sede in Via Archimede 58r, 16142 Genova (GE), P.IVA/CF: 02727120103, 
               è il <strong>Titolare del trattamento</strong> dei dati personali raccolti tramite il presente sito web 
               <span class="text-primary">{{ currentDomain }}</span>.
             </p>
