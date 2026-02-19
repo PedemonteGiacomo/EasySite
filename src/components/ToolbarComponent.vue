@@ -46,7 +46,7 @@
         <div class="q-pa-lg">
           <!-- Header -->
           <div class="row items-center q-mb-lg">
-            <q-avatar square size="50px" class="q-mr-sm" style="width: 70px;">
+            <q-avatar square size="120px" class="q-mr-sm" style="width: 100%;">
               <img src="icons/ITL_Logo.png" />
             </q-avatar>
             <div>
