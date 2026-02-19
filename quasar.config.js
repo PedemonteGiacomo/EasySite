@@ -56,20 +56,40 @@ module.exports = configure(function (/* ctx */) {
         node: "node16",
       },
 
-      vueRouterMode: "hash", // available values: 'hash', 'history'
+      vueRouterMode: "history", // available values: 'hash', 'history' - HISTORY for SEO!
       // vueRouterBase,
       // vueDevtools,
       // vueOptionsAPI: false,
+
+      // Performance optimizations
+      minify: true,
+      sourcemap: false,
+      
+      // SEO and Performance enhancements
+      extendViteConf(viteConf) {
+        // Optimize chunks for better loading
+        viteConf.build.rollupOptions = {
+          output: {
+            manualChunks: {
+              vendor: ['vue', 'vue-router', 'quasar'],
+              components: ['src/components/ServiceComponent.vue']
+            }
+          }
+        };
+        
+        // Preload critical resources
+        viteConf.build.assetsInlineLimit = 4096;
+        
+        return viteConf;
+      }
 
       // rebuildCache: true, // rebuilds Vite/linter/etc cache on startup
 
       // rawDefine: {}
       // ignorePublicFolder: true,
-      // minify: false,
       // polyfillModulePreload: true,
       // distDir
 
-      // extendViteConf (viteConf) {},
       // viteVuePluginOptions: {},
 
       // vitePlugins: [

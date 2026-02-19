@@ -36,6 +36,7 @@
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-vue": "^9.0.0",
     "postcss": "^8.4.14",
+    "prerender-spa-plugin": "^3.4.0",
     "prettier": "^2.5.1"
   },
   "engines": {

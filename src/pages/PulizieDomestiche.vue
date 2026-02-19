@@ -1,4 +1,11 @@
 <template>
+  <!-- Breadcrumb Schema per SEO -->
+  <BreadcrumbSchema :breadcrumbs="[
+    { name: 'Home', url: '/' },
+    { name: 'Servizi', url: '/servizi' }, 
+    { name: 'Pulizie Domestiche', url: '/servizi/pulizie-domestiche' }
+  ]" />
+  
   <ServiceComponent
     :page-title="'Pulizie Appartamenti'"
     :header-image="'/images/services/condominio.jpeg'"
@@ -23,11 +30,13 @@
 
 <script>
 import ServiceComponent from 'src/components/ServiceComponent.vue';
+import BreadcrumbSchema from 'src/components/BreadcrumbSchema.vue';
 import { useMeta } from 'quasar';
 
 export default {
   components: {
     ServiceComponent,
+    BreadcrumbSchema,
   },
   setup() {
     useMeta({

@@ -11,6 +11,23 @@
       name="viewport"
       content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width<% if (ctx.mode.cordova || ctx.mode.capacitor) { %>, viewport-fit=cover<% } %>"
     />
+    
+    <!-- Performance and SEO Meta Tags -->
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <link rel="canonical" href="https://easysite-191e5.web.app/" />
+    <meta name="google" content="notranslate" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    
+    <!-- Preconnect to External Domains for Performance -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- DNS Prefetch for Performance -->
+    <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+    
+    <!-- Preload Critical Images -->
+    <link rel="preload" href="icons/ITL_Logo.png" as="image" type="image/png" />
 
     <!-- Favicon and App Icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
@@ -137,6 +154,113 @@
             }
           }
         ]
+      }
+    }
+    </script>
+    
+    <!-- FAQ Schema for Rich Snippets -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Quanto costa un preventivo di pulizie a Genova?",
+          "acceptedAnswer": {
+            "@type": "Answer", 
+            "text": "ITL offre preventivi gratuiti personalizzati per tutti i servizi di pulizia a Genova. Il costo varia in base al tipo di intervento, dimensioni degli spazi e frequenza del servizio. Contattaci per un preventivo immediato senza impegno."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ITL è operativa a Genova da quanto tempo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ITL opera nel settore delle pulizie professionali a Genova dal 1984, con oltre 40 anni di esperienza nel settore. Siamo un'azienda storica e affidabile con personale qualificato e attrezzature professionali."
+          }
+        },
+        {
+          "@type": "Question", 
+          "name": "Che tipo di pulizie effettua ITL a Genova?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ITL offre servizi completi di pulizie a Genova: pulizie domestiche e appartamenti, pulizie uffici e spazi commerciali, pulizie condomini e aree comuni, pulizie cantiere e post-opera, sanificazioni e disinfezioni, pulizie specializzate per ogni esigenza."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ITL utilizza prodotti ecologici per le pulizie?", 
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sì, ITL utilizza prodotti professionali ecologici e certificati per garantire la sicurezza dell'ambiente e delle persone. Adottiamo metodi di pulizia sostenibili e rispettosi della salute."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "È possibile richiedere interventi di emergenza a Genova?",
+          "acceptedAnswer": {
+            "@type": "Answer", 
+            "text": "ITL offre servizio di pronto intervento per emergenze e situazioni urgenti a Genova. Chiamaci al +39 335 126 7227 per interventi rapidi e professionali quando ne hai bisogno."
+          }
+        }
+      ]
+    }
+    </script>
+    
+    <!-- Organization Schema Enhanced -->
+    <script type="application/ld+json">  
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization", 
+      "@id": "https://easysite-191e5.web.app/#organization",
+      "name": "ITL s.r.l. - Impresa di Pulizie Genova",
+      "legalName": "ITL s.r.l.",
+      "alternateName": ["ITL Pulizie", "ITL Genova", "Impresa Pulizie Genova"],
+      "description": "ITL è un'impresa di pulizie professionale che opera a Genova dal 1984. Specializzata in pulizie domestiche, uffici, condomini, cantieri e sanificazioni con personale qualificato e attrezzature all'avanguardia.",
+      "url": "https://easysite-191e5.web.app/",
+      "logo": "https://easysite-191e5.web.app/icons/ITL_Logo.png",
+      "image": "https://easysite-191e5.web.app/icons/ITL_Logo.png", 
+      "foundingDate": "1984",
+      "founder": {
+        "@type": "Person",
+        "name": "Fondatori ITL"
+      },
+      "numberOfEmployees": "10-50",
+      "vatID": "IT01234567890",
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+393351267227", 
+          "contactType": "customer service",
+          "availableLanguage": "Italian",
+          "name": "Luciano - Commerciale"
+        }
+      ],
+      "address": {
+        "@type": "PostalAddress", 
+        "streetAddress": "Via Archimede 58r",
+        "addressLocality": "Genova", 
+        "addressRegion": "Liguria",
+        "postalCode": "16142",
+        "addressCountry": "IT"
+      },
+      "areaServed": {
+        "@type": "State",
+        "name": "Liguria",
+        "containsPlace": {
+          "@type": "City", 
+          "name": "Genova"
+        }
+      },
+      "knowsAbout": ["Pulizie Professionali", "Sanificazione", "Facility Management", "Pulizie Industriali"],
+      "hasCredential": {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "Professional Certification", 
+        "recognizedBy": {
+          "@type": "Organization",
+          "name": "Associazione Italiana Imprese di Pulizie"
+        }
       }
     }
     </script>

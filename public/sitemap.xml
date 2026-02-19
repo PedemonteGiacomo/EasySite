@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   
   <!-- Homepage - Massima priorità per "ITL impresa di pulizie Genova" -->
   <url>
@@ -7,6 +8,10 @@
     <lastmod>2024-12-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://easysite-191e5.web.app/icons/ITL_Logo.png</image:loc>
+      <image:title>ITL Impresa di Pulizie Genova - Logo</image:title>
+    </image:image>
   </url>
   
   <!-- About Us -->
@@ -17,7 +22,7 @@
     <priority>0.8</priority>
   </url>
   
-  <!-- Services Overview -->
+  <!-- Services Overview - URL puliti con history mode -->
   <url>
     <loc>https://easysite-191e5.web.app/servizi</loc>
     <lastmod>2024-12-20</lastmod>
@@ -31,6 +36,10 @@
     <lastmod>2024-12-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://easysite-191e5.web.app/images/services/condominio.jpeg</image:loc>
+      <image:title>Pulizie Domestiche Genova - ITL</image:title>
+    </image:image>
   </url>
   
   <!-- Pulizie Uffici -->
@@ -39,6 +48,10 @@
     <lastmod>2024-12-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://easysite-191e5.web.app/images/services/uffici.jpeg</image:loc>
+      <image:title>Pulizie Uffici Genova - ITL</image:title>
+    </image:image>
   </url>
   
   <!-- Pulizie Condomini -->
@@ -55,6 +68,10 @@
     <lastmod>2024-12-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://easysite-191e5.web.app/images/services/cantiere.jpeg</image:loc>
+      <image:title>Pulizie Cantiere Genova - ITL</image:title>
+    </image:image>
   </url>
   
   <!-- Pulizie Specializzate -->
@@ -63,6 +80,10 @@
     <lastmod>2024-12-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://easysite-191e5.web.app/images/services/pulizie_specializzate.jpeg</image:loc>
+      <image:title>Pulizie Specializzate Genova - ITL</image:title>
+    </image:image>
   </url>
   
   <!-- Sanificazioni -->
@@ -71,6 +92,10 @@
     <lastmod>2024-12-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://easysite-191e5.web.app/images/services/sanificazione2.jpeg</image:loc>
+      <image:title>Sanificazione Genova - ITL</image:title>
+    </image:image>
   </url>
   
   <!-- Contact - Alta priorità per conversioni -->
