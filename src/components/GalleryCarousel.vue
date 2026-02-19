@@ -65,16 +65,16 @@
       
       <q-carousel-slide 
         :name="4" 
-        img-src="/images/services/condominio.jpeg"
+        img-src="/images/services/pulizie_specializzate.jpeg"
         class="gallery-slide"
       >
         <div class="slide-overlay">
           <div class="slide-content">
             <h3 class="slide-title text-white text-weight-bold">
-              Pulizie Condominiali
+              Servizi Completi di Pulizia
             </h3>
             <p class="slide-subtitle text-white opacity-90">
-              Manteniamo pulite le aree comuni
+              Per ogni esigenza, dalla casa all'ufficio
             </p>
           </div>
         </div>
