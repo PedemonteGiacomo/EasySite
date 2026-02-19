@@ -57,13 +57,14 @@ export default {
   },
   computed: {
     mapUrl() {
-      // Use Google Maps embed for specific address
-      const formattedAddress = encodeURIComponent(this.address);
-      return `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2825.2147462537447!2d8.931385476518033!3d44.405474971103186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12d343f4c5a7c2e5%3A0x7f8b7e8b7e8b7e8b!2sVia%20Archimede%2C%2058%2C%2016142%20Genova%20GE!5e0!3m2!1sit!2sit!4v1708185600000!5m2!1sit!2sit`;
+      // Search for the business name instead of address coordinates  
+      const businessName = encodeURIComponent("ITL Srl IMPRESA PULIZIA Genova");
+      return `https://maps.google.com/maps?q=${businessName}&t=&z=15&ie=UTF8&iwloc=&output=embed`;
     },
     fallbackMapUrl() {
-      const formattedAddress = encodeURIComponent(this.address);
-      return `https://www.google.com/maps/search/${formattedAddress}`;
+      // Search for the business name instead of address
+      const businessName = encodeURIComponent("ITL Srl IMPRESA PULIZIA");
+      return `https://www.google.com/maps/search/${businessName}`;
     }
   },
   mounted() {
