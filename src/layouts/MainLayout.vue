@@ -29,7 +29,7 @@
           <div class="q-py-xl">
             <div class="row q-col-gutter-xl items-start">
               <!-- Logo and company info -->
-              <div class="col-12 col-md-6 col-lg-3 text-center">
+              <div class="col-12 col-sm-3 text-center">
                 <router-link to="/" class="router-link-no-style">
                   <q-avatar square size="100px" class="q-mb-lg footer-logo" style="width: 140px;">
                     <img src="icons/ITL_Logo.png" alt="ITL Logo" />
@@ -40,7 +40,7 @@
               </div>
               
               <!-- Contact info -->
-              <div class="col-12 col-md-6 col-lg-3">
+              <div class="col-12 col-sm-3">
                 <div class="text-h6 text-weight-bold q-mb-lg text-primary">Contatti Diretti</div>
                 <div class="contact-list q-gutter-md">
                   <div class="contact-item">
@@ -72,7 +72,7 @@
               </div>
               
               <!-- Services links -->
-              <div class="col-12 col-md-6 col-lg-3">
+              <div class="col-12 col-sm-3">
                 <div class="text-h6 text-weight-bold q-mb-lg text-primary">I Nostri Servizi</div>
                 <div class="footer-links q-gutter-sm">
                   <router-link to="/servizi" class="footer-nav-link">Panoramica Servizi</router-link>
@@ -85,7 +85,7 @@
               </div>
               
               <!-- Company links -->
-              <div class="col-12 col-md-6 col-lg-3">
+              <div class="col-12 col-sm-3">
                 <div class="text-h6 text-weight-bold q-mb-lg text-primary">Azienda</div>
                 <div class="footer-links q-gutter-sm q-mb-lg">
                   <router-link to="/" class="footer-nav-link">Home</router-link>
@@ -94,14 +94,14 @@
                   <router-link to="/privacy_policy" class="footer-nav-link">Privacy Policy</router-link>
                 </div>
                 
-                <div class="text-h6 text-weight-bold q-mb-md text-primary">Orari</div>
+                <!-- <div class="text-h6 text-weight-bold q-mb-md text-primary">Orari</div>
                 <div class="contact-item" style="align-items: flex-start;">
                   <q-icon name="schedule" color="primary" size="sm" class="contact-icon" />
                   <div class="contact-details">
                     <div class="text-body2 text-grey-7">Lun-Ven: 8:00-18:00</div>
                     <div class="text-body2 text-grey-6">Weekend: Su appuntamento</div>
                   </div>
-                </div>
+                </div> -->
               </div>
             </div>
           </div>
