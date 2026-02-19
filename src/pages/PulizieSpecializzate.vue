@@ -22,11 +22,47 @@
 
 <script>
 import ServiceComponent from 'src/components/ServiceComponent.vue';
+import { useMeta } from 'quasar';
 
 export default {
   components: {
     ServiceComponent,
   },
+  setup() {
+    useMeta({
+      title: 'Pulizie Specializzate Genova | ITL Servizi Tecnici Avanzati dal 1984',
+      meta: {
+        description: {
+          name: 'description',
+          content: 'ITL offre servizi di pulizie specializzate a Genova. Rimozione macchie difficili, pulizia ambienti contaminati e trattamenti specifici con tecniche avanzate. Preventivo gratuito.'
+        },
+        keywords: {
+          name: 'keywords',
+          content: 'pulizie specializzate Genova, rimozione macchie Genova, pulizia tappeti Genova, ITL pulizie specializzate, servizi pulizia tecnica Genova'
+        },
+        // Open Graph
+        'og:title': {
+          property: 'og:title',
+          content: 'Pulizie Specializzate Genova | ITL Servizi Tecnici Avanzati'
+        },
+        'og:description': {
+          property: 'og:description',
+          content: 'ITL offre servizi di pulizie specializzate a Genova. Rimozione macchie difficili e trattamenti specifici con tecniche avanzate dal 1984.'
+        },
+        'og:type': { property: 'og:type', content: 'website' },
+        'og:site_name': { property: 'og:site_name', content: 'ITL Impresa di Pulizie' },
+        // Twitter Cards
+        'twitter:title': {
+          name: 'twitter:title',
+          content: 'Pulizie Specializzate Genova | ITL Servizi Tecnici Avanzati'
+        },
+        'twitter:description': {
+          name: 'twitter:description',
+          content: 'ITL offre servizi di pulizie specializzate a Genova. Rimozione macchie difficili e trattamenti specifici con tecniche avanzate.'
+        }
+      }
+    });
+  }
 };
 </script>
 

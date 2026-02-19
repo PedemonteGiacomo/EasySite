@@ -23,11 +23,48 @@
 
 <script>
 import ServiceComponent from 'src/components/ServiceComponent.vue';
+import { useMeta } from 'quasar';
 
 export default {
   components: {
     ServiceComponent,
   },
+  setup() {
+    useMeta({
+      title: 'Pulizie Condomini Genova | ITL Servizi Aree Comuni dal 1984',
+      meta: {
+        description: {
+          name: 'description',
+          content: 'ITL offre servizi specializzati di pulizie condomini a Genova. Pulizia aree comuni, scale, ascensori e cortili con personale esperto. Preventivo gratuito.'
+        },
+        keywords: {
+          name: 'keywords',
+          content: 'pulizie condomini Genova, pulizia aree comuni Genova, pulizie scale condomini Genova, ITL pulizie condomini, servizi pulizia condominiale Genova'
+        },
+        // Open Graph
+        'og:title': {
+          property: 'og:title',
+          content: 'Pulizie Condomini Genova | ITL Servizi Aree Comuni'
+        },
+        'og:description': {
+          property: 'og:description',
+          content: 'ITL offre servizi specializzati di pulizie condomini a Genova. Pulizia aree comuni, scale e ascensori con personale esperto dal 1984.'
+        },
+        'og:type': { property: 'og:type', content: 'website' },
+        'og:site_name': { property: 'og:site_name', content: 'ITL Impresa di Pulizie' },
+        // Twitter Cards
+        'twitter:title': {
+          name: 'twitter:title',
+          content: 'Pulizie Condomini Genova | ITL Servizi Aree Comuni'
+        },
+        'twitter:description': {
+          name: 'twitter:description',
+          content: 'ITL offre servizi specializzati di pulizie condomini a Genova. Pulizia aree comuni e scale con personale esperto.'
+        }
+      }
+    });
+  }
+};
 };
 </script>
 

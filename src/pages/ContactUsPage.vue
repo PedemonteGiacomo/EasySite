@@ -180,11 +180,37 @@ import { useMeta } from 'quasar';
 
 // SEO metadata
 const metaData = {
-  title: 'Contatti - ITL Impresa di Pulizie',
-  titleTemplate: title => `${title} - Genova`,
+  title: 'Contatti ITL Genova | Preventivo Gratuito Pulizie - Chiamaci Subito',
+  titleTemplate: title => `${title}`,
   meta: {
-    description: { name: 'description', content: 'Contatta ITL per un preventivo gratuito. Servizi di pulizia professionali a Genova. Risposta entro 24 ore.' },
-    keywords: { name: 'keywords', content: 'contatti pulizie Genova, preventivo pulizie, ITL contatti' },
+    description: { 
+      name: 'description', 
+      content: 'Contatta ITL per un preventivo gratuito di pulizie a Genova. Servizi professionali per casa, ufficio e condomini. Chiamaci al numero o compila il form. Risposta entro 24 ore.' 
+    },
+    keywords: { 
+      name: 'keywords', 
+      content: 'contatti ITL Genova, preventivo gratuito pulizie Genova, ITL telefono contatti, richiesta preventivo pulizie, contatti impresa pulizie Genova'
+    },
+    // Open Graph
+    'og:title': {
+      property: 'og:title',
+      content: 'Contatti ITL Genova | Preventivo Gratuito Pulizie'
+    },
+    'og:description': {
+      property: 'og:description',
+      content: 'Contatta ITL per un preventivo gratuito di pulizie a Genova. Servizi professionali per casa, ufficio e condomini.'
+    },
+    'og:type': { property: 'og:type', content: 'website' },
+    'og:site_name': { property: 'og:site_name', content: 'ITL Impresa di Pulizie' },
+    // Twitter Cards
+    'twitter:title': {
+      name: 'twitter:title',
+      content: 'Contatti ITL Genova | Preventivo Gratuito Pulizie'
+    },
+    'twitter:description': {
+      name: 'twitter:description',
+      content: 'Contatta ITL per un preventivo gratuito di pulizie a Genova. Servizi professionali per casa e ufficio.'
+    }
   }
 }
 

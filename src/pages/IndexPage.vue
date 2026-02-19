@@ -8,12 +8,14 @@
             <div class="container">
               <div class="hero-text q-pl-lg">
                 <h1 class="hero-title text-balance">
-                  Servizi di Pulizia 
-                  <span class="text-primary">Professionali</span> 
-                  a Genova
+                  ITL Impresa di Pulizie
+                  <span class="text-primary">Genova</span> 
+                  dal 1984
                 </h1>
                 <p class="hero-subtitle text-balance">
-                  Una realtà fondata sulla soddisfazione del cliente, caratterizzata dalla velocità e dall'accuratezza nell'effettuare pulizie complete per varie tipologie di immobili.
+                  ITL è l'impresa di pulizie di riferimento a Genova dal 1984. Offriamo servizi professionali 
+                  di pulizie domestiche, uffici, condomini e cantieri con velocità, accuratezza e 
+                  prodotti ecologici certificati. Preventivo gratuito in 24 ore.
                 </p>
                 <div class="hero-actions row q-gutter-md q-mt-lg">
                   <router-link to="/contattaci">
@@ -50,11 +52,12 @@
     <!-- QUALITY PROMISE SECTION -->
     <section class="section bg-white">
       <div class="container text-center">
-        <h2 class="section-title">Eccellenza in ogni dettaglio</h2>
+        <h2 class="section-title">Impresa di Pulizie Genova: Eccellenza in ogni dettaglio</h2>
         <p class="section-subtitle">
-          Il nostro servizio di pulizia offre risultati impeccabili che superano le tue aspettative. 
-          Ogni spazio trasformato in uno scenario di pulizia e freschezza, grazie alla nostra attenzione ai 
-          dettagli e all'uso di prodotti di alta qualità.
+          ITL è l'impresa di pulizie di riferimento a Genova e provincia. I nostri servizi 
+          professionali di pulizia offrono risultati impeccabili che superano le aspettative. 
+          Ogni spazio è trasformato con precisione grazie alla nostra esperienza dal 1984 e 
+          all'uso di prodotti ecologici certificati.
         </p>
       </div>
     </section>
@@ -63,9 +66,11 @@
     <section ref="statsSection" class="section">
       <div class="container">
         <div class="text-center q-mb-xl">
-          <h2 class="section-title">La nostra esperienza in numeri</h2>
+          <h2 class="section-title">ITL Impresa Pulizie Genova: La nostra esperienza in numeri</h2>
           <p class="section-subtitle">
-            Affidabilità e qualità comprovate da anni di servizio sul territorio genovese
+            Oltre 40 anni di esperienza nell'impresa di pulizie a Genova. 
+            Affidabilità e qualità comprovate da decenni di servizio professionale 
+            sul territorio genovese e in tutta la Liguria.
           </p>
         </div>
 
@@ -147,9 +152,10 @@
     <section class="section bg-white">
       <div class="container">
         <div class="text-center q-mb-xl">
-          <h2 class="section-title">Perché scegliere ITL</h2>
+          <h2 class="section-title">Perché scegliere ITL come impresa di pulizie a Genova</h2>
           <p class="section-subtitle">
-            I nostri valori e il nostro impegno per offrire un servizio eccellente
+            I nostri valori e il nostro impegno per offrire servizi di pulizia 
+            eccellenti a Genova dal 1984
           </p>
         </div>
 
@@ -188,18 +194,21 @@
               class="rounded-borders"
               style="height: 400px;"
               fit="cover"
+              alt="ITL Impresa di Pulizie Genova - Attrezzature e prodotti professionali per pulizie di qualità"
             />
           </div>
           <div class="col-12 col-md-6">
-            <h2 class="section-title">Pulizie di qualità dal 1984</h2>
+            <h2 class="section-title">ITL Impresa di Pulizie: qualità dal 1984 a Genova</h2>
             <p class="text-body1 q-mb-md text-grey-8 text-balance">
-              Presso ITL - Impresa di Pulizie, ci dedichiamo a fornire servizi di 
-              pulizia di qualità eccezionale che superano le aspettative dei nostri clienti.
+              ITL è un'impresa di pulizie consolidata a Genova dal 1984. Ci dedichiamo a fornire 
+              servizi di pulizia di qualità eccezionale che superano le aspettative dei nostri 
+              clienti su tutto il territorio genovese e ligure.
             </p>
             <p class="text-body1 q-mb-lg text-grey-8 text-balance">
-              Sappiamo quanto sia importante per te mantenere un ambiente pulito, sano e invitante, 
-              sia a casa che in ufficio. Per questo utilizziamo metodologie innovative e prodotti 
-              all'avanguardia per garantire risultati straordinari.
+              Sappiamo quanto sia importante mantenere un ambiente pulito, sano e invitante, 
+              sia per abitazioni private che per uffici commerciali. Per questo la nostra 
+              impresa di pulizie utilizza metodologie innovative e prodotti 
+              all'avanguardia per garantire risultati straordinari a Genova.
             </p>
             <router-link to="/about#storia">
               <q-btn 
@@ -218,9 +227,10 @@
     <section class="section bg-white">
       <div class="container">
         <div class="text-center q-mb-xl">
-          <h2 class="section-title">Dove trovarci</h2>
+          <h2 class="section-title">ITL Impresa Pulizie: dove trovarci a Genova</h2>
           <p class="section-subtitle">
-            Serviamo Genova e provincia con professionalità e puntualità
+            La nostra impresa di pulizie serve Genova e tutta la provincia ligure 
+            con professionalità, puntualità e oltre 40 anni di esperienza
           </p>
         </div>
         <MapComponent address="ITL s.r.l. IMPRESA PULIZIA, Genova Italy" />
@@ -496,15 +506,42 @@ import CallToActionButton from "src/components/CallToActionButton.vue";
 // all the MetaData that application needs to have like API handlers for G-Analytics and SEO
 const metaData = {
   // sets document title
-  title: 'ITL s.r.l. impresa di pulizie',
+  title: 'ITL Impresa di Pulizie Genova | Servizi Professionali dal 1984',
   // optional; sets final title as "Index Page - My Website", useful for multiple level meta
-  titleTemplate: title => `${title} - Genova`,
+  titleTemplate: title => title,
 
   // meta tags
   meta: {
-    //title: { name: "title", content: 'ITL sas Impresa di pulizie'},
-    description: { name: 'description', content: 'ITL impresa di pulizie genova, servizi di pulizie' },
-    keywords: { name: 'keywords', content: 'ITL impresa di pulizi Genova' },
+    description: { 
+      name: 'description', 
+      content: 'ITL Impresa di Pulizie Genova: servizi professionali di pulizie domestiche, uffici, condomini e cantieri. Dal 1984 a Genova e provincia. Preventivo gratuito in 24h.' 
+    },
+    keywords: { 
+      name: 'keywords', 
+      content: 'ITL impresa pulizie Genova, pulizie domestiche Genova, pulizie uffici Genova, pulizie condomini Genova, impresa pulizie professionale, servizi pulizie Liguria, pulizie cantiere Genova, sanificazione Genova' 
+    },
+    author: { name: 'author', content: 'ITL s.r.l. Impresa di Pulizie' },
+    robots: { name: 'robots', content: 'index,follow' },
+    
+    // Open Graph / Facebook
+    'og:title': { property: 'og:title', content: 'ITL Impresa di Pulizie Genova | Servizi Professionali dal 1984' },
+    'og:description': { property: 'og:description', content: 'ITL Impresa di Pulizie Genova: servizi professionali di pulizie domestiche, uffici, condomini e cantieri. Dal 1984 a Genova e provincia.' },
+    'og:type': { property: 'og:type', content: 'website' },
+    'og:url': { property: 'og:url', content: 'https://itl-impresadipulizie-genova.web.app' },
+    'og:site_name': { property: 'og:site_name', content: 'ITL Impresa di Pulizie Genova' },
+    'og:locale': { property: 'og:locale', content: 'it_IT' },
+    
+    // Twitter Card
+    'twitter:card': { name: 'twitter:card', content: 'summary_large_image' },
+    'twitter:title': { name: 'twitter:title', content: 'ITL Impresa di Pulizie Genova | Servizi Professionali dal 1984' },
+    'twitter:description': { name: 'twitter:description', content: 'ITL Impresa di Pulizie Genova: servizi professionali dal 1984. Preventivo gratuito in 24h.' },
+    
+    // Geographic SEO
+    'geo.region': { name: 'geo.region', content: 'IT-LIG' },
+    'geo.placename': { name: 'geo.placename', content: 'Genova' },
+    'geo.position': { name: 'geo.position', content: '44.4056;8.9463' },
+    'ICBM': { name: 'ICBM', content: '44.4056, 8.9463' },
+    
     equiv: { 'http-equiv': 'Content-Type', content: 'text/html; charset=UTF-8' },
   }
 

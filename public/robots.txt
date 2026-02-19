@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://itl-impresadipulizie-genova.web.app/sitemap.xml
+
+# Discourage crawling of admin/private pages (if any)
+Disallow: /admin/
+Disallow: /.firebase/
+
+# Allow important pages for SEO
+Allow: /
+Allow: /about
+Allow: /servizi
+Allow: /servizi/*
+Allow: /contattaci
+Allow: /privacy_policy
+
+# Crawl delay (optional - helps prevent overloading server)
+Crawl-delay: 1

@@ -14,7 +14,7 @@
         icon="phone" 
         class="itl-btn-primary"
         size="lg"
-        @click="window.open('tel:+393351267227')"
+        @click="callLuciano"
       >
         <q-tooltip class="bg-primary text-white" anchor="center left" self="center right">
           Chiama Luciano
@@ -138,6 +138,11 @@ export default {
     ToolbarComponent,
   },
   name: "MainLayout",
+  methods: {
+    callLuciano() {
+      window.location.href = 'tel:+393351267227';
+    }
+  }
 };
 </script>
 

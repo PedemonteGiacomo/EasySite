@@ -22,11 +22,47 @@
 
 <script>
 import ServiceComponent from 'src/components/ServiceComponent.vue';
+import { useMeta } from 'quasar';
 
 export default {
   components: {
     ServiceComponent,
   },
+  setup() {
+    useMeta({
+      title: 'Sanificazione Genova | ITL Servizi Disinfezione Professionale dal 1984',
+      meta: {
+        description: {
+          name: 'description',
+          content: 'ITL offre servizi professionali di sanificazione e disinfezione a Genova. Interventi specializzati per uffici, case e aziende con prodotti certificati. Preventivo gratuito.'
+        },
+        keywords: {
+          name: 'keywords',
+          content: 'sanificazione Genova, disinfezione Genova, sanificazione uffici Genova, ITL sanificazione, servizi disinfezione professionale Genova'
+        },
+        // Open Graph
+        'og:title': {
+          property: 'og:title',
+          content: 'Sanificazione Genova | ITL Servizi Disinfezione Professionale'
+        },
+        'og:description': {
+          property: 'og:description',
+          content: 'ITL offre servizi professionali di sanificazione e disinfezione a Genova. Interventi specializzati con prodotti certificati dal 1984.'
+        },
+        'og:type': { property: 'og:type', content: 'website' },
+        'og:site_name': { property: 'og:site_name', content: 'ITL Impresa di Pulizie' },
+        // Twitter Cards
+        'twitter:title': {
+          name: 'twitter:title',
+          content: 'Sanificazione Genova | ITL Servizi Disinfezione Professionale'
+        },
+        'twitter:description': {
+          name: 'twitter:description',
+          content: 'ITL offre servizi professionali di sanificazione e disinfezione a Genova. Interventi specializzati con prodotti certificati.'
+        }
+      }
+    });
+  }
 };
 </script>
 

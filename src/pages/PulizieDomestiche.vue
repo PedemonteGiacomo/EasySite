@@ -23,11 +23,47 @@
 
 <script>
 import ServiceComponent from 'src/components/ServiceComponent.vue';
+import { useMeta } from 'quasar';
 
 export default {
   components: {
     ServiceComponent,
   },
+  setup() {
+    useMeta({
+      title: 'Pulizie Domestiche Genova | ITL Servizi Appartamenti dal 1984',
+      meta: {
+        description: {
+          name: 'description',
+          content: 'ITL offre servizi professionali di pulizie domestiche a Genova. Pulizia appartamenti, case e abitazioni private con personale qualificato. Preventivo gratuito.'
+        },
+        keywords: {
+          name: 'keywords', 
+          content: 'pulizie domestiche Genova, pulizia appartamenti Genova, pulizie case Genova, ITL pulizie domestiche, servizi pulizia abitazioni Genova'
+        },
+        // Open Graph
+        'og:title': {
+          property: 'og:title',
+          content: 'Pulizie Domestiche Genova | ITL Servizi Appartamenti'
+        },
+        'og:description': {
+          property: 'og:description',
+          content: 'ITL offre servizi professionali di pulizie domestiche a Genova. Pulizia appartamenti e case con personale qualificato dal 1984.'
+        },
+        'og:type': { property: 'og:type', content: 'website' },
+        'og:site_name': { property: 'og:site_name', content: 'ITL Impresa di Pulizie' },
+        // Twitter Cards  
+        'twitter:title': {
+          name: 'twitter:title',
+          content: 'Pulizie Domestiche Genova | ITL Servizi Appartamenti'
+        },
+        'twitter:description': {
+          name: 'twitter:description',
+          content: 'ITL offre servizi professionali di pulizie domestiche a Genova. Pulizia appartamenti e case con personale qualificato.'
+        }
+      }
+    });
+  }
 };
 </script>
 

@@ -23,11 +23,48 @@
 
 <script>
 import ServiceComponent from 'src/components/ServiceComponent.vue'; // Update the path
+import { useMeta } from 'quasar';
 
 export default {
   components: {
     ServiceComponent,
   },
+  setup() {
+    useMeta({
+      title: 'Pulizie Uffici Genova | ITL Servizi Pulizie Commerciali dal 1984',
+      meta: {
+        description: {
+          name: 'description',
+          content: 'ITL eroga servizi professionali di pulizie uffici e commerciali a Genova. Pulizia spazi di lavoro, aziende e negozi con personale qualificato. Preventivo gratuito.'
+        },
+        keywords: {
+          name: 'keywords',
+          content: 'pulizie uffici Genova, pulizie commerciali Genova, pulizia aziende Genova, ITL pulizie uffici, servizi pulizia commerciale Genova'
+        },
+        // Open Graph
+        'og:title': {
+          property: 'og:title',
+          content: 'Pulizie Uffici Genova | ITL Servizi Pulizie Commerciali'
+        },
+        'og:description': {
+          property: 'og:description',
+          content: 'ITL eroga servizi professionali di pulizie uffici e commerciali a Genova. Pulizia spazi di lavoro e aziende con personale qualificato dal 1984.'
+        },
+        'og:type': { property: 'og:type', content: 'website' },
+        'og:site_name': { property: 'og:site_name', content: 'ITL Impresa di Pulizie' },
+        // Twitter Cards
+        'twitter:title': {
+          name: 'twitter:title',
+          content: 'Pulizie Uffici Genova | ITL Servizi Pulizie Commerciali'
+        },
+        'twitter:description': {
+          name: 'twitter:description',
+          content: 'ITL eroga servizi professionali di pulizie uffici e commerciali a Genova. Pulizia spazi di lavoro con personale qualificato.'
+        }
+      }
+    });
+  }
+};
 };
 </script>
 

@@ -23,11 +23,48 @@
 
 <script>
 import ServiceComponent from 'src/components/ServiceComponent.vue'; // Update the path
+import { useMeta } from 'quasar';
 
 export default {
   components: {
     ServiceComponent,
   },
+  setup() {
+    useMeta({
+      title: 'Pulizie Cantiere Genova | ITL Servizi Edilizia e Costruzioni dal 1984',
+      meta: {
+        description: {
+          name: 'description',
+          content: 'ITL offre servizi specializzati di pulizie cantiere a Genova. Pulizia post-opera, cantieri edili e aree di costruzione con personale esperto. Preventivo gratuito.'
+        },
+        keywords: {
+          name: 'keywords',
+          content: 'pulizie cantiere Genova, pulizie post opera Genova, pulizie edili Genova, ITL pulizie cantiere, servizi pulizia costruzioni Genova'
+        },
+        // Open Graph
+        'og:title': {
+          property: 'og:title',
+          content: 'Pulizie Cantiere Genova | ITL Servizi Edilizia e Costruzioni'
+        },
+        'og:description': {
+          property: 'og:description',
+          content: 'ITL offre servizi specializzati di pulizie cantiere a Genova. Pulizia post-opera e cantieri edili con personale esperto dal 1984.'
+        },
+        'og:type': { property: 'og:type', content: 'website' },
+        'og:site_name': { property: 'og:site_name', content: 'ITL Impresa di Pulizie' },
+        // Twitter Cards
+        'twitter:title': {
+          name: 'twitter:title',
+          content: 'Pulizie Cantiere Genova | ITL Servizi Edilizia e Costruzioni'
+        },
+        'twitter:description': {
+          name: 'twitter:description',
+          content: 'ITL offre servizi specializzati di pulizie cantiere a Genova. Pulizia post-opera e cantieri edili con personale esperto.'
+        }
+      }
+    });
+  }
+};
 };
 </script>
 

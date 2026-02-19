@@ -313,6 +313,11 @@ Messaggio generato automaticamente dal sito ITL - ${new Date().toLocaleString('i
   max-width: 600px;
   margin: 0 auto;
   padding: 0 1rem;
+  
+  @media (max-width: 767px) {
+    max-width: none;
+    padding: 0;
+  }
 }
 
 .form-content {
@@ -378,10 +383,25 @@ Messaggio generato automaticamente dal sito ITL - ${new Date().toLocaleString('i
     }
   }
   
+  .form-content {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  
+  .row.q-col-gutter-md {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  
+  .row.q-col-gutter-md > div {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  
   .itl-input {
-    margin-left: 0px !important;
-    margin-right: 0px !important;
-    width: 100% !important;
+    margin-left: 0.8rem !important;
+    margin-right: 0.15rem !important;
+    width: calc(100% - 0.65rem) !important;
   }
 }
 </style>

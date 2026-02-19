@@ -284,12 +284,48 @@
 <script>
 import GoogleReviews from '../components/GoogleReviews.vue'
 import MapComponent from '../components/MapComponent.vue'
+import { useMeta } from 'quasar';
 
 export default {
   name: 'AboutUsPage',
   components: {
     GoogleReviews,
     MapComponent
+  },
+  setup() {
+    useMeta({
+      title: 'Chi Siamo | ITL Impresa di Pulizie Genova dal 1984 - La Nostra Storia',
+      meta: {
+        description: {
+          name: 'description',
+          content: 'Scopri la storia di ITL, impresa di pulizie attiva a Genova dal 1984. 40 anni di esperienza nel settore pulizie domestiche, commerciali e specializzate. La nostra missione.'
+        },
+        keywords: {
+          name: 'keywords',
+          content: 'ITL storia, impresa pulizie Genova dal 1984, chi siamo ITL, azienda pulizie Genova esperienza, storia ITL pulizie'
+        },
+        // Open Graph
+        'og:title': {
+          property: 'og:title',
+          content: 'Chi Siamo | ITL Impresa di Pulizie Genova dal 1984'
+        },
+        'og:description': {
+          property: 'og:description',
+          content: 'Scopri la storia di ITL, impresa di pulizie attiva a Genova dal 1984. 40 anni di esperienza nel settore pulizie.'
+        },
+        'og:type': { property: 'og:type', content: 'website' },
+        'og:site_name': { property: 'og:site_name', content: 'ITL Impresa di Pulizie' },
+        // Twitter Cards
+        'twitter:title': {
+          name: 'twitter:title',
+          content: 'Chi Siamo | ITL Impresa di Pulizie Genova dal 1984'
+        },
+        'twitter:description': {
+          name: 'twitter:description',
+          content: 'Scopri la storia di ITL, impresa di pulizie attiva a Genova dal 1984. 40 anni di esperienza nel settore pulizie.'
+        }
+      }
+    });
   }
 }
 </script>
