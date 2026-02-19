@@ -334,16 +334,16 @@ export default defineComponent({
   text-decoration: none;
   transition: all 0.2s ease;
   display: inline-block;
-  
-  &:hover {
-    text-decoration: underline;
-    transform: scale(1.02);
-    filter: brightness(1.1);
-  }
-  
-  &:active {
-    transform: scale(0.98);
-  }
+}
+
+.contact-link:hover {
+  text-decoration: underline;
+  transform: scale(1.02);
+  filter: brightness(1.1);
+}
+
+.contact-link:active {
+  transform: scale(0.98);
 }
 
 .hours-info {

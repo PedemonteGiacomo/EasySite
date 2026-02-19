@@ -398,24 +398,11 @@
   flex-direction: column;
   justify-content: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  
-  &:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-hover);
-  }
 }
 
-.stats-card {
-  min-height: 200px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  
-  &:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-hover);
-  }
+.stats-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
 }
 
 .trust-badge {

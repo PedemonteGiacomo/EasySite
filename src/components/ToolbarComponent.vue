@@ -253,15 +253,15 @@ export default defineComponent({
 .logo-container {
   transition: all 0.2s ease;
   cursor: pointer;
-  
-  &:hover {
-    transform: scale(1.02);
-    opacity: 0.9;
-  }
-  
-  &:active {
-    transform: scale(0.98);
-  }
+}
+
+.logo-container:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
+}
+
+.logo-container:active {
+  transform: scale(0.98);
 }
 
 /* Remove underline from router links */

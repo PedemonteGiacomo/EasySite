@@ -219,16 +219,16 @@ export default {
   line-height: 1.4;
   transition: all 0.2s ease;
   display: block;
-  
-  &:hover {
-    color: var(--primary);
-    text-decoration: underline;
-    transform: translateX(4px);
-  }
-  
-  &:active {
-    transform: translateX(2px);
-  }
+}
+
+.footer-link:hover {
+  color: var(--primary);
+  text-decoration: underline;
+  transform: translateX(4px);
+}
+
+.footer-link:active {
+  transform: translateX(2px);
 }
 
 .footer-links {
@@ -243,40 +243,40 @@ export default {
   padding: 6px 0;
   transition: all 0.2s ease;
   position: relative;
-  
-  &:hover {
-    color: var(--primary);
-    padding-left: 8px;
-  }
-  
-  &:before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 0;
-    height: 2px;
-    background: var(--primary);
-    transition: width 0.3s ease;
-  }
-  
-  &:hover:before {
-    width: 4px;
-  }
+}
+
+.footer-nav-link:hover {
+  color: var(--primary);
+  padding-left: 8px;
+}
+
+.footer-nav-link:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: width 0.3s ease;
+}
+
+.footer-nav-link:hover:before {
+  width: 4px;
 }
 
 .footer-bottom {
   background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+}
+
+@media (max-width: 767px) {
+  .footer-bottom .col-md-auto:first-child {
+    margin-bottom: 8px;
+  }
   
-  @media (max-width: 767px) {
-    .col-md-auto:first-child {
-      margin-bottom: 8px;
-    }
-    
-    .col-md-auto:last-child {
-      margin-top: 0 !important;
-    }
+  .footer-bottom .col-md-auto:last-child {
+    margin-top: 0 !important;
   }
 }
 
@@ -285,11 +285,11 @@ export default {
   text-decoration: none;
   border-bottom: 1px dotted rgba(255, 255, 255, 0.5);
   transition: all 0.2s ease;
-  
-  &:hover {
-    color: white;
-    border-bottom: 1px solid white;
-    transform: scale(1.02);
-  }
+}
+
+.portfolio-link:hover {
+  color: white;
+  border-bottom: 1px solid white;
+  transform: scale(1.02);
 }
 </style>
