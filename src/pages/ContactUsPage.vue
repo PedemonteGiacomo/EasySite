@@ -137,7 +137,7 @@
                   <q-icon name="call" size="lg" color="secondary" />
                 </div>
                 <div class="timeline-content">
-                  <h4 class="text-h6 text-weight-bold">Entro 24 ore</h4>
+                  <h4 class="text-h6 text-weight-bold">Entro 12 ore</h4>
                   <p class="text-body2 text-grey-7">Chiamata per discutere le tue esigenze</p>
                 </div>
               </div>
@@ -147,7 +147,7 @@
                   <q-icon name="assignment" size="lg" color="accent" />
                 </div>
                 <div class="timeline-content">
-                  <h4 class="text-h6 text-weight-bold">Entro 48 ore</h4>
+                  <h4 class="text-h6 text-weight-bold">Entro 24 ore</h4>
                   <p class="text-body2 text-grey-7">Preventivo dettagliato e personalizzato</p>
                 </div>
               </div>
