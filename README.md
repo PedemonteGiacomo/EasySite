@@ -1,30 +1,20 @@
-# EasySite - Template Vue.js
+# ITL Impresa di Pulizie - Sito Web
 
-EasySite is a versatile Vue.js and Quasar template designed for creating sleek and intuitive facade websites. It's engineered for simplicity, making it effortless to customize and enhance according to your specific needs.
+Sito web ufficiale di ITL s.r.l., impresa di pulizie con sede a Genova. Sviluppato con Vue.js e Quasar Framework, offre un'interfaccia moderna e intuitiva per presentare i servizi di pulizia professionale dell'azienda.
 
-Watch [this site realized with this template](https://itlpuliziegenova.it)
-
-
-[![Video Presentation](readme_images/facade.png)](https://clipchamp.com/watch/rGfTaHwric3)
-
+**Sito live:** [https://itl-impresadipulizie-genova.web.app/](https://itl-impresadipulizie-genova.web.app/)
 
 ## Table of Contents
 
-- [EasySite - Template Vue.js](#easysite---template-vuejs)
+- [ITL Impresa di Pulizie - Sito Web](#itl-impresa-di-pulizie---sito-web)
   - [Table of Contents](#table-of-contents)
-- [Requisites](#requisites)
-  - [Ensure Node.js and Vue CLI are Installed:](#ensure-nodejs-and-vue-cli-are-installed)
-  - [Quasar Framework](#quasar-framework)
-- [How to use this Template?](#how-to-use-this-template)
-  - [Clone this Repository:](#clone-this-repository)
-  - [Navigate to the Project Directory:](#navigate-to-the-project-directory)
-  - [Install Dependencies:](#install-dependencies)
-    - [Install Function Dependencies](#install-function-dependencies)
-      - [Navigate inside "functions" folder](#navigate-inside-functions-folder)
-      - [Install functions dependencies](#install-functions-dependencies)
-      - [Navigate back to the EasySite folder](#navigate-back-to-the-easysite-folder)
-  - [Run the Quasar Project:](#run-the-quasar-project)
-- [Make it Personal](#make-it-personal)
+- [About ITL](#about-itl)
+- [Tecnologie Utilizzate](#tecnologie-utilizzate)
+- [Struttura del Progetto](#struttura-del-progetto)
+- [Setup per Sviluppo](#setup-per-sviluppo)
+  - [Requisiti](#requisiti)
+  - [Installazione](#installazione)
+- [Funzionalità Principali](#funzionalità-principali)
   - [Adapt Packages \& Configuration with your Project Name](#adapt-packages--configuration-with-your-project-name)
     - [Configuration](#configuration)
     - [Pakages](#pakages)
@@ -41,9 +31,48 @@ Watch [this site realized with this template](https://itlpuliziegenova.it)
   - [Animations and Transitions](#animations-and-transitions)
 - [Contributing](#contributing)
 
-# Requisites
+# About ITL
 
-## Ensure Node.js and Vue CLI are Installed:
+ITL s.r.l. è un'impresa di pulizie professionale con sede a Genova che offre un'ampia gamma di servizi di pulizia per abitazioni, uffici, condomini e cantieri. Il sito web presenta in modo chiaro e professionale tutti i servizi offerti dall'azienda.
+
+## Servizi Offerti
+
+- **Pulizie Domestiche**: Servizi di pulizia per abitazioni private
+- **Pulizie Commerciali**: Pulizia di uffici e spazi commerciali  
+- **Pulizie Condomini**: Manutenzione e pulizia aree comuni
+- **Pulizie Cantiere**: Servizi specializzati per cantieri edili
+- **Pulizie Specializzate**: Servizi specifici e personalizzati
+- **Sanificazione**: Servizi di sanificazione ambienti
+
+# Tecnologie Utilizzate
+
+Il sito è sviluppato utilizzando moderne tecnologie web:
+
+- **Vue.js 3**: Framework JavaScript progressivo
+- **Quasar Framework**: Framework basato su Vue.js per interfacce responsive
+- **Firebase**: Piattaforma per hosting e backend
+- **Firestore**: Database NoSQL per gestione contatti
+- **SendGrid**: Servizio per l'invio automatico di email
+- **Google Maps API**: Integrazione mappe per localizzazione
+- **Trustmary**: Widget per recensioni Google
+
+# Struttura del Progetto
+
+Il progetto segue una struttura organizzata per facilitare la manutenzione:
+
+```
+src/
+├── components/     # Componenti riutilizzabili
+├── pages/         # Pagine del sito
+├── layouts/       # Layout principali
+├── router/        # Configurazione routing
+├── firebase/      # Configurazione Firebase
+└── assets/        # Risorse statiche
+```
+
+# Setup per Sviluppo
+
+## Requisiti
 
 Make sure that you have **Node.js** installed. If not, you can download it from [nodejs.org](https://nodejs.org).
 
@@ -61,76 +90,61 @@ Make sure you have Quasar CLI installed globally. If not, you can install it usi
 npm install -g @quasar/cli
 ```
 
-Refers always to the official documentation of Quasar that you will find [on their official website](https://quasar.dev/docs).
+Per maggiori informazioni consulta sempre la [documentazione ufficiale di Quasar](https://quasar.dev/docs).
 
-# How to use this Template?
+## Installazione
 
-## Clone this Repository:
-Clone this repository to your local machine:
+Per installare il progetto localmente:
+
 ```bash
+# Clona il repository
 git clone https://github.com/PedemonteGiacomo/EasySite
-```
-
-## Navigate to the Project Directory:
-
-Now you should navigate to the project directory:
-
-```bash
 cd EasySite
-```
 
-## Install Dependencies:
-
-Inside the project directory, you should install the project dependencies:
-
-```bash
+# Installa le dipendenze principali
 npm install
-```
 
-### Install Function Dependencies
-
-Since we are using Firebase I've created a personal usage of the SendGrid Trigger a simple function calling via API hosted by Firebase functions as discussed later in this guide.
-
-When you run ```firebase deploy``` will instantiate those functions declared in the [function/index.js](https://github.com/PedemonteGiacomo/EasySite/blob/main/functions/index.js) so install the dependencies that those functions need following these steps.
-
-#### Navigate inside "functions" folder
-```bash
+# Installa le dipendenze delle Firebase Functions
 cd functions
-```
-
-#### Install functions dependencies
-```bash
 npm install
-```
-
-#### Navigate back to the EasySite folder
-```bash
 cd ..
 ```
 
-## Run the Quasar Project:
-
-To run the Quasar project in development mode, as suggested, users can use the following command:
+### Avvio in Modalità Sviluppo
 
 ```bash
 quasar dev
 ```
-This will start the development server, and Quasar will automatically open the development server page. If you can see the main page your installation was successful.
 
-# Make it Personal
+Questo comando avvia il server di sviluppo e apre automaticamente il sito nel browser.
 
-## Adapt Packages & Configuration with your Project Name
-### Configuration
+# Funzionalità Principali
 
-Explore the [config](https://github.com/PedemonteGiacomo/EasySite/blob/main/quasar.config.js#L189) file to adapt it to fit your needs.
+## Form di Contatto
+Il sito include un modulo di contatto avanzato che:
+- Raccoglie le informazioni del cliente
+- Salva automaticamente i dati in Firestore
+- Invia email di conferma tramite SendGrid
+- Notifica automaticamente l'azienda delle nuove richieste
 
-For the moment, I suggest only to change the project name to your one:
-```js
-builder: {
-    // https://www.electron.build/configuration/configuration
-    appId: "quasar-itl", //change with your personal appID
-},
-```
+## Gestione Servizi
+Presentazione completa dei servizi ITL con:
+- Pagine dedicate per ogni tipologia di servizio
+- Gallerie fotografiche dei lavori realizzati
+- Descrizioni dettagliate delle procedure
+- Call-to-action per richieste di preventivo
+
+## Integrazione Mappe
+Localizzazione aziendale tramite Google Maps API per:
+- Visualizzare la sede dell'azienda
+- Facilitare ai clienti il raggiungimento degli uffici
+- Mostrare le zone di servizio
+
+## Recensioni Clienti
+Widget Trustmary integrato per:
+- Mostrare recensioni Google autentiche
+- Aumentare la credibilità dell'azienda
+- Influenzare le decisioni dei potenziali clienti
 
 ### Pakages
 To adapt the site to your usage, go change inside the [package-lock.json](https://github.com/PedemonteGiacomo/EasySite/blob/main/package-lock.json#L1-L8) the name of the project:
@@ -509,51 +523,55 @@ await axios.post(
   formData);
 ```
 
-This also will bypass all possible Cross-Origin errors because all the mail requests performed to the SendGrid API pass through the same address which is your *function URL*.
+## Performance e SEO
+Il sito è ottimizzato per:
+- **Velocità di caricamento**: Implementazione di lazy loading e ottimizzazione risorse
+- **SEO**: Meta tag dinamici, struttura dati Schema.org, sitemap
+- **Responsive Design**: Perfettamente visualizzabile su tutti i dispositivi
+- **Accessibilità**: Conformità agli standard di accessibilità web
 
+# Deployment e Hosting
 
-Finally, after you have followed all the instructions in [Sendgrid](https://app.sendgrid.com/), this system can make you obtain a template mail like the following:
+Il sito è hostato su Firebase Hosting per garantire:
+- Alta affidabilità e uptime
+- CDN globale per prestazioni ottimali
+- Certificato SSL automatico
+- Easy deployment e rollback
 
-![Confirmation Mail](readme_images/content_name.png)
+## Build per Produzione
 
-The owner(or you), on the other hand, will receive a simple content-based email with a simple visualization of the message of the user.
-
-![Owner Mail](readme_images/owner_mail.png)
-
-You can adapt this mail system with every kind of usage, starting from confirmation mail until the verification of user payments...
-
-# Build the app for production
-
-When the site is ready to be launched you will no longer need the development server that Quasar provides you with ```quasar dev```, you can simply type in the command prompt:
+Per creare la build di produzione:
 
 ```bash
 quasar build
 ```
 
-This will make you "compile" your quasar project and setup the SPA (Single Page Application) that can be easily hosted on Firebase as reported in [firebase.json](https://github.com/PedemonteGiacomo/EasySite/blob/main/firebase.json).
+## Deploy su Firebase
 
-If you are hosting the site with Firebase then to make the changes visible also in the deployment server (obtained by Firebase in the Firebase Hosting console web page related to your project connected to the site you are realizing) you need to perform the following command:
+Per pubblicare le modifiche:
 
 ```bash
 firebase deploy
 ```
-**The site should run even without all the API KEY updates.**
 
-If your ```firebase deploy``` isn't working try to check if all the API KEYs are set, but a first possible solution could be to check the endpoint URL of the firebase functions that are not accessible to you, for further assistance [check this](#use-sendgrid-api-to-trigger-mail-when-user-complete-contact-form).
+Il sito sarà disponibile all'indirizzo: **https://itl-impresadipulizie-genova.web.app/**
 
-If more problems are discovered, please, contact me directly by mail at giacomopedemonte@libero.it.
+# Contatti ITL
 
+Per informazioni sui servizi di pulizia:
 
+- **Sito Web**: [https://itl-impresadipulizie-genova.web.app/](https://itl-impresadipulizie-genova.web.app/)
+- **Sede**: Genova, Italia
+- **Servizi**: Pulizie domestiche, commerciali, cantieri, sanificazione
 
-# Extras
-## Animations and Transitions
+# Informazioni Tecniche
 
-Animation are based on [animation.style](https://animate.style/).
+**Sviluppatore**: Giacomo Pedemonte  
+**Email**: giacomopedemonte@libero.it  
+**Framework**: Vue.js 3 + Quasar  
+**Hosting**: Firebase  
+**Database**: Firestore  
 
-[Animations](https://quasar.dev/options/animations)  in quasar are triggered by [Transitions](https://quasar.dev/options/transitions) that are managed by [Intersection](https://quasar.dev/vue-components/intersection) within the page.
+---
 
-If interested follow [quasar docs](https://quasar.dev/options/transitions) to know more about animation, transitions and intersections.
-
-# Contributing
-
-Contributions are welcome! For further assistance write directly to  giacomopedemonte@libero.it.
+*Questo sito web rappresenta ITL s.r.l. - Impresa di Pulizie, Genova. Tutti i diritti riservati.*
