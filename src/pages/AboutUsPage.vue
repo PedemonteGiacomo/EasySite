@@ -185,7 +185,7 @@
     <!-- TESTIMONIALS SECTION -->
     <section id="testimonianze" class="section">
       <div class="container">
-        <div class="text-center q-mb-xl">
+        <div class="text-center q-mb-sm">
           <h2 class="section-title">Testimonianze dei Clienti</h2>
           <p class="section-subtitle">
             Cosa dicono di noi i nostri clienti

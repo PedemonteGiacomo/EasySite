@@ -12,7 +12,7 @@ export default {
     addTrustmaryScript() {
       // Create script element for Trustmary widget
       const script = document.createElement('script');
-      script.src = 'https://widget.trustmary.com/X6xhp1Y1h';
+      script.src = 'https://widget.trustmary.com/L-EdM19eN';
 
       // Append the script to the document's body or head
       //document.body.appendChild(script); // or document.head.appendChild(script);
