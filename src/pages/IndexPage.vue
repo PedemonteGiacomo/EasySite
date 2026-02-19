@@ -52,7 +52,7 @@
     <!-- QUALITY PROMISE SECTION -->
     <section class="section bg-white">
       <div class="container text-center">
-        <h2 class="section-title">Impresa di Pulizie Genova: Eccellenza in ogni dettaglio</h2>
+        <h2 class="section-title">Eccellenza in ogni dettaglio</h2>
         <p class="section-subtitle">
           ITL è l'impresa di pulizie di riferimento a Genova e provincia. I nostri servizi 
           professionali di pulizia offrono risultati impeccabili che superano le aspettative. 
@@ -66,7 +66,7 @@
     <section ref="statsSection" class="section">
       <div class="container">
         <div class="text-center q-mb-xl">
-          <h2 class="section-title">ITL Impresa Pulizie Genova: La nostra esperienza in numeri</h2>
+          <h2 class="section-title">La nostra esperienza in numeri</h2>
           <p class="section-subtitle">
             Oltre 40 anni di esperienza nell'impresa di pulizie a Genova. 
             Affidabilità e qualità comprovate da decenni di servizio professionale 
@@ -198,7 +198,7 @@
             />
           </div>
           <div class="col-12 col-md-6">
-            <h2 class="section-title">ITL Impresa di Pulizie: qualità dal 1984 a Genova</h2>
+            <h2 class="section-title">Qualità dal 1984 a Genova</h2>
             <p class="text-body1 q-mb-md text-grey-8 text-balance">
               ITL è un'impresa di pulizie consolidata a Genova dal 1984. Ci dedichiamo a fornire 
               servizi di pulizia di qualità eccezionale che superano le aspettative dei nostri 
@@ -227,7 +227,7 @@
     <section class="section bg-white">
       <div class="container">
         <div class="text-center q-mb-xl">
-          <h2 class="section-title">ITL Impresa Pulizie: dove trovarci a Genova</h2>
+          <h2 class="section-title">Dove trovarci a Genova</h2>
           <p class="section-subtitle">
             La nostra impresa di pulizie serve Genova e tutta la provincia ligure 
             con professionalità, puntualità e oltre 40 anni di esperienza
