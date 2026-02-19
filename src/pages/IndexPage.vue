@@ -9,8 +9,7 @@
               <div class="hero-text q-pl-lg">
                 <h1 class="hero-title text-balance">
                   ITL Impresa di Pulizie
-                  <span class="text-primary">Genova</span> 
-                  dal 1984
+                  <span class="text-primary">Genova</span>
                 </h1>
                 <p class="hero-subtitle text-balance">
                   ITL è l'impresa di pulizie di riferimento a Genova dal 1984. Offriamo servizi professionali 
